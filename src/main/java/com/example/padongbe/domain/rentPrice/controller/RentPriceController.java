@@ -1,8 +1,11 @@
 package com.example.padongbe.domain.rentPrice.controller;
 
+import com.example.padongbe.domain.rentPrice.dto.response.RentPriceDto;
 import com.example.padongbe.domain.rentPrice.service.RentPriceService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,8 +16,14 @@ public class RentPriceController {
     private final RentPriceService rentPriceService;
 
     @GetMapping("/data")
-    public String getRentPriceData() {
-        return rentPriceService.getRentPriceData();
+    public ResponseEntity<String> getRentPriceData() {
+        rentPriceService.getRentPriceData();
+        return ResponseEntity.ok("Success to save rent price data");
+    }
+
+    @GetMapping("/{dongneId}")
+    public ResponseEntity<RentPriceDto> getRentPriceByDongneId(@PathVariable Long dongneId) {
+        return ResponseEntity.ok(rentPriceService.getRentPriceByDongneId(dongneId));
     }
 
 }
