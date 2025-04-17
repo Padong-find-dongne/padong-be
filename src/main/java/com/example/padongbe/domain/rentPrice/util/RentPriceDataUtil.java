@@ -29,18 +29,20 @@ public class RentPriceDataUtil {
                 if (row == null) continue;
 
                 String dongName = getCellValue(row.getCell(0));
-                String districtName = getCellValue(row.getCell(1));
-                String districtCode = getCellValue(row.getCell(2));
-                String dongCode = getCellValue(row.getCell(3));
-                String avgJeonseDeposit = getCellValue(row.getCell(4));
-                String avgMonthlyDeposit = getCellValue(row.getCell(5));
-                String avgMonthlyRent = getCellValue(row.getCell(6));
+                String buildingType = getCellValue(row.getCell(1));
+                String districtName = getCellValue(row.getCell(2));
+                String districtCode = getCellValue(row.getCell(3));
+                String dongCode = getCellValue(row.getCell(4));
+                String avgJeonseDeposit = getCellValue(row.getCell(5));
+                String avgMonthlyDeposit = getCellValue(row.getCell(6));
+                String avgMonthlyRent = getCellValue(row.getCell(7));
 
                 RentPrice rent = RentPrice.builder()
+                        .buildingType(buildingType)
                         .dongName(dongName)
                         .districtName(districtName)
-                        .districtCode(districtCode.isEmpty() ? null : Long.parseLong(districtCode))
-                        .dongCode(dongCode.isEmpty() ? null : Long.parseLong(dongCode))
+                        .districtCode(districtCode)
+                        .dongCode(dongCode)
                         .avgJeonseDeposit(avgJeonseDeposit.isEmpty() ? null : Long.parseLong(avgJeonseDeposit))
                         .avgMonthlyDeposit(avgMonthlyDeposit.isEmpty() ? null : Long.parseLong(avgMonthlyDeposit))
                         .avgMonthlyRent(avgMonthlyRent.isEmpty() ? null : Long.parseLong(avgMonthlyRent))

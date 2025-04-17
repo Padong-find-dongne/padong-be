@@ -20,8 +20,9 @@ public class RentPrice {
     private Long id;
     private String dongName;
     private String districtName;
-    private Long districtCode;
-    private Long dongCode;
+    private String districtCode;
+    private String dongCode;
+    private String buildingType;
     private Long avgJeonseDeposit;
     private Long avgMonthlyDeposit;
     private Long avgMonthlyRent;

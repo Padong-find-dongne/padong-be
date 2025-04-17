@@ -10,7 +10,8 @@ public class RentPriceDto {
     private Long id;
     private String districtName;
     private String dongName;
-    private Long dongneId;
+    private String dongneId;
+    private String buildingType;
     private Long avgJeonseDeposit;
     private Long avgMonthlyDeposit;
     private Long avgMonthlyRent;
@@ -19,7 +20,8 @@ public class RentPriceDto {
         this.id = rentPrice.getId();
         this.districtName = rentPrice.getDistrictName();
         this.dongName = rentPrice.getDongName();
-        this.dongneId = Long.parseLong(rentPrice.getDistrictCode() + "" + rentPrice.getDongCode());
+        this.dongneId = rentPrice.getDistrictCode() + rentPrice.getDongCode();
+        this.buildingType = rentPrice.getBuildingType();
         this.avgJeonseDeposit = rentPrice.getAvgJeonseDeposit();
         this.avgMonthlyDeposit = rentPrice.getAvgMonthlyDeposit();
         this.avgMonthlyRent = rentPrice.getAvgMonthlyRent();

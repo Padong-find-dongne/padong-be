@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface RentPriceRepository extends JpaRepository<RentPrice, Long> {
-    Optional<RentPrice> findByDistrictCodeAndDongCode(Long districtCode, Long dongCode);
+    Optional<RentPrice> findByDistrictCodeAndDongCode(String districtCode, String dongCode);
 }

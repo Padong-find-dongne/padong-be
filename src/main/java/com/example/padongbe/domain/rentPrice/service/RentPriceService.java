@@ -25,8 +25,8 @@ public class RentPriceService {
 
     public RentPriceDto getRentPriceByDongneId(Long dongneId) {
         String dongne = dongneId.toString();
-        Long districtCode = Long.parseLong(dongne.substring(0, 5));
-        Long dongCode = Long.parseLong(dongne.substring(5, 10));
+        String districtCode = dongne.substring(0, 5);
+        String dongCode = dongne.substring(5, 10);
 
         Optional<RentPrice> rentPriceOpt = rentPriceRepository.findByDistrictCodeAndDongCode(districtCode, dongCode);
         if (rentPriceOpt.isEmpty()) {
