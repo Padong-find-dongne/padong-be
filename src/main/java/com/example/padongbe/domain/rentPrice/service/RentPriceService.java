@@ -23,16 +23,26 @@ public class RentPriceService {
         rentPriceRepository.saveAll(rentPriceList);
     }
 
-    public RentPriceDto getRentPriceByDongneId(Long dongneId) {
+    public RentPriceDto getRentPriceByDongneId(Long dongneId, String buildingType) {
         String dongne = dongneId.toString();
         String districtCode = dongne.substring(0, 5);
         String dongCode = dongne.substring(5, 10);
 
-        Optional<RentPrice> rentPriceOpt = rentPriceRepository.findByDistrictCodeAndDongCode(districtCode, dongCode);
+        Optional<RentPrice> rentPriceOpt = rentPriceRepository.
+                findByDistrictCodeAndDongCodeAndBuildingType(districtCode, dongCode, convertBuildingType(buildingType));
         if (rentPriceOpt.isEmpty()) {
             log.error("No data found for dongneId: {}", dongneId);
             throw new IllegalArgumentException("No data found for the given dongneId");
         }
         return new RentPriceDto(rentPriceOpt.get());
+    }
+
+    private String convertBuildingType(String buildingType) {
+        return switch (buildingType) {
+            case "apartment" -> "아파트";
+            case "officetel" -> "오피스텔";
+            case "villa" -> "주택";
+            default -> throw new IllegalStateException("Unexpected value: " + buildingType);
+        };
     }
 }

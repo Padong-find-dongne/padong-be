@@ -21,9 +21,9 @@ public class RentPriceController {
         return ResponseEntity.ok("Success to save rent price data");
     }
 
-    @GetMapping("/{dongneId}")
-    public ResponseEntity<RentPriceDto> getRentPriceByDongneId(@PathVariable Long dongneId) {
-        return ResponseEntity.ok(rentPriceService.getRentPriceByDongneId(dongneId));
+    @GetMapping("/{buildingType}/{dongneId}")
+    public ResponseEntity<RentPriceDto> getRentPriceByDongneId(@PathVariable String buildingType, @PathVariable Long dongneId) {
+        return ResponseEntity.ok(rentPriceService.getRentPriceByDongneId(dongneId, buildingType));
     }
 
 }
