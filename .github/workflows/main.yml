@@ -58,6 +58,25 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
+      - name: Cleanup untagged images in ECR
+        run: |
+          aws ecr list-images \
+            --repository-name padong \
+            --filter "tagStatus=UNTAGGED" \
+            --query 'imageIds[*]' \
+            --output json \
+            --region ap-northeast-2 > images_to_delete.json
+
+          COUNT=$(jq length images_to_delete.json)
+          if [ "$COUNT" -gt 0 ]; then
+            echo "Deleting $COUNT untagged image(s)..."
+            aws ecr batch-delete-image \
+              --repository-name padong \
+              --image-ids file://images_to_delete.json \
+              --region ap-northeast-2
+          else
+            echo "No untagged images to delete."
+          fi
 
   deploy:
     name: Deploy to EC2
