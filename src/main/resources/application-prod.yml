@@ -3,9 +3,9 @@ spring:
     name: padong-be
 
   datasource:
-    url: jdbc:mysql://padong-database.cpa0ggqay2hd.ap-northeast-2.rds.amazonaws.com:3306/padong
-    username: padong
-    password: vkehd2025
+    url: ${RDS_URL}
+    username: ${RDS_USERNAME}
+    password: ${RDS_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
