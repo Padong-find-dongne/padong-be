@@ -34,7 +34,6 @@ jobs:
 
       - name: Build with Gradle
         run: ./gradlew build -x test
-        working-directory: padong-be
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
