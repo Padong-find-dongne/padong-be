@@ -6,7 +6,6 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.core.io.ClassPathResource;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -15,12 +14,12 @@ import java.util.List;
 @Slf4j
 public class RentPriceDataUtil {
 
-    private final static String filePath = "../src/data/rentPriceData.xlsx";
+    private final static String filePath = "data/rentPriceData.xlsx";
 
     public static List<RentPrice> readRentPricesFromExcel() {
         long start = System.currentTimeMillis();
         List<RentPrice> result = new ArrayList<>();
-        ClassPathResource resource = new ClassPathResource("data/rentPriceData.xlsx");
+        ClassPathResource resource = new ClassPathResource(filePath);
         try (InputStream is = resource.getInputStream()) {
             Workbook workbook = new XSSFWorkbook(is);
             Sheet sheet = workbook.getSheetAt(0);
