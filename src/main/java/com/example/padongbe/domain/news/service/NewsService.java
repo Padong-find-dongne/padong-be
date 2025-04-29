@@ -1,0 +1,49 @@
+package com.example.padongbe.domain.news.service;
+
+import com.example.padongbe.domain.news.dto.NewsResponse;
+import com.example.padongbe.domain.news.dto.NewsResponse.News;
+import com.example.padongbe.global.ResponseDTO;
+import lombok.extern.slf4j.Slf4j;
+import org.jsoup.Jsoup;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
+
+@Service
+@Slf4j
+public class NewsService {
+  private final String BASE_URL = "https://openapi.naver.com";
+  private final String serviceKey = "OE2sHIk6MRnEbwBG8PuV";
+  private final String secretKey = "clvSRTarvD";
+  private final WebClient webClient = WebClient.builder()
+      .baseUrl(BASE_URL)
+      .defaultHeader("X-Naver-Client-Id", serviceKey)
+      .defaultHeader("X-Naver-Client-Secret", secretKey)
+      .build();
+
+  public ResponseDTO<NewsResponse> getNews() {
+
+    NewsResponse response = webClient.get()
+        .uri(uriBuilder -> uriBuilder
+            .path("/v1/search/news.json")
+            .queryParam("query", "청년안심주택")
+            .queryParam("display", 10)
+            .build())
+        .retrieve()
+        .bodyToMono(NewsResponse.class)
+        .block();
+
+    assert response != null;
+    response.getItems().forEach(item -> {
+      item.setTitle(cleanHtml(item.getTitle()));
+      item.setDescription(cleanHtml(item.getDescription()));
+    });
+
+
+    return ResponseDTO.res(HttpStatus.OK,"news 조회 성공",response);
+  }
+
+  private String cleanHtml(String html) {
+    return Jsoup.parse(html).text();
+  }
+}
