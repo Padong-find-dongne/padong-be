@@ -1,13 +1,13 @@
 package com.example.padongbe.domain.population.controller;
 
+import com.example.padongbe.domain.population.dto.PopulationChartDto;
+import com.example.padongbe.domain.population.dto.PopulationDto;
 import com.example.padongbe.domain.population.service.PopulationService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -20,9 +20,14 @@ public class PopulationController {
     @PostMapping("/data")
     @Operation(summary = "동네별 인구수 데이터 저장")
     public ResponseEntity<String> uploadPopulationData() {
-        System.out.println("호출");
         populationService.uploadPopulationData();
         return ResponseEntity.ok("Success to save population data");
+    }
+
+    @GetMapping("/{dongneCode}")
+    @Operation(summary = "동네별 인구수 조회")
+    public ResponseEntity<PopulationChartDto> getPopulationByDongneCode(@PathVariable String dongneCode) {
+        return ResponseEntity.ok(populationService.getPopulationByDongneCode(dongneCode));
     }
 
 
