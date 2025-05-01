@@ -34,6 +34,13 @@ public class DongneService {
             if (!dongMappingRepository.existsByAdminDongAndLegalDong(admin, legal))
                 dongMappingRepository.save(new DongMapping(admin, legal));
         }
-        
+
+    }
+
+    public AdminDong findAdminDongByCode(String adminDongCode) {
+        System.out.println("adminDongCode: "+adminDongCode);
+        return adminDongRepository.findByAdminDongCode(adminDongCode)
+                .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 행정동 코드입니다."));
+
     }
 }

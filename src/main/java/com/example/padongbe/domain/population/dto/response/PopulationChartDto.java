@@ -8,12 +8,12 @@ import java.util.List;
 @Getter
 public class PopulationChartDto {
     private String dongneCode;
-    private List<PopulationDto> populationList;
+    private List<PopulationDataDto> populationList;
 
     public PopulationChartDto(List<Population> populationList) {
-        this.dongneCode = populationList.get(0).getDongneCode();
+        this.dongneCode = populationList.get(0).getAdminDong().getAdminDongCode();
         this.populationList = populationList.stream()
-                .map(PopulationDto::new)
+                .map(PopulationDataDto::new)
                 .toList();
     }
 

@@ -6,12 +6,12 @@ import lombok.Getter;
 import java.util.List;
 
 @Getter
-public class PopulationDto {
+public class PopulationDataDto {
     private String gender;
     private String[] labels = {"0~9세", "10~19세", "20~29세", "30~39세", "40~49세", "50~59세", "60세 이상"};
     private List<Double> data;
 
-    public PopulationDto(Population population) {
+    public PopulationDataDto(Population population) {
         this.gender = population.getGender();
         this.data = List.of(
                 population.getAge0to9(),
