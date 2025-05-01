@@ -1,11 +1,14 @@
 package com.example.padongbe.domain.rentPrice.service;
 
+import com.example.padongbe.domain.dongne.entity.LegalDong;
+import com.example.padongbe.domain.dongne.service.DongneService;
 import com.example.padongbe.domain.rentPrice.dto.response.RentPriceDto;
 import com.example.padongbe.domain.rentPrice.entity.RentPrice;
 import com.example.padongbe.domain.rentPrice.repository.RentPriceRepository;
 import com.example.padongbe.domain.rentPrice.util.RentPriceDataUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.poi.sl.draw.geom.GuideIf;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,19 +20,25 @@ import java.util.Optional;
 public class RentPriceService {
 
     private final RentPriceRepository rentPriceRepository;
+    private final DongneService dongneService;
 
     public void uploadRentPriceData() {
         List<RentPrice> rentPriceList = RentPriceDataUtil.readRentPricesFromExcel();
         rentPriceRepository.saveAll(rentPriceList);
     }
 
-    public RentPriceDto getRentPriceByDongneId(Long dongneId, String buildingType) {
+    public RentPriceDto getRentPriceByDongneId(String dongneId, String buildingType) {
         String dongne = dongneId.toString();
         String districtCode = dongne.substring(0, 5);
         String dongCode = dongne.substring(5, 10);
 
+//        Optional<RentPrice> rentPriceOpt = rentPriceRepository.
+//                findByDistrictCodeAndDongCodeAndBuildingType(districtCode, dongCode, convertBuildingType(buildingType));
+
+        LegalDong legalDong = dongneService.findLegalDongByName(dongneId);
+
         Optional<RentPrice> rentPriceOpt = rentPriceRepository.
-                findByDistrictCodeAndDongCodeAndBuildingType(districtCode, dongCode, convertBuildingType(buildingType));
+                findByLegalDongAndBuildingType(legalDong, convertBuildingType(buildingType));
         if (rentPriceOpt.isEmpty()) {
             log.error("No data found for dongneId: {}", dongneId);
             throw new IllegalArgumentException("No data found for the given dongneId");

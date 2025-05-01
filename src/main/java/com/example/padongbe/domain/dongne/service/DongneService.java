@@ -38,9 +38,14 @@ public class DongneService {
     }
 
     public AdminDong findAdminDongByCode(String adminDongCode) {
-        System.out.println("adminDongCode: "+adminDongCode);
         return adminDongRepository.findByAdminDongCode(adminDongCode)
                 .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 행정동 코드입니다."));
 
+    }
+
+    public LegalDong findLegalDongByName(String dongCode) {
+        System.out.println(dongCode);
+        return legalDongRepository.findByLegalDongCode(dongCode)
+                .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 법정동 이름입니다."));
     }
 }
