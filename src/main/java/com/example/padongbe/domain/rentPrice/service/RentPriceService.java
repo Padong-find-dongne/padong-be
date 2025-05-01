@@ -18,7 +18,7 @@ public class RentPriceService {
 
     private final RentPriceRepository rentPriceRepository;
 
-    public void getRentPriceData() {
+    public void uploadRentPriceData() {
         List<RentPrice> rentPriceList = RentPriceDataUtil.readRentPricesFromExcel();
         rentPriceRepository.saveAll(rentPriceList);
     }
