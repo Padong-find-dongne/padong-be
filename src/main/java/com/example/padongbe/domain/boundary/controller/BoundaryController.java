@@ -1,7 +1,7 @@
-package com.example.padongbe.boundary.controller;
+package com.example.padongbe.domain.boundary.controller;
 
-import com.example.padongbe.boundary.dto.BoundaryResponse;
-import com.example.padongbe.boundary.service.BoundaryService;
+import com.example.padongbe.domain.boundary.dto.BoundaryResponse;
+import com.example.padongbe.domain.boundary.service.BoundaryService;
 import com.example.padongbe.global.ResponseDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;

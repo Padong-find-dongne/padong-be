@@ -12,7 +12,7 @@ import java.util.List;
 @Slf4j
 public class PopulationDataUtil {
 
-    private final static String filePath = "data/agePopulation.csv";
+    private final static String filePath = "data/population.csv";
     private final static String dongneRegex = "^서울특별시.*구.*\\(\\d{10}\\)$";
 
     public static List<Population> readPopulationFromCsv() {
