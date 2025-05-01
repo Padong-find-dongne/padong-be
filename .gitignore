@@ -37,3 +37,4 @@ out/
 .vscode/
 *.xlsx
 .DS_Store
+*.csv
