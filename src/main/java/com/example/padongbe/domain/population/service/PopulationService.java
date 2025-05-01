@@ -1,7 +1,6 @@
 package com.example.padongbe.domain.population.service;
 
-import com.example.padongbe.domain.population.dto.PopulationChartDto;
-import com.example.padongbe.domain.population.dto.PopulationDto;
+import com.example.padongbe.domain.population.dto.response.PopulationChartDto;
 import com.example.padongbe.domain.population.entity.Population;
 import com.example.padongbe.domain.population.repository.PopulationRepository;
 import com.example.padongbe.domain.population.util.PopulationDataUtil;

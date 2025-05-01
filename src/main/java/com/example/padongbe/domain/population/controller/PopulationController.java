@@ -1,7 +1,6 @@
 package com.example.padongbe.domain.population.controller;
 
-import com.example.padongbe.domain.population.dto.PopulationChartDto;
-import com.example.padongbe.domain.population.dto.PopulationDto;
+import com.example.padongbe.domain.population.dto.response.PopulationChartDto;
 import com.example.padongbe.domain.population.service.PopulationService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

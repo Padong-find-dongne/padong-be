@@ -1,4 +1,4 @@
-package com.example.padongbe.domain.population.dto;
+package com.example.padongbe.domain.population.dto.response;
 
 import com.example.padongbe.domain.population.entity.Population;
 import lombok.Getter;
