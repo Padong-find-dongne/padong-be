@@ -34,7 +34,11 @@ public class DongneDataUtil {
                 String legalDongCode = getString(row.getCell(8));
 
                 if (!city.equals("서울특별시")) continue;
-                if (isDistrictOnly(adminDongName) && isDistrictOnly(legalDongName)) continue;
+                if(adminDongName.equals("서울특별시")) continue;
+                if (isDistrictOnly(adminDongName) && isDistrictOnly(legalDongName)) {
+                    System.out.println(adminDongName + " " + legalDongName);
+                    continue;
+                }
 
                 results.add(DongMappingDto.builder()
                         .city(city)
