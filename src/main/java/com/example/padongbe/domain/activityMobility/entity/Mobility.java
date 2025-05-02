@@ -22,8 +22,9 @@ public class Mobility {
   private Long id;
 
   private String month;
-  private String startCode;
-  private String destinationCode;
-  private int totalMobility;
+  private String departureCode;
+  private String arrivalCode;
+  private double totalMobility;
+  private double avgTime;
 
 }

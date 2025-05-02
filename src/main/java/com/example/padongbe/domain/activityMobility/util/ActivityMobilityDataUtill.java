@@ -14,7 +14,7 @@ import java.util.List;
 @Slf4j
 public class ActivityMobilityDataUtill {
 
-    private final static String filePath = "C:\\Users\\강예린\\Desktop\\HW_이동인구_요약_2025_03.xlsx";
+    private final static String filePath = "data/HW_이동인구_요약_2025_03.xlsx";
 
     public static List<Mobility> readActivityMobilityFromExcel() {
         long start = System.currentTimeMillis();
@@ -28,15 +28,18 @@ public class ActivityMobilityDataUtill {
                 if (row == null) continue;
 
                 String month = String.valueOf(row.getCell(0));
-                String startCode = String.valueOf(row.getCell(1));
-                String destinationCode = String.valueOf(row.getCell(2));
-                int totalMobility = Integer.parseInt(String.valueOf(row.getCell(3)));
+                String departureCode = String.valueOf(row.getCell(1));
+                String arrivalCode = String.valueOf(row.getCell(2));
+                double totalMobility = Double.parseDouble(String.valueOf(row.getCell(3)));
+                double avgTime= Double.parseDouble(String.valueOf(row.getCell(4)));
+
 
                 Mobility mobility = Mobility.builder()
                         .month(month)
-                        .startCode(startCode)
-                        .destinationCode(destinationCode)
+                        .departureCode(departureCode)
+                        .arrivalCode(arrivalCode)
                         .totalMobility(totalMobility)
+                        .avgTime(avgTime)
                         .build();
 
                 result.add(mobility);

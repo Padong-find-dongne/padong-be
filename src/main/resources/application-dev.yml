@@ -15,3 +15,6 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+swagger-config:
+  server-url: "http://localhost:8080"
