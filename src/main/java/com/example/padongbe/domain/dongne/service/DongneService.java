@@ -8,10 +8,14 @@ import com.example.padongbe.domain.dongne.repository.AdminDongRepository;
 import com.example.padongbe.domain.dongne.repository.DongMappingRepository;
 import com.example.padongbe.domain.dongne.repository.LegalDongRepository;
 import com.example.padongbe.domain.dongne.util.DongneDataUtil;
+import com.example.padongbe.domain.safetyGrade.entity.SafetyGrade;
+import com.example.padongbe.domain.safetyGrade.service.SafetyGradeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
@@ -20,6 +24,7 @@ public class DongneService {
     private final AdminDongRepository adminDongRepository;
     private final LegalDongRepository legalDongRepository;
     private final DongMappingRepository dongMappingRepository;
+    private final SafetyGradeService safetyGradeService;
 
     public void addDongneDate() {
         List<DongMappingDto> rows = DongneDataUtil.readDongneFromExcel();
@@ -38,9 +43,31 @@ public class DongneService {
     }
 
     public AdminDong findAdminDongByCode(String adminDongCode) {
-        System.out.println("adminDongCode: "+adminDongCode);
         return adminDongRepository.findByAdminDongCode(adminDongCode)
                 .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 행정동 코드입니다."));
 
+    }
+
+    public LegalDong findLegalDongByName(String dongCode) {
+        System.out.println(dongCode);
+        return legalDongRepository.findByLegalDongCode(dongCode)
+                .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 법정동 이름입니다."));
+    }
+
+    @Transactional
+    public void addDongneSafetyGradeData() {
+        List<AdminDong> adminDongList = adminDongRepository.findAll();
+        Map<String, SafetyGrade> safetyGradeMap = safetyGradeService.getSafetyGradeMap();
+        adminDongList.forEach(adminDong -> {
+            SafetyGrade safetyGrade = safetyGradeMap.get(adminDong.getDistrict());
+            adminDong.setSafetyGrade(safetyGrade);
+            System.out.println(safetyGrade.getDistrictName());
+        });
+//        List<AdminDong> adminDongList = adminDongRepository.findAll();
+//        adminDongList.forEach(adminDong -> {
+//                    SafetyGrade safetyGrade = safetyGradeService.findByDistrictName(adminDong.getDistrict());
+//                    adminDong.setSafetyGrade(safetyGrade);
+//                    adminDongRepository.save(adminDong);
+//                });
     }
 }

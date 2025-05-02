@@ -1,7 +1,10 @@
 package com.example.padongbe.domain.dongne.entity;
 
 import com.example.padongbe.domain.dongne.dto.DongMappingDto;
+import com.example.padongbe.domain.safetyGrade.entity.SafetyGrade;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -23,6 +26,10 @@ public class AdminDong {
     private String adminTypeCode;
     private String adminDongCode;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "safety_grade_id")
+    private SafetyGrade safetyGrade;
+
     @OneToMany(mappedBy = "adminDong")
     private List<DongMapping> dongMappingList = new ArrayList<>();
 
@@ -35,4 +42,7 @@ public class AdminDong {
         this.adminTypeCode = dto.getAdminTypeCode();
     }
 
+    public void setSafetyGrade(SafetyGrade safetyGrade) {
+        this.safetyGrade = safetyGrade;
+    }
 }
