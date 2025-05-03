@@ -18,15 +18,16 @@ import java.util.List;
 @RequiredArgsConstructor
 @Tag(name = "Mobility", description = "서울시 생활이동 데이터 관리 API")
 public class MobilityController {
-  private final MobilityService mobilityService;
-  @GetMapping("/{arrivalCode}")
-  public ResponseEntity<ResponseDTO<List<MobilityResponse>>> searchByDestination(@PathVariable String arrivalCode){
-    return ResponseEntity.ok(mobilityService.searchByDestination(arrivalCode));
-  }
+    private final MobilityService mobilityService;
 
-  @GetMapping("/data")
-  public void fetchData(){
-    mobilityService.fetchData();
-  }
+    @GetMapping("/{arrivalCode}")
+    public ResponseEntity<ResponseDTO<List<MobilityResponse>>> searchByDestination(@PathVariable String arrivalCode) {
+        return ResponseEntity.ok(mobilityService.searchByDestination(arrivalCode));
+    }
+
+    @GetMapping("/data")
+    public void fetchData() {
+        mobilityService.fetchData();
+    }
 
 }
