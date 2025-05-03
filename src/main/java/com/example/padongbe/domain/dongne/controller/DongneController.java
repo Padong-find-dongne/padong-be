@@ -24,7 +24,7 @@ public class DongneController {
         return ResponseEntity.ok("동네 데이터 추가 완료");
     }
 
-    @PostMapping("/data/safetyGrade")
+    @PostMapping("/data/safety-grade")
     @Operation(summary = "동네 안전등급 데이터 추가")
     public ResponseEntity<String> addDongneSafetyGradeData(){
         dongneService.addDongneSafetyGradeData();
