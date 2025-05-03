@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class RentPriceDto {
     private Long id;
-    private String districtName;
-    private String dongName;
-    private String dongneId;
+//    private String districtName;
+//    private String dongName;
+//    private String dongneId;
     private String buildingType;
     private Long avgJeonseDeposit;
     private Long avgMonthlyDeposit;
@@ -18,9 +18,9 @@ public class RentPriceDto {
 
     public RentPriceDto(RentPrice rentPrice) {
         this.id = rentPrice.getId();
-        this.districtName = rentPrice.getDistrictName();
-        this.dongName = rentPrice.getDongName();
-        this.dongneId = rentPrice.getDistrictCode() + rentPrice.getDongCode();
+//        this.districtName = rentPrice.getDistrictName();
+//        this.dongName = rentPrice.getDongName();
+//        this.dongneId = rentPrice.getDistrictCode() + rentPrice.getDongCode();
         this.buildingType = rentPrice.getBuildingType();
         this.avgJeonseDeposit = rentPrice.getAvgJeonseDeposit();
         this.avgMonthlyDeposit = rentPrice.getAvgMonthlyDeposit();

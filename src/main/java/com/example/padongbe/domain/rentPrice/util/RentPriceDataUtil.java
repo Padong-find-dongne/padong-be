@@ -1,10 +1,13 @@
 package com.example.padongbe.domain.rentPrice.util;
 
+import com.example.padongbe.domain.dongne.entity.LegalDong;
+import com.example.padongbe.domain.dongne.service.DongneService;
 import com.example.padongbe.domain.rentPrice.entity.RentPrice;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,7 +15,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
+@Component
 public class RentPriceDataUtil {
+
+    private static DongneService dongneService;
+
+    public RentPriceDataUtil(DongneService dongneService) {
+        this.dongneService = dongneService;
+    }
 
     private final static String filePath = "data/rentPriceData.xlsx";
 
@@ -36,12 +46,15 @@ public class RentPriceDataUtil {
                 String avgMonthlyDeposit = getCellValue(row.getCell(6));
                 String avgMonthlyRent = getCellValue(row.getCell(7));
 
+                LegalDong legalDong = dongneService.findLegalDongByName(districtCode+dongCode);
+
                 RentPrice rent = RentPrice.builder()
                         .buildingType(buildingType)
-                        .dongName(dongName)
-                        .districtName(districtName)
-                        .districtCode(districtCode)
-                        .dongCode(dongCode)
+                        .legalDong(legalDong)
+//                        .dongName(dongName)
+//                        .districtName(districtName)
+//                        .districtCode(districtCode)
+//                        .dongCode(dongCode)
                         .avgJeonseDeposit(avgJeonseDeposit.isEmpty() ? null : Long.parseLong(avgJeonseDeposit))
                         .avgMonthlyDeposit(avgMonthlyDeposit.isEmpty() ? null : Long.parseLong(avgMonthlyDeposit))
                         .avgMonthlyRent(avgMonthlyRent.isEmpty() ? null : Long.parseLong(avgMonthlyRent))

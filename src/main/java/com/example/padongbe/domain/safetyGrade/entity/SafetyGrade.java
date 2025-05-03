@@ -1,13 +1,14 @@
 package com.example.padongbe.domain.safetyGrade.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.example.padongbe.domain.dongne.entity.AdminDong;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -24,4 +25,7 @@ public class SafetyGrade {
     private Long livingGrade;
     private Long suicideGrade;
     private Long epidemicGrade;
+
+    @OneToMany(mappedBy = "safetyGrade")
+    private List<AdminDong> adminDongs = new ArrayList<>();
 }

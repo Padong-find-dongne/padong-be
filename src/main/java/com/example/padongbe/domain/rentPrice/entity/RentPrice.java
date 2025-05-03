@@ -1,9 +1,7 @@
 package com.example.padongbe.domain.rentPrice.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.example.padongbe.domain.dongne.entity.LegalDong;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -18,10 +16,12 @@ public class RentPrice {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String dongName;
-    private String districtName;
-    private String districtCode;
-    private String dongCode;
+//    private String dongName;
+//    private String districtName;
+//    private String districtCode;
+//    private String dongCode;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private LegalDong legalDong;
     private String buildingType;
     private Long avgJeonseDeposit;
     private Long avgMonthlyDeposit;
