@@ -45,7 +45,20 @@ public class DongneService {
     public AdminDong findAdminDongByCode(String adminDongCode) {
         return adminDongRepository.findByAdminDongCode(adminDongCode)
                 .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 행정동 코드입니다."));
+    }
 
+    public AdminDong findAdminDongByTypeCode(String adminTypeCode) {
+        switch (adminTypeCode) {
+            case "11160640" -> adminTypeCode = "11160751";
+            case "11230740" -> adminTypeCode = "11230511";
+            case "11160720" -> adminTypeCode = "11160761";
+            case "11170680" -> adminTypeCode = "11170730";
+            case "11250510" -> adminTypeCode = "11250750";
+            case "11250520" -> adminTypeCode = "11250760";
+        }
+        String finalAdminTypeCode = adminTypeCode;
+        return adminDongRepository.findByAdminTypeCode(adminTypeCode)
+                .orElseThrow(() -> new IllegalArgumentException(finalAdminTypeCode +": 존재하지 않는 행정분류 코드입니다."));
     }
 
     public LegalDong findLegalDongByName(String dongCode) {
@@ -69,5 +82,15 @@ public class DongneService {
 //                    adminDong.setSafetyGrade(safetyGrade);
 //                    adminDongRepository.save(adminDong);
 //                });
+    }
+
+    public AdminDong findAdminDongByAddress(String address) {
+        String[] addressParts = address.split(" ");
+        String city = addressParts[0];
+        String district = addressParts[1];
+        String dong = addressParts[2];
+
+        return adminDongRepository.findByCityAndDistrictAndAdminAreaName(city, district, dong)
+                .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 행정동 주소입니다."));
     }
 }
