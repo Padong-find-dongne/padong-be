@@ -83,4 +83,14 @@ public class DongneService {
 //                    adminDongRepository.save(adminDong);
 //                });
     }
+
+    public AdminDong findAdminDongByAddress(String address) {
+        String[] addressParts = address.split(" ");
+        String city = addressParts[0];
+        String district = addressParts[1];
+        String dong = addressParts[2];
+
+        return adminDongRepository.findByCityAndDistrictAndAdminAreaName(city, district, dong)
+                .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 행정동 주소입니다."));
+    }
 }

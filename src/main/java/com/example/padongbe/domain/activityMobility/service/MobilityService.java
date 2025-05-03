@@ -5,6 +5,7 @@ import static com.example.padongbe.domain.activityMobility.util.ActivityMobility
 import com.example.padongbe.domain.activityMobility.dto.MobilityResponse;
 import com.example.padongbe.domain.activityMobility.entity.Mobility;
 import com.example.padongbe.domain.activityMobility.repository.MobilityRepository;
+import com.example.padongbe.domain.dongne.dto.AdminDongDto;
 import com.example.padongbe.domain.dongne.entity.AdminDong;
 import com.example.padongbe.domain.dongne.service.DongneService;
 import com.example.padongbe.global.ResponseDTO;
@@ -43,4 +44,24 @@ public class MobilityService {
         mobilityRepository.saveAll(readActivityMobilityFromExcel());
     }
 
+    public ResponseDTO<List<MobilityResponse>> searchByAddress(String address) {
+        AdminDong adminDong = dongneService.findAdminDongByAddress(address);
+        List<MobilityResponse> responses = new ArrayList<>();
+        List<Mobility> mobilities = mobilityRepository.findByArrivalDongOrderByTotalMobilityDesc(adminDong);
+        if (mobilities.isEmpty())
+            return ResponseDTO.res(HttpStatus.NOT_FOUND, "해당 행정동이 존재하지 않습니다.");
+
+        for (Mobility mobility :mobilities) {
+            AdminDong departureDong = mobility.getDepartureDong();
+            responses.add(MobilityResponse.builder()
+                    .departureDong(AdminDongDto.builder()
+                                    .adminDongCode(departureDong.getAdminDongCode())
+                                    .address(departureDong.getCity()+" "+departureDong.getDistrict()+" "+departureDong.getAdminAreaName())
+                                    .build())
+                    .totalMobility(mobility.getTotalMobility())
+                    .avgTime(mobility.getAvgTime())
+                    .build());
+        }
+        return ResponseDTO.res(HttpStatus.OK, "출발 행정동 조회 성공", responses);
+    }
 }
