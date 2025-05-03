@@ -8,10 +8,7 @@ import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,7 +24,6 @@ public class MobilityController {
         return ResponseEntity.ok(mobilityService.searchByDestination(arrivalCode));
     }
 
-
     @GetMapping("/address/{address}")
     @Operation(summary = "행정동 주소로 검색")
     @Parameter(name = "address", description = "행정동 주소", example = "서울특별시 서대문구 남가좌1동")
@@ -35,7 +31,8 @@ public class MobilityController {
         return ResponseEntity.ok(mobilityService.searchByAddress(address));
     }
 
-    @GetMapping("/data")
+    @PostMapping("/data")
+    @Operation(summary = "서울시 생활이동 데이터 저장")
     public void fetchData() {
         mobilityService.fetchData();
     }

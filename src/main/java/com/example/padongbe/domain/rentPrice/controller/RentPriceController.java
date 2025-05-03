@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/rentPrice")
+@RequestMapping("/rent-price")
 @Tag(name = "RentPrice", description = "전월세가 관련 API")
 public class RentPriceController {
     private final RentPriceService rentPriceService;
