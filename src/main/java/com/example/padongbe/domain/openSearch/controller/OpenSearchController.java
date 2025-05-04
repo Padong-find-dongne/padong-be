@@ -20,11 +20,8 @@ public class OpenSearchController {
     private final OpenSearchService openSearchService;
 
     @GetMapping("/keyword")
-    @Parameter(
-            description = "검색할 키워드",
-            example = "키워드 단어 포함되는 자치구 및 행정동 검색 (초성으로 행정동 검색 가능)"
-    )
-    @Operation(summary = "자동완성 주소 조회")
+    @Operation(summary = "자동완성으로 주소 검색")
+    @Parameter(name = "keyword", description = "키워드 단어 포함되는 자치구 및 행정동 검색 (초성으로 행정동 검색 가능", example = "서대문, 서대문구, 연희동, 남가좌...")
     public List<String> autoComplete(@RequestParam String keyword) {
         return openSearchService.autocomplete(keyword);
     }
