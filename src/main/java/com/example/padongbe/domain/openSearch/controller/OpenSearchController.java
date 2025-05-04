@@ -1,6 +1,8 @@
 package com.example.padongbe.domain.openSearch.controller;
 
 import com.example.padongbe.domain.openSearch.service.OpenSearchService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +19,12 @@ import java.util.List;
 public class OpenSearchController {
     private final OpenSearchService openSearchService;
 
-    @GetMapping
+    @GetMapping("/keyword")
+    @Parameter(
+            description = "검색할 키워드",
+            example = "키워드 단어 포함되는 자치구 및 행정동 검색 (초성으로 행정동 검색 가능)"
+    )
+    @Operation(summary = "자동완성 주소 조회")
     public List<String> autoComplete(@RequestParam String keyword) {
         return openSearchService.autocomplete(keyword);
     }

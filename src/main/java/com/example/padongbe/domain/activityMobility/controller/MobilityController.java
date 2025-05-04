@@ -24,10 +24,10 @@ public class MobilityController {
         return ResponseEntity.ok(mobilityService.searchByDestination(arrivalCode));
     }
 
-    @GetMapping("/address/{address}")
+    @GetMapping("/address")
     @Operation(summary = "행정동 주소로 검색")
     @Parameter(name = "address", description = "행정동 주소", example = "서울특별시 서대문구 남가좌1동")
-    public ResponseEntity<ResponseDTO<List<MobilityResponse>>> searchByAddress(@PathVariable String address) {
+    public ResponseEntity<ResponseDTO<List<MobilityResponse>>> searchByAddress(@RequestBody String address) {
         return ResponseEntity.ok(mobilityService.searchByAddress(address));
     }
 
