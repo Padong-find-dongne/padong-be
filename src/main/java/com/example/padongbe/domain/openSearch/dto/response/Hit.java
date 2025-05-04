@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 
 @Getter
-public class AutoComplete {
+public class Hit {
     @JsonProperty("_source")
     private AdminDongSearch source;
 }

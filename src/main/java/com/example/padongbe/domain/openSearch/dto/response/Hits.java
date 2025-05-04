@@ -4,6 +4,6 @@ import lombok.Getter;
 import java.util.List;
 
 @Getter
-public class AutoCompleteList {
-    private List<AutoComplete> autoCompleteList;
+public class Hits {
+    private List<Hit> hits;
 }

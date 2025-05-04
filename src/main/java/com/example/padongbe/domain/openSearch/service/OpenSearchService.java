@@ -45,9 +45,9 @@ public class OpenSearchService {
                 .bodyValue(query)
                 .retrieve()
                 .bodyToMono(OpenSearchDto.class)
-                .map(res -> res.getAutoCompleteList().getAutoCompleteList().stream()
-                        .map(autoComplete -> {
-                            var src = autoComplete.getSource();
+                .map(res -> res.getHits().getHits().stream()
+                        .map(hit -> {
+                            var src = hit.getSource();
                             return src.getCity() + " " + src.getDistrict() + " " + src.getAdminAreaName();
                         })
                         .toList()
