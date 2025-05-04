@@ -4,5 +4,5 @@ import lombok.Getter;
 
 @Getter
 public class OpenSearchDto {
-    private AutoCompleteList autoCompleteList;
+    private Hits hits;
 }
