@@ -105,4 +105,7 @@ jobs:
               -e RDS_URL=${{ secrets.RDS_URL }} \
               -e RDS_USERNAME=${{ secrets.RDS_USERNAME }} \
               -e RDS_PASSWORD=${{ secrets.RDS_PASSWORD }} \
+              -e OPEN_SEARCH_URL=${{ secrets.OPEN_SEARCH_URL }} \
+              -e OPEN_SEARCH_USERNAME=${{ secrets.OPEN_SEARCH_USERNAME }} \
+              -e OPEN_SEARCH_PASSWORD=${{ secrets.OPEN_SEARCH_PASSWORD }} \
               $AWS_ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
