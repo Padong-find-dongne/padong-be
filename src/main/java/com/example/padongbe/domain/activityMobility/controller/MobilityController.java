@@ -28,7 +28,17 @@ public class MobilityController {
     @Operation(summary = "행정동 주소로 검색")
     @Parameter(name = "address", description = "행정동 주소", example = "서울특별시 서대문구 남가좌1동")
     public ResponseEntity<ResponseDTO<List<MobilityResponse>>> searchByAddress(@RequestParam String address) {
-        return ResponseEntity.ok(mobilityService.searchByAddress(address));
+        ResponseDTO<List<MobilityResponse>> response = mobilityService.searchByAddress(address);
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/address/merge")
+    @Operation(summary = "두 개의 행정동 주소로 검색")
+    public ResponseEntity<ResponseDTO<List<MobilityResponse>>> searchByTwoAddresses(
+            @RequestParam String address1,
+            @RequestParam String address2) {
+
+        return ResponseEntity.ok(mobilityService.searchByTwoAddresses(address1, address2));
     }
 
     @PostMapping("/data")
@@ -36,5 +46,7 @@ public class MobilityController {
     public void fetchData() {
         mobilityService.fetchData();
     }
+
+
 
 }

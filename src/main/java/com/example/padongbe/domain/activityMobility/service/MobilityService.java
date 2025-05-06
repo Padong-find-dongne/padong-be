@@ -11,7 +11,11 @@ import com.example.padongbe.domain.dongne.service.DongneService;
 import com.example.padongbe.global.ResponseDTO;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -62,6 +66,46 @@ public class MobilityService {
                     .avgTime(mobility.getAvgTime())
                     .build());
         }
+
         return ResponseDTO.res(HttpStatus.OK, "출발 행정동 조회 성공", responses);
     }
+
+    public ResponseDTO<List<MobilityResponse>> searchByTwoAddresses(String address1, String address2) {
+        List<MobilityResponse> response1 = searchByAddress(address1).getData();
+        List<MobilityResponse> response2 = searchByAddress(address2).getData();
+
+        Map<String, MobilityResponse> response1Map = response1.stream()
+                .collect(Collectors.toMap(
+                        r -> r.getDepartureDong().getAdminDongCode(),
+                        Function.identity(),
+                        (a, b) -> a
+                ));
+
+        List<MobilityResponse> result = new ArrayList<>();
+
+        for (MobilityResponse r2 : response2) {
+            String code = r2.getDepartureDong().getAdminDongCode();
+            MobilityResponse r1 = response1Map.get(code);
+            if (r1 != null) {
+                MobilityResponse mergedResponse = MobilityResponse.builder()
+                        .departureDong(r1.getDepartureDong())
+                        .totalMobility(r1.getTotalMobility() + r2.getTotalMobility())
+                        .avgTime((r1.getAvgTime() + r2.getAvgTime()) / 2)
+                        .build();
+                result.add(mergedResponse);
+            }
+        }
+
+        List<MobilityResponse> finalResult;
+        if (result.isEmpty()) {
+            finalResult = new ArrayList<>();
+            finalResult.addAll(response1);
+            finalResult.addAll(response2);
+        } else {
+            finalResult = result;
+        }
+        finalResult.sort(Comparator.comparingDouble(MobilityResponse::getAvgTime));
+        return ResponseDTO.res(HttpStatus.OK, "출발 행정동 조회 성공", finalResult);
+    }
+
 }
