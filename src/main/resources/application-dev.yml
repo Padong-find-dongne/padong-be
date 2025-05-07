@@ -21,5 +21,9 @@ swagger-config:
 
 open-search:
   url: ""
-  username: ""
-  password: ""
+
+  iam:
+    region: ""
+    access-key: ""
+    secret-key: ""
+    session-token: ""
