@@ -21,7 +21,7 @@ public class MobilityService {
     List<Mobility> mobilities= mobilityRepository.findByArrivalCodeOrderByTotalMobilityDesc(arrivalCode);
     if (mobilities.isEmpty()) return ResponseDTO.res(HttpStatus.NOT_FOUND,"해당 행정동이 존재하지 않습니다.");
     for(Mobility mobility: mobilityRepository.findByArrivalCodeOrderByTotalMobilityDesc(arrivalCode)){
-      responses.add(MobilityResponse.builder().totalMobility(mobility.getTotalMobility())
+      responses.add(MobilityResponse.builder().departureCode(mobility.getDepartureCode()).totalMobility(mobility.getTotalMobility())
           .avgTime(mobility.getAvgTime()).build());
     }
     return ResponseDTO.res(HttpStatus.OK,"출발 행정동 조회 성공", responses);
