@@ -21,7 +21,7 @@ public class PopulationDataUtil {
     private static DongneService dongneService;
 
     public PopulationDataUtil(DongneService dongneService){
-        this.dongneService = dongneService;
+        PopulationDataUtil.dongneService = dongneService;
     }
 
     private final static String filePath = "data/population.csv";
@@ -52,40 +52,7 @@ public class PopulationDataUtil {
                 // 전체 (계)
                 result.add(Population.builder()
                         .adminDong(adminDong)
-                        .gender("계")
-                        .age0to9(parse(fields[4]))
-                        .age10to19(parse(fields[5]))
-                        .age20to29(parse(fields[6]))
-                        .age30to39(parse(fields[7]))
-                        .age40to49(parse(fields[8]))
-                        .age50to59(parse(fields[9]))
-                        .age60plus(parse(fields[10]) + parse(fields[11]) + parse(fields[12]) + parse(fields[13]))
-                        .build());
-
-                // 남성
-                result.add(Population.builder()
-                        .adminDong(adminDong)
-                        .gender("남")
-                        .age0to9(parse(fields[16]))
-                        .age10to19(parse(fields[17]))
-                        .age20to29(parse(fields[18]))
-                        .age30to39(parse(fields[19]))
-                        .age40to49(parse(fields[20]))
-                        .age50to59(parse(fields[21]))
-                        .age60plus(parse(fields[22]) + parse(fields[23]) + parse(fields[24]) + parse(fields[25]))
-                        .build());
-
-                // 여성
-                result.add(Population.builder()
-                        .adminDong(adminDong)
-                        .gender("여")
-                        .age0to9(parse(fields[29]))
-                        .age10to19(parse(fields[30]))
-                        .age20to29(parse(fields[31]))
-                        .age30to39(parse(fields[32]))
-                        .age40to49(parse(fields[33]))
-                        .age50to59(parse(fields[34]))
-                        .age60plus(parse(fields[35]) + parse(fields[36]) + parse(fields[37]) + parse(fields[38]))
+                        .totalPopulation(parse(fields[1]))
                         .build());
             }
 

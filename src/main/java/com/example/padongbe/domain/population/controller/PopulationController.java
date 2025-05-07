@@ -1,7 +1,8 @@
 package com.example.padongbe.domain.population.controller;
 
-import com.example.padongbe.domain.population.dto.response.PopulationChartDto;
+import com.example.padongbe.domain.population.dto.response.PopulationDataDto;
 import com.example.padongbe.domain.population.service.PopulationService;
+import com.example.padongbe.global.ResponseDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -23,10 +24,18 @@ public class PopulationController {
         return ResponseEntity.ok("Success to save population data");
     }
 
+    @PostMapping("/density/data")
+    @Operation(summary = "동네별 인구밀도 데이터 저장")
+    public ResponseEntity<String> uploadDensityData() {
+        populationService.uploadDensityData();
+        return ResponseEntity.ok("Success to save Density data");
+    }
+
     @GetMapping("/{dongneCode}")
-    @Operation(summary = "동네별 인구수 조회")
-    public ResponseEntity<PopulationChartDto> getPopulationByDongneCode(@PathVariable String dongneCode) {
+    @Operation(summary = "동네별 인구밀도 조회")
+    public ResponseEntity<ResponseDTO<PopulationDataDto>> getPopulationByDongneCode(@PathVariable String dongneCode) {
         return ResponseEntity.ok(populationService.getPopulationByDongneCode(dongneCode));
     }
+
 
 }
