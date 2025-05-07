@@ -25,6 +25,7 @@ import static com.example.padongbe.domain.activityMobility.util.ActivityMobility
 @Service
 @RequiredArgsConstructor
 public class MobilityService {
+
     private final MobilityRepository mobilityRepository;
     private final DongneService dongneService;
 
