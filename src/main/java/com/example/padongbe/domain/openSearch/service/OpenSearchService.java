@@ -1,24 +1,50 @@
 package com.example.padongbe.domain.openSearch.service;
 
-import com.example.padongbe.domain.openSearch.dto.response.OpenSearchDto;
+import com.fasterxml.jackson.databind.JsonNode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Mono;
 
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
+
 @Service
 @RequiredArgsConstructor
 public class OpenSearchService {
 
     @Qualifier("openSearchWebClient")
-    private final WebClient openSearchWebClient;
+    private final WebClient webClient;
 
     public List<String> autocomplete(String keyword) {
-        String query;
+        String query = buildQuery(keyword);
 
+        return webClient.post()
+                .uri("/admin-dong/_search")
+                .bodyValue(query)
+                .retrieve()
+                .bodyToMono(JsonNode.class)
+                .map(json -> {
+                    JsonNode hits = json.path("hits").path("hits");
+                    return StreamSupport.stream(hits.spliterator(), false)
+                            .map(hit -> hit.path("_source"))
+                            .map(src -> src.path("city").asText() + " " +
+                                    src.path("district").asText() + " " +
+                                    src.path("admin_area_name").asText())
+                            .collect(Collectors.toList());
+                })
+                .onErrorResume(e -> {
+                    e.printStackTrace();
+                    return Mono.just(List.of()); // 실패 시 빈 리스트 반환
+                })
+                .block();
+    }
+
+    private String buildQuery(String keyword) {
         if (isChosungOnly(keyword)) {
-            query = """
+            return """
                 {
                   "query": {
                     "match": {
@@ -28,7 +54,7 @@ public class OpenSearchService {
                 }
             """.formatted(keyword);
         } else {
-            query = """
+            return """
                 {
                   "query": {
                     "multi_match": {
@@ -39,20 +65,6 @@ public class OpenSearchService {
                 }
             """.formatted(keyword);
         }
-
-        return openSearchWebClient.post()
-                .uri("/admin-dong/_search")
-                .bodyValue(query)
-                .retrieve()
-                .bodyToMono(OpenSearchDto.class)
-                .map(res -> res.getHits().getHits().stream()
-                        .map(hit -> {
-                            var src = hit.getSource();
-                            return src.getCity() + " " + src.getDistrict() + " " + src.getAdminAreaName();
-                        })
-                        .toList()
-                )
-                .block();
     }
 
     private boolean isChosungOnly(String keyword) {
