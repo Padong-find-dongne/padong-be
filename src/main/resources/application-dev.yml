@@ -18,3 +18,8 @@ spring:
 
 swagger-config:
   server-url: "http://localhost:8080"
+
+open-search:
+  url: ""
+  username: ""
+  password: ""
