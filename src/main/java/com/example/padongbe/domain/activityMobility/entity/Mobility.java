@@ -19,8 +19,7 @@ public class Mobility {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String month;
-//  private String departureCode;
-//  private String arrivalCode;
+
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "departure_dong_id")
   private AdminDong departureDong;

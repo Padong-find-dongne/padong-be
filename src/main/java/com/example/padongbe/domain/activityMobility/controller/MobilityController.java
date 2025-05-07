@@ -8,6 +8,10 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,16 +24,14 @@ import java.util.List;
 public class MobilityController {
     private final MobilityService mobilityService;
 
-    @GetMapping("/{arrivalCode}")
-    public ResponseEntity<ResponseDTO<List<MobilityResponse>>> searchByDestination(@PathVariable String arrivalCode) {
-        return ResponseEntity.ok(mobilityService.searchByDestination(arrivalCode));
-    }
-
     @GetMapping("/address")
     @Operation(summary = "행정동 주소로 검색")
     @Parameter(name = "address", description = "행정동 주소", example = "서울특별시 서대문구 남가좌1동")
-    public ResponseEntity<ResponseDTO<List<MobilityResponse>>> searchByAddress(@RequestParam String address) {
-        ResponseDTO<List<MobilityResponse>> response = mobilityService.searchByAddress(address);
+    public ResponseEntity<ResponseDTO<List<MobilityResponse>>> searchByAddress(@RequestParam String address,
+        @RequestParam(defaultValue = "0") int page
+        ) {
+        Pageable pageable = PageRequest.of(page, 10, Sort.by(Sort.Direction.DESC, "totalMobility"));
+        ResponseDTO<List<MobilityResponse>> response = mobilityService.searchByAddress(address, pageable);
         return ResponseEntity.ok(response);
     }
 
@@ -37,9 +39,11 @@ public class MobilityController {
     @Operation(summary = "두 개의 행정동 주소로 검색")
     public ResponseEntity<ResponseDTO<MultiMobilityResponse>> searchByTwoAddresses(
             @RequestParam String address1,
-            @RequestParam String address2)
+            @RequestParam String address2,
+            @RequestParam int page
+    )
     {
-        return ResponseEntity.ok(mobilityService.searchByTwoAddresses(address1, address2));
+        return ResponseEntity.ok(mobilityService.searchByTwoAddresses(address1, address2, page));
     }
 
     @PostMapping("/data")

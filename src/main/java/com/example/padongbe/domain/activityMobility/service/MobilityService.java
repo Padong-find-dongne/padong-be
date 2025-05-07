@@ -9,7 +9,10 @@ import com.example.padongbe.domain.dongne.dto.AdminDongDto;
 import com.example.padongbe.domain.dongne.entity.AdminDong;
 import com.example.padongbe.domain.dongne.service.DongneService;
 import com.example.padongbe.global.ResponseDTO;
+import java.util.Collection;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -29,61 +32,51 @@ public class MobilityService {
     private final MobilityRepository mobilityRepository;
     private final DongneService dongneService;
 
-    public ResponseDTO<List<MobilityResponse>> searchByDestination(String arrivalCode) {
+    public List<MobilityResponse> mapFromEntities(Collection<Mobility> mobilities){
         List<MobilityResponse> responses = new ArrayList<>();
-        AdminDong adminDong = dongneService.findAdminDongByCode(arrivalCode);
-//        List<Mobility> mobilities = mobilityRepository.findByArrivalCodeOrderByTotalMobilityDesc(arrivalCode);
-        List<Mobility> mobilities = mobilityRepository.findByArrivalDongOrderByTotalMobilityDesc(adminDong);
-        if (mobilities.isEmpty())
-            return ResponseDTO.res(HttpStatus.NOT_FOUND, "해당 행정동이 존재하지 않습니다.");
-
         for (Mobility mobility :mobilities) {
+            AdminDong departureDong = mobility.getDepartureDong();
             responses.add(MobilityResponse.builder()
-                    .totalMobility(mobility.getTotalMobility())
-                    .avgTime(mobility.getAvgTime())
-                    .build());
+                .departureDong(AdminDongDto.builder()
+                    .adminDongCode(departureDong.getAdminDongCode())
+                    .address(departureDong.getCity()+" "+departureDong.getDistrict()+" "+departureDong.getAdminAreaName())
+                    .build())
+                .totalMobility(mobility.getTotalMobility())
+                .avgTime(mobility.getAvgTime())
+                .build());
         }
-        return ResponseDTO.res(HttpStatus.OK, "출발 행정동 조회 성공", responses);
-    }
 
+        return responses;
+    }
     public void fetchData() {
         mobilityRepository.saveAll(readActivityMobilityFromExcel());
     }
 
-    public ResponseDTO<List<MobilityResponse>> searchByAddress(String address) {
+    public ResponseDTO<List<MobilityResponse>> searchByAddress(String address, Pageable pageable) {
         AdminDong adminDong = dongneService.findAdminDongByAddress(address);
-        List<MobilityResponse> responses = new ArrayList<>();
-        List<Mobility> mobilities = mobilityRepository.findByArrivalDongOrderByTotalMobilityDesc(adminDong);
+        Page<Mobility> mobilities = mobilityRepository.findByArrivalDongOrderByTotalMobility(adminDong, pageable);
         if (mobilities.isEmpty())
             return ResponseDTO.res(HttpStatus.NOT_FOUND, "해당 행정동이 존재하지 않습니다.");
 
-        for (Mobility mobility :mobilities) {
-            AdminDong departureDong = mobility.getDepartureDong();
-            responses.add(MobilityResponse.builder()
-                    .departureDong(AdminDongDto.builder()
-                                    .adminDongCode(departureDong.getAdminDongCode())
-                                    .address(departureDong.getCity()+" "+departureDong.getDistrict()+" "+departureDong.getAdminAreaName())
-                                    .build())
-                    .totalMobility(mobility.getTotalMobility())
-                    .avgTime(mobility.getAvgTime())
-                    .build());
-        }
-
-        return ResponseDTO.res(HttpStatus.OK, "출발 행정동 조회 성공", responses);
+        return ResponseDTO.res(HttpStatus.OK, "출발 행정동 조회 성공", mapFromEntities(mobilities.getContent()));
     }
 
-    public ResponseDTO<MultiMobilityResponse> searchByTwoAddresses(String address1, String address2) {
-        List<MobilityResponse> response1 = searchByAddress(address1).getData();
-        List<MobilityResponse> response2 = searchByAddress(address2).getData();
+    public ResponseDTO<MultiMobilityResponse> searchByTwoAddresses(String address1, String address2, int page) {
+        AdminDong adminDong1 = dongneService.findAdminDongByAddress(address1);
+        AdminDong adminDong2 = dongneService.findAdminDongByAddress(address2);
 
-        Map<String, MobilityResponse> map1 = response1.stream()
+        List<Mobility> entities1 = mobilityRepository.findByArrivalDong(adminDong1);
+        List<Mobility> entities2 = mobilityRepository.findByArrivalDong(adminDong2);
+
+
+        Map<String, MobilityResponse> map1 = mapFromEntities(entities1).stream()
                 .collect(Collectors.toMap(
                         r -> r.getDepartureDong().getAdminDongCode(),
                         Function.identity(),
                         (a, b) -> a
                 ));
 
-        Map<String, MobilityResponse> map2 = response2.stream()
+        Map<String, MobilityResponse> map2 = mapFromEntities(entities2).stream()
                 .collect(Collectors.toMap(
                         r -> r.getDepartureDong().getAdminDongCode(),
                         Function.identity(),
@@ -159,12 +152,21 @@ public class MobilityService {
         onlyFromSecond.sort(byMobilityDesc);
 
         MultiMobilityResponse result = MultiMobilityResponse.builder()
-                .firstMobility(onlyFromFirst)
-                .secondMobility(onlyFromSecond)
-                .intersectedMobility(intersected)
+                .firstMobility(listToPage(onlyFromFirst,page))
+                .secondMobility(listToPage(onlyFromSecond,page))
+                .intersectedMobility(listToPage(intersected, page))
                 .build();
 
         return ResponseDTO.res(HttpStatus.OK, "출발지 데이터 병합 완료", result);
+    }
+
+    public <T>List<T> listToPage(List<T> list, int page){
+        int totalElements = list.size();
+        int fromIndex = (page+1) * 10;
+        int toIndex = Math.min(fromIndex + 10, totalElements);
+
+        if (fromIndex <= totalElements)  return list.subList(fromIndex, toIndex);
+        return null;
     }
 
 }

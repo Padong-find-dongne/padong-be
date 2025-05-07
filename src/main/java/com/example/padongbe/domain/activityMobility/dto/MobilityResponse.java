@@ -9,7 +9,6 @@ import lombok.Getter;
 @Builder
 public class MobilityResponse {
   private AdminDongDto departureDong;
-//  private String departureCode;
   private double totalMobility;
   private double avgTime;
 }
