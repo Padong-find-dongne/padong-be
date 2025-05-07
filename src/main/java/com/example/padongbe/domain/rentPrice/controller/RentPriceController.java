@@ -23,12 +23,12 @@ public class RentPriceController {
         return ResponseEntity.ok("Success to save rent price data");
     }
 
-    @GetMapping("/{buildingType}/{dongneId}")
-    @Operation(summary = "건물유형별 전월세가 조회")
+    @GetMapping("/{buildingType}/{adminDongCode}")
+    @Operation(summary = "행정동 코드로 건물유형별 전월세가 조회")
     @Parameter(name = "buildingType", description = "건물 유형 (예: apartment, officetel, villa)")
-    @Parameter(name = "dongneId", description = "법정동코드 10자리 (예:1141011000)")
-    public ResponseEntity<RentPriceDto> getRentPriceByDongneId(@PathVariable String buildingType, @PathVariable String dongneId) {
-        return ResponseEntity.ok(rentPriceService.getRentPriceByDongneId(dongneId, buildingType));
+    @Parameter(name = "adminDongCode", description = "행정동 코드 10자리 (예:1141069000)")
+    public ResponseEntity<RentPriceDto> getRentPriceByAdminDongCode(@PathVariable String buildingType, @PathVariable String adminDongCode) {
+        return ResponseEntity.ok(rentPriceService.getRentPriceByAdminDongCode(adminDongCode, buildingType));
     }
 
 }
