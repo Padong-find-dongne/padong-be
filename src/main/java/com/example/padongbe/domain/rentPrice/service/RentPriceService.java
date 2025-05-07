@@ -28,13 +28,9 @@ public class RentPriceService {
         rentPriceRepository.saveAll(rentPriceList);
     }
 
-    public RentPriceDto getRentPriceByAdminDongCode(String adminDongCode, String buildingType) {
-        List<DongMapping> dongMappingList = dongneService.findAdminDongByCode(adminDongCode).getDongMappingList();
-        String convertedBuildingType = convertBuildingType(buildingType);
-        Long sumMonthlyRent = 0L;
-        Long sumJeonseDeposit = 0L;
-        Long sumMonthlyDeposit = 0L;
-        int count = 0;
+    public RentPriceDto getRentPriceByDongneId(String dongneId, String buildingType) {
+        String dongne = dongneId.toString();
+
 
         for (DongMapping dongMapping : dongMappingList) {
             Optional<RentPrice> rentPriceOpt = rentPriceRepository.findByLegalDongAndBuildingType(dongMapping.getLegalDong(), convertedBuildingType);

@@ -29,21 +29,16 @@ public class SafetyGradeDataUtil {
                 if (row == null) continue;
 
                 String districtName = row.getCell(0).getStringCellValue();
-                Long trafficAccidentGrade = (long) row.getCell(1).getNumericCellValue();
-                Long fireGrade = (long) row.getCell(2).getNumericCellValue();
-                Long crimeGrade = (long) row.getCell(3).getNumericCellValue();
-                Long livingGrade = (long) row.getCell(4).getNumericCellValue();
-                Long suicideGrade = (long) row.getCell(5).getNumericCellValue();
-                Long epidemicGrade = (long) row.getCell(6).getNumericCellValue();
+                double a = row.getCell(1).getNumericCellValue();
+                double b = row.getCell(2).getNumericCellValue();
+                double c = row.getCell(3).getNumericCellValue();
+                double d = row.getCell(4).getNumericCellValue();
+                double e = row.getCell(5).getNumericCellValue();
+                double f = row.getCell(6).getNumericCellValue();
 
                 SafetyGrade safetyGrade = SafetyGrade.builder()
                         .districtName(districtName)
-                        .trafficAccidentGrade(trafficAccidentGrade)
-                        .fireGrade(fireGrade)
-                        .crimeGrade(crimeGrade)
-                        .livingGrade(livingGrade)
-                        .suicideGrade(suicideGrade)
-                        .epidemicGrade(epidemicGrade)
+                        .avgGrade((a+b+c+d+e+f)/6.0)
                         .build();
 
                 result.add(safetyGrade);

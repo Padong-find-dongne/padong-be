@@ -31,11 +31,11 @@ public class PopulationController {
         return ResponseEntity.ok("Success to save Density data");
     }
 
-    @GetMapping("/{dongneCode}")
-    @Operation(summary = "동네별 인구밀도 조회")
-    public ResponseEntity<ResponseDTO<PopulationDataDto>> getPopulationByDongneCode(@PathVariable String dongneCode) {
-        return ResponseEntity.ok(populationService.getPopulationByDongneCode(dongneCode));
-    }
+//    @GetMapping("/{dongneCode}")
+//    @Operation(summary = "동네별 인구밀도 조회")
+//    public ResponseEntity<ResponseDTO<PopulationDataDto>> getPopulationByDongneCode(@PathVariable String dongneCode) {
+//        return ResponseEntity.ok(populationService.getPopulationByAdmin(dongneCode));
+//    }
 
 
 }
