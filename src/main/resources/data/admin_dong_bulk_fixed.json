@@ -1,0 +1,860 @@
+{"index": {"_index": "admin-dong"}}
+{"id": 1, "admin_area_name": "청운효자동", "city": "서울특별시", "district": "종로구", "admin_area_name_chosung": "ㅊㅇㅎㅈㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 2, "admin_area_name": "사직동", "city": "서울특별시", "district": "종로구", "admin_area_name_chosung": "ㅅㅈㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 3, "admin_area_name": "삼청동", "city": "서울특별시", "district": "종로구", "admin_area_name_chosung": "ㅅㅊㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 4, "admin_area_name": "부암동", "city": "서울특별시", "district": "종로구", "admin_area_name_chosung": "ㅂㅇㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 5, "admin_area_name": "평창동", "city": "서울특별시", "district": "종로구", "admin_area_name_chosung": "ㅍㅊㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 6, "admin_area_name": "무악동", "city": "서울특별시", "district": "종로구", "admin_area_name_chosung": "ㅁㅇㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 7, "admin_area_name": "교남동", "city": "서울특별시", "district": "종로구", "admin_area_name_chosung": "ㄱㄴㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 8, "admin_area_name": "가회동", "city": "서울특별시", "district": "종로구", "admin_area_name_chosung": "ㄱㅎㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 9, "admin_area_name": "종로1·2·3·4가동", "city": "서울특별시", "district": "종로구", "admin_area_name_chosung": "ㅈㄹ1·2·3·4ㄱㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 10, "admin_area_name": "종로5·6가동", "city": "서울특별시", "district": "종로구", "admin_area_name_chosung": "ㅈㄹ5·6ㄱㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 11, "admin_area_name": "이화동", "city": "서울특별시", "district": "종로구", "admin_area_name_chosung": "ㅇㅎㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 12, "admin_area_name": "혜화동", "city": "서울특별시", "district": "종로구", "admin_area_name_chosung": "ㅎㅎㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 13, "admin_area_name": "창신1동", "city": "서울특별시", "district": "종로구", "admin_area_name_chosung": "ㅊㅅ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 14, "admin_area_name": "창신2동", "city": "서울특별시", "district": "종로구", "admin_area_name_chosung": "ㅊㅅ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 15, "admin_area_name": "창신3동", "city": "서울특별시", "district": "종로구", "admin_area_name_chosung": "ㅊㅅ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 16, "admin_area_name": "숭인1동", "city": "서울특별시", "district": "종로구", "admin_area_name_chosung": "ㅅㅇ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 17, "admin_area_name": "숭인2동", "city": "서울특별시", "district": "종로구", "admin_area_name_chosung": "ㅅㅇ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 18, "admin_area_name": "소공동", "city": "서울특별시", "district": "중구", "admin_area_name_chosung": "ㅅㄱㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 19, "admin_area_name": "회현동", "city": "서울특별시", "district": "중구", "admin_area_name_chosung": "ㅎㅎㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 20, "admin_area_name": "명동", "city": "서울특별시", "district": "중구", "admin_area_name_chosung": "ㅁㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 21, "admin_area_name": "필동", "city": "서울특별시", "district": "중구", "admin_area_name_chosung": "ㅍㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 22, "admin_area_name": "장충동", "city": "서울특별시", "district": "중구", "admin_area_name_chosung": "ㅈㅊㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 23, "admin_area_name": "광희동", "city": "서울특별시", "district": "중구", "admin_area_name_chosung": "ㄱㅎㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 24, "admin_area_name": "을지로동", "city": "서울특별시", "district": "중구", "admin_area_name_chosung": "ㅇㅈㄹㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 25, "admin_area_name": "신당동", "city": "서울특별시", "district": "중구", "admin_area_name_chosung": "ㅅㄷㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 26, "admin_area_name": "다산동", "city": "서울특별시", "district": "중구", "admin_area_name_chosung": "ㄷㅅㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 27, "admin_area_name": "약수동", "city": "서울특별시", "district": "중구", "admin_area_name_chosung": "ㅇㅅㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 28, "admin_area_name": "청구동", "city": "서울특별시", "district": "중구", "admin_area_name_chosung": "ㅊㄱㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 29, "admin_area_name": "신당5동", "city": "서울특별시", "district": "중구", "admin_area_name_chosung": "ㅅㄷ5ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 30, "admin_area_name": "동화동", "city": "서울특별시", "district": "중구", "admin_area_name_chosung": "ㄷㅎㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 31, "admin_area_name": "황학동", "city": "서울특별시", "district": "중구", "admin_area_name_chosung": "ㅎㅎㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 32, "admin_area_name": "중림동", "city": "서울특별시", "district": "중구", "admin_area_name_chosung": "ㅈㄹㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 33, "admin_area_name": "후암동", "city": "서울특별시", "district": "용산구", "admin_area_name_chosung": "ㅎㅇㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 34, "admin_area_name": "용산2가동", "city": "서울특별시", "district": "용산구", "admin_area_name_chosung": "ㅇㅅ2ㄱㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 35, "admin_area_name": "남영동", "city": "서울특별시", "district": "용산구", "admin_area_name_chosung": "ㄴㅇㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 36, "admin_area_name": "청파동", "city": "서울특별시", "district": "용산구", "admin_area_name_chosung": "ㅊㅍㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 37, "admin_area_name": "원효로1동", "city": "서울특별시", "district": "용산구", "admin_area_name_chosung": "ㅇㅎㄹ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 38, "admin_area_name": "원효로2동", "city": "서울특별시", "district": "용산구", "admin_area_name_chosung": "ㅇㅎㄹ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 39, "admin_area_name": "효창동", "city": "서울특별시", "district": "용산구", "admin_area_name_chosung": "ㅎㅊㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 40, "admin_area_name": "용문동", "city": "서울특별시", "district": "용산구", "admin_area_name_chosung": "ㅇㅁㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 41, "admin_area_name": "한강로동", "city": "서울특별시", "district": "용산구", "admin_area_name_chosung": "ㅎㄱㄹㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 42, "admin_area_name": "이촌1동", "city": "서울특별시", "district": "용산구", "admin_area_name_chosung": "ㅇㅊ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 43, "admin_area_name": "이촌2동", "city": "서울특별시", "district": "용산구", "admin_area_name_chosung": "ㅇㅊ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 44, "admin_area_name": "이태원1동", "city": "서울특별시", "district": "용산구", "admin_area_name_chosung": "ㅇㅌㅇ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 45, "admin_area_name": "이태원2동", "city": "서울특별시", "district": "용산구", "admin_area_name_chosung": "ㅇㅌㅇ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 46, "admin_area_name": "한남동", "city": "서울특별시", "district": "용산구", "admin_area_name_chosung": "ㅎㄴㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 47, "admin_area_name": "서빙고동", "city": "서울특별시", "district": "용산구", "admin_area_name_chosung": "ㅅㅂㄱㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 48, "admin_area_name": "보광동", "city": "서울특별시", "district": "용산구", "admin_area_name_chosung": "ㅂㄱㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 49, "admin_area_name": "성동구", "city": "서울특별시", "district": "성동구", "admin_area_name_chosung": "ㅅㄷㄱ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 50, "admin_area_name": "왕십리2동", "city": "서울특별시", "district": "성동구", "admin_area_name_chosung": "ㅇㅅㄹ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 51, "admin_area_name": "왕십리도선동", "city": "서울특별시", "district": "성동구", "admin_area_name_chosung": "ㅇㅅㄹㄷㅅㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 52, "admin_area_name": "마장동", "city": "서울특별시", "district": "성동구", "admin_area_name_chosung": "ㅁㅈㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 53, "admin_area_name": "사근동", "city": "서울특별시", "district": "성동구", "admin_area_name_chosung": "ㅅㄱㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 54, "admin_area_name": "행당1동", "city": "서울특별시", "district": "성동구", "admin_area_name_chosung": "ㅎㄷ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 55, "admin_area_name": "행당2동", "city": "서울특별시", "district": "성동구", "admin_area_name_chosung": "ㅎㄷ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 56, "admin_area_name": "응봉동", "city": "서울특별시", "district": "성동구", "admin_area_name_chosung": "ㅇㅂㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 57, "admin_area_name": "금호1가동", "city": "서울특별시", "district": "성동구", "admin_area_name_chosung": "ㄱㅎ1ㄱㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 58, "admin_area_name": "금호2.3가동", "city": "서울특별시", "district": "성동구", "admin_area_name_chosung": "ㄱㅎ2.3ㄱㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 59, "admin_area_name": "금호4가동", "city": "서울특별시", "district": "성동구", "admin_area_name_chosung": "ㄱㅎ4ㄱㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 60, "admin_area_name": "옥수동", "city": "서울특별시", "district": "성동구", "admin_area_name_chosung": "ㅇㅅㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 61, "admin_area_name": "성수1가1동", "city": "서울특별시", "district": "성동구", "admin_area_name_chosung": "ㅅㅅ1ㄱ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 62, "admin_area_name": "성수1가2동", "city": "서울특별시", "district": "성동구", "admin_area_name_chosung": "ㅅㅅ1ㄱ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 63, "admin_area_name": "성수2가1동", "city": "서울특별시", "district": "성동구", "admin_area_name_chosung": "ㅅㅅ2ㄱ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 64, "admin_area_name": "성수2가3동", "city": "서울특별시", "district": "성동구", "admin_area_name_chosung": "ㅅㅅ2ㄱ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 65, "admin_area_name": "송정동", "city": "서울특별시", "district": "성동구", "admin_area_name_chosung": "ㅅㅈㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 66, "admin_area_name": "용답동", "city": "서울특별시", "district": "성동구", "admin_area_name_chosung": "ㅇㄷㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 67, "admin_area_name": "화양동", "city": "서울특별시", "district": "광진구", "admin_area_name_chosung": "ㅎㅇㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 68, "admin_area_name": "군자동", "city": "서울특별시", "district": "광진구", "admin_area_name_chosung": "ㄱㅈㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 69, "admin_area_name": "중곡1동", "city": "서울특별시", "district": "광진구", "admin_area_name_chosung": "ㅈㄱ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 70, "admin_area_name": "중곡2동", "city": "서울특별시", "district": "광진구", "admin_area_name_chosung": "ㅈㄱ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 71, "admin_area_name": "중곡3동", "city": "서울특별시", "district": "광진구", "admin_area_name_chosung": "ㅈㄱ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 72, "admin_area_name": "중곡4동", "city": "서울특별시", "district": "광진구", "admin_area_name_chosung": "ㅈㄱ4ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 73, "admin_area_name": "능동", "city": "서울특별시", "district": "광진구", "admin_area_name_chosung": "ㄴㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 74, "admin_area_name": "광장동", "city": "서울특별시", "district": "광진구", "admin_area_name_chosung": "ㄱㅈㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 75, "admin_area_name": "자양1동", "city": "서울특별시", "district": "광진구", "admin_area_name_chosung": "ㅈㅇ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 76, "admin_area_name": "자양2동", "city": "서울특별시", "district": "광진구", "admin_area_name_chosung": "ㅈㅇ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 77, "admin_area_name": "자양3동", "city": "서울특별시", "district": "광진구", "admin_area_name_chosung": "ㅈㅇ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 78, "admin_area_name": "자양4동", "city": "서울특별시", "district": "광진구", "admin_area_name_chosung": "ㅈㅇ4ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 79, "admin_area_name": "구의1동", "city": "서울특별시", "district": "광진구", "admin_area_name_chosung": "ㄱㅇ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 80, "admin_area_name": "구의2동", "city": "서울특별시", "district": "광진구", "admin_area_name_chosung": "ㄱㅇ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 81, "admin_area_name": "구의3동", "city": "서울특별시", "district": "광진구", "admin_area_name_chosung": "ㄱㅇ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 82, "admin_area_name": "동대문구", "city": "서울특별시", "district": "동대문구", "admin_area_name_chosung": "ㄷㄷㅁㄱ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 83, "admin_area_name": "용신동", "city": "서울특별시", "district": "동대문구", "admin_area_name_chosung": "ㅇㅅㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 84, "admin_area_name": "제기동", "city": "서울특별시", "district": "동대문구", "admin_area_name_chosung": "ㅈㄱㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 85, "admin_area_name": "전농1동", "city": "서울특별시", "district": "동대문구", "admin_area_name_chosung": "ㅈㄴ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 86, "admin_area_name": "전농2동", "city": "서울특별시", "district": "동대문구", "admin_area_name_chosung": "ㅈㄴ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 87, "admin_area_name": "답십리1동", "city": "서울특별시", "district": "동대문구", "admin_area_name_chosung": "ㄷㅅㄹ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 88, "admin_area_name": "답십리2동", "city": "서울특별시", "district": "동대문구", "admin_area_name_chosung": "ㄷㅅㄹ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 89, "admin_area_name": "장안1동", "city": "서울특별시", "district": "동대문구", "admin_area_name_chosung": "ㅈㅇ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 90, "admin_area_name": "장안2동", "city": "서울특별시", "district": "동대문구", "admin_area_name_chosung": "ㅈㅇ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 91, "admin_area_name": "청량리동", "city": "서울특별시", "district": "동대문구", "admin_area_name_chosung": "ㅊㄹㄹㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 92, "admin_area_name": "회기동", "city": "서울특별시", "district": "동대문구", "admin_area_name_chosung": "ㅎㄱㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 93, "admin_area_name": "휘경1동", "city": "서울특별시", "district": "동대문구", "admin_area_name_chosung": "ㅎㄱ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 94, "admin_area_name": "휘경2동", "city": "서울특별시", "district": "동대문구", "admin_area_name_chosung": "ㅎㄱ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 95, "admin_area_name": "이문1동", "city": "서울특별시", "district": "동대문구", "admin_area_name_chosung": "ㅇㅁ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 96, "admin_area_name": "이문2동", "city": "서울특별시", "district": "동대문구", "admin_area_name_chosung": "ㅇㅁ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 97, "admin_area_name": "면목2동", "city": "서울특별시", "district": "중랑구", "admin_area_name_chosung": "ㅁㅁ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 98, "admin_area_name": "면목4동", "city": "서울특별시", "district": "중랑구", "admin_area_name_chosung": "ㅁㅁ4ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 99, "admin_area_name": "면목5동", "city": "서울특별시", "district": "중랑구", "admin_area_name_chosung": "ㅁㅁ5ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 100, "admin_area_name": "면목본동", "city": "서울특별시", "district": "중랑구", "admin_area_name_chosung": "ㅁㅁㅂㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 101, "admin_area_name": "면목7동", "city": "서울특별시", "district": "중랑구", "admin_area_name_chosung": "ㅁㅁ7ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 102, "admin_area_name": "면목3.8동", "city": "서울특별시", "district": "중랑구", "admin_area_name_chosung": "ㅁㅁ3.8ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 103, "admin_area_name": "상봉1동", "city": "서울특별시", "district": "중랑구", "admin_area_name_chosung": "ㅅㅂ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 104, "admin_area_name": "상봉2동", "city": "서울특별시", "district": "중랑구", "admin_area_name_chosung": "ㅅㅂ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 105, "admin_area_name": "중화1동", "city": "서울특별시", "district": "중랑구", "admin_area_name_chosung": "ㅈㅎ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 106, "admin_area_name": "중화2동", "city": "서울특별시", "district": "중랑구", "admin_area_name_chosung": "ㅈㅎ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 107, "admin_area_name": "묵1동", "city": "서울특별시", "district": "중랑구", "admin_area_name_chosung": "ㅁ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 108, "admin_area_name": "묵2동", "city": "서울특별시", "district": "중랑구", "admin_area_name_chosung": "ㅁ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 109, "admin_area_name": "망우본동", "city": "서울특별시", "district": "중랑구", "admin_area_name_chosung": "ㅁㅇㅂㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 110, "admin_area_name": "망우3동", "city": "서울특별시", "district": "중랑구", "admin_area_name_chosung": "ㅁㅇ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 111, "admin_area_name": "신내1동", "city": "서울특별시", "district": "중랑구", "admin_area_name_chosung": "ㅅㄴ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 112, "admin_area_name": "신내2동", "city": "서울특별시", "district": "중랑구", "admin_area_name_chosung": "ㅅㄴ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 113, "admin_area_name": "성북동", "city": "서울특별시", "district": "성북구", "admin_area_name_chosung": "ㅅㅂㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 114, "admin_area_name": "삼선동", "city": "서울특별시", "district": "성북구", "admin_area_name_chosung": "ㅅㅅㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 115, "admin_area_name": "동선동", "city": "서울특별시", "district": "성북구", "admin_area_name_chosung": "ㄷㅅㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 116, "admin_area_name": "돈암1동", "city": "서울특별시", "district": "성북구", "admin_area_name_chosung": "ㄷㅇ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 117, "admin_area_name": "돈암2동", "city": "서울특별시", "district": "성북구", "admin_area_name_chosung": "ㄷㅇ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 118, "admin_area_name": "안암동", "city": "서울특별시", "district": "성북구", "admin_area_name_chosung": "ㅇㅇㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 119, "admin_area_name": "보문동", "city": "서울특별시", "district": "성북구", "admin_area_name_chosung": "ㅂㅁㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 120, "admin_area_name": "정릉1동", "city": "서울특별시", "district": "성북구", "admin_area_name_chosung": "ㅈㄹ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 121, "admin_area_name": "정릉2동", "city": "서울특별시", "district": "성북구", "admin_area_name_chosung": "ㅈㄹ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 122, "admin_area_name": "정릉3동", "city": "서울특별시", "district": "성북구", "admin_area_name_chosung": "ㅈㄹ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 123, "admin_area_name": "정릉4동", "city": "서울특별시", "district": "성북구", "admin_area_name_chosung": "ㅈㄹ4ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 124, "admin_area_name": "길음1동", "city": "서울특별시", "district": "성북구", "admin_area_name_chosung": "ㄱㅇ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 125, "admin_area_name": "길음2동", "city": "서울특별시", "district": "성북구", "admin_area_name_chosung": "ㄱㅇ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 126, "admin_area_name": "종암동", "city": "서울특별시", "district": "성북구", "admin_area_name_chosung": "ㅈㅇㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 127, "admin_area_name": "월곡1동", "city": "서울특별시", "district": "성북구", "admin_area_name_chosung": "ㅇㄱ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 128, "admin_area_name": "월곡2동", "city": "서울특별시", "district": "성북구", "admin_area_name_chosung": "ㅇㄱ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 129, "admin_area_name": "장위1동", "city": "서울특별시", "district": "성북구", "admin_area_name_chosung": "ㅈㅇ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 130, "admin_area_name": "장위2동", "city": "서울특별시", "district": "성북구", "admin_area_name_chosung": "ㅈㅇ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 131, "admin_area_name": "장위3동", "city": "서울특별시", "district": "성북구", "admin_area_name_chosung": "ㅈㅇ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 132, "admin_area_name": "석관동", "city": "서울특별시", "district": "성북구", "admin_area_name_chosung": "ㅅㄱㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 133, "admin_area_name": "삼양동", "city": "서울특별시", "district": "강북구", "admin_area_name_chosung": "ㅅㅇㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 134, "admin_area_name": "미아동", "city": "서울특별시", "district": "강북구", "admin_area_name_chosung": "ㅁㅇㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 135, "admin_area_name": "송중동", "city": "서울특별시", "district": "강북구", "admin_area_name_chosung": "ㅅㅈㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 136, "admin_area_name": "송천동", "city": "서울특별시", "district": "강북구", "admin_area_name_chosung": "ㅅㅊㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 137, "admin_area_name": "삼각산동", "city": "서울특별시", "district": "강북구", "admin_area_name_chosung": "ㅅㄱㅅㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 138, "admin_area_name": "번1동", "city": "서울특별시", "district": "강북구", "admin_area_name_chosung": "ㅂ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 139, "admin_area_name": "번2동", "city": "서울특별시", "district": "강북구", "admin_area_name_chosung": "ㅂ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 140, "admin_area_name": "번3동", "city": "서울특별시", "district": "강북구", "admin_area_name_chosung": "ㅂ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 141, "admin_area_name": "수유1동", "city": "서울특별시", "district": "강북구", "admin_area_name_chosung": "ㅅㅇ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 142, "admin_area_name": "수유2동", "city": "서울특별시", "district": "강북구", "admin_area_name_chosung": "ㅅㅇ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 143, "admin_area_name": "수유3동", "city": "서울특별시", "district": "강북구", "admin_area_name_chosung": "ㅅㅇ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 144, "admin_area_name": "우이동", "city": "서울특별시", "district": "강북구", "admin_area_name_chosung": "ㅇㅇㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 145, "admin_area_name": "인수동", "city": "서울특별시", "district": "강북구", "admin_area_name_chosung": "ㅇㅅㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 146, "admin_area_name": "창1동", "city": "서울특별시", "district": "도봉구", "admin_area_name_chosung": "ㅊ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 147, "admin_area_name": "창2동", "city": "서울특별시", "district": "도봉구", "admin_area_name_chosung": "ㅊ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 148, "admin_area_name": "창3동", "city": "서울특별시", "district": "도봉구", "admin_area_name_chosung": "ㅊ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 149, "admin_area_name": "창4동", "city": "서울특별시", "district": "도봉구", "admin_area_name_chosung": "ㅊ4ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 150, "admin_area_name": "창5동", "city": "서울특별시", "district": "도봉구", "admin_area_name_chosung": "ㅊ5ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 151, "admin_area_name": "도봉1동", "city": "서울특별시", "district": "도봉구", "admin_area_name_chosung": "ㄷㅂ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 152, "admin_area_name": "도봉2동", "city": "서울특별시", "district": "도봉구", "admin_area_name_chosung": "ㄷㅂ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 153, "admin_area_name": "쌍문1동", "city": "서울특별시", "district": "도봉구", "admin_area_name_chosung": "ㅆㅁ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 154, "admin_area_name": "쌍문2동", "city": "서울특별시", "district": "도봉구", "admin_area_name_chosung": "ㅆㅁ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 155, "admin_area_name": "쌍문3동", "city": "서울특별시", "district": "도봉구", "admin_area_name_chosung": "ㅆㅁ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 156, "admin_area_name": "쌍문4동", "city": "서울특별시", "district": "도봉구", "admin_area_name_chosung": "ㅆㅁ4ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 157, "admin_area_name": "방학1동", "city": "서울특별시", "district": "도봉구", "admin_area_name_chosung": "ㅂㅎ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 158, "admin_area_name": "방학2동", "city": "서울특별시", "district": "도봉구", "admin_area_name_chosung": "ㅂㅎ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 159, "admin_area_name": "방학3동", "city": "서울특별시", "district": "도봉구", "admin_area_name_chosung": "ㅂㅎ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 160, "admin_area_name": "월계1동", "city": "서울특별시", "district": "노원구", "admin_area_name_chosung": "ㅇㄱ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 161, "admin_area_name": "월계2동", "city": "서울특별시", "district": "노원구", "admin_area_name_chosung": "ㅇㄱ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 162, "admin_area_name": "월계3동", "city": "서울특별시", "district": "노원구", "admin_area_name_chosung": "ㅇㄱ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 163, "admin_area_name": "공릉1동", "city": "서울특별시", "district": "노원구", "admin_area_name_chosung": "ㄱㄹ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 164, "admin_area_name": "공릉2동", "city": "서울특별시", "district": "노원구", "admin_area_name_chosung": "ㄱㄹ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 165, "admin_area_name": "하계1동", "city": "서울특별시", "district": "노원구", "admin_area_name_chosung": "ㅎㄱ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 166, "admin_area_name": "하계2동", "city": "서울특별시", "district": "노원구", "admin_area_name_chosung": "ㅎㄱ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 167, "admin_area_name": "중계본동", "city": "서울특별시", "district": "노원구", "admin_area_name_chosung": "ㅈㄱㅂㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 168, "admin_area_name": "중계1동", "city": "서울특별시", "district": "노원구", "admin_area_name_chosung": "ㅈㄱ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 169, "admin_area_name": "중계4동", "city": "서울특별시", "district": "노원구", "admin_area_name_chosung": "ㅈㄱ4ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 170, "admin_area_name": "중계2.3동", "city": "서울특별시", "district": "노원구", "admin_area_name_chosung": "ㅈㄱ2.3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 171, "admin_area_name": "상계1동", "city": "서울특별시", "district": "노원구", "admin_area_name_chosung": "ㅅㄱ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 172, "admin_area_name": "상계2동", "city": "서울특별시", "district": "노원구", "admin_area_name_chosung": "ㅅㄱ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 173, "admin_area_name": "상계3.4동", "city": "서울특별시", "district": "노원구", "admin_area_name_chosung": "ㅅㄱ3.4ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 174, "admin_area_name": "상계5동", "city": "서울특별시", "district": "노원구", "admin_area_name_chosung": "ㅅㄱ5ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 175, "admin_area_name": "상계6.7동", "city": "서울특별시", "district": "노원구", "admin_area_name_chosung": "ㅅㄱ6.7ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 176, "admin_area_name": "상계8동", "city": "서울특별시", "district": "노원구", "admin_area_name_chosung": "ㅅㄱ8ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 177, "admin_area_name": "상계9동", "city": "서울특별시", "district": "노원구", "admin_area_name_chosung": "ㅅㄱ9ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 178, "admin_area_name": "상계10동", "city": "서울특별시", "district": "노원구", "admin_area_name_chosung": "ㅅㄱ10ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 179, "admin_area_name": "녹번동", "city": "서울특별시", "district": "은평구", "admin_area_name_chosung": "ㄴㅂㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 180, "admin_area_name": "불광1동", "city": "서울특별시", "district": "은평구", "admin_area_name_chosung": "ㅂㄱ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 181, "admin_area_name": "불광2동", "city": "서울특별시", "district": "은평구", "admin_area_name_chosung": "ㅂㄱ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 182, "admin_area_name": "갈현1동", "city": "서울특별시", "district": "은평구", "admin_area_name_chosung": "ㄱㅎ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 183, "admin_area_name": "갈현2동", "city": "서울특별시", "district": "은평구", "admin_area_name_chosung": "ㄱㅎ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 184, "admin_area_name": "구산동", "city": "서울특별시", "district": "은평구", "admin_area_name_chosung": "ㄱㅅㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 185, "admin_area_name": "대조동", "city": "서울특별시", "district": "은평구", "admin_area_name_chosung": "ㄷㅈㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 186, "admin_area_name": "응암1동", "city": "서울특별시", "district": "은평구", "admin_area_name_chosung": "ㅇㅇ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 187, "admin_area_name": "응암2동", "city": "서울특별시", "district": "은평구", "admin_area_name_chosung": "ㅇㅇ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 188, "admin_area_name": "응암3동", "city": "서울특별시", "district": "은평구", "admin_area_name_chosung": "ㅇㅇ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 189, "admin_area_name": "역촌동", "city": "서울특별시", "district": "은평구", "admin_area_name_chosung": "ㅇㅊㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 190, "admin_area_name": "신사1동", "city": "서울특별시", "district": "은평구", "admin_area_name_chosung": "ㅅㅅ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 191, "admin_area_name": "신사2동", "city": "서울특별시", "district": "은평구", "admin_area_name_chosung": "ㅅㅅ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 192, "admin_area_name": "증산동", "city": "서울특별시", "district": "은평구", "admin_area_name_chosung": "ㅈㅅㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 193, "admin_area_name": "수색동", "city": "서울특별시", "district": "은평구", "admin_area_name_chosung": "ㅅㅅㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 194, "admin_area_name": "진관동", "city": "서울특별시", "district": "은평구", "admin_area_name_chosung": "ㅈㄱㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 195, "admin_area_name": "천연동", "city": "서울특별시", "district": "서대문구", "admin_area_name_chosung": "ㅊㅇㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 196, "admin_area_name": "북아현동", "city": "서울특별시", "district": "서대문구", "admin_area_name_chosung": "ㅂㅇㅎㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 197, "admin_area_name": "충현동", "city": "서울특별시", "district": "서대문구", "admin_area_name_chosung": "ㅊㅎㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 198, "admin_area_name": "신촌동", "city": "서울특별시", "district": "서대문구", "admin_area_name_chosung": "ㅅㅊㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 199, "admin_area_name": "연희동", "city": "서울특별시", "district": "서대문구", "admin_area_name_chosung": "ㅇㅎㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 200, "admin_area_name": "홍제1동", "city": "서울특별시", "district": "서대문구", "admin_area_name_chosung": "ㅎㅈ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 201, "admin_area_name": "홍제3동", "city": "서울특별시", "district": "서대문구", "admin_area_name_chosung": "ㅎㅈ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 202, "admin_area_name": "홍제2동", "city": "서울특별시", "district": "서대문구", "admin_area_name_chosung": "ㅎㅈ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 203, "admin_area_name": "홍은1동", "city": "서울특별시", "district": "서대문구", "admin_area_name_chosung": "ㅎㅇ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 204, "admin_area_name": "홍은2동", "city": "서울특별시", "district": "서대문구", "admin_area_name_chosung": "ㅎㅇ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 205, "admin_area_name": "남가좌1동", "city": "서울특별시", "district": "서대문구", "admin_area_name_chosung": "ㄴㄱㅈ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 206, "admin_area_name": "남가좌2동", "city": "서울특별시", "district": "서대문구", "admin_area_name_chosung": "ㄴㄱㅈ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 207, "admin_area_name": "북가좌1동", "city": "서울특별시", "district": "서대문구", "admin_area_name_chosung": "ㅂㄱㅈ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 208, "admin_area_name": "북가좌2동", "city": "서울특별시", "district": "서대문구", "admin_area_name_chosung": "ㅂㄱㅈ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 209, "admin_area_name": "아현동", "city": "서울특별시", "district": "마포구", "admin_area_name_chosung": "ㅇㅎㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 210, "admin_area_name": "공덕동", "city": "서울특별시", "district": "마포구", "admin_area_name_chosung": "ㄱㄷㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 211, "admin_area_name": "도화동", "city": "서울특별시", "district": "마포구", "admin_area_name_chosung": "ㄷㅎㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 212, "admin_area_name": "용강동", "city": "서울특별시", "district": "마포구", "admin_area_name_chosung": "ㅇㄱㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 213, "admin_area_name": "대흥동", "city": "서울특별시", "district": "마포구", "admin_area_name_chosung": "ㄷㅎㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 214, "admin_area_name": "염리동", "city": "서울특별시", "district": "마포구", "admin_area_name_chosung": "ㅇㄹㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 215, "admin_area_name": "신수동", "city": "서울특별시", "district": "마포구", "admin_area_name_chosung": "ㅅㅅㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 216, "admin_area_name": "서강동", "city": "서울특별시", "district": "마포구", "admin_area_name_chosung": "ㅅㄱㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 217, "admin_area_name": "서교동", "city": "서울특별시", "district": "마포구", "admin_area_name_chosung": "ㅅㄱㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 218, "admin_area_name": "합정동", "city": "서울특별시", "district": "마포구", "admin_area_name_chosung": "ㅎㅈㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 219, "admin_area_name": "망원1동", "city": "서울특별시", "district": "마포구", "admin_area_name_chosung": "ㅁㅇ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 220, "admin_area_name": "망원2동", "city": "서울특별시", "district": "마포구", "admin_area_name_chosung": "ㅁㅇ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 221, "admin_area_name": "연남동", "city": "서울특별시", "district": "마포구", "admin_area_name_chosung": "ㅇㄴㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 222, "admin_area_name": "성산1동", "city": "서울특별시", "district": "마포구", "admin_area_name_chosung": "ㅅㅅ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 223, "admin_area_name": "성산2동", "city": "서울특별시", "district": "마포구", "admin_area_name_chosung": "ㅅㅅ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 224, "admin_area_name": "상암동", "city": "서울특별시", "district": "마포구", "admin_area_name_chosung": "ㅅㅇㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 225, "admin_area_name": "목1동", "city": "서울특별시", "district": "양천구", "admin_area_name_chosung": "ㅁ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 226, "admin_area_name": "목2동", "city": "서울특별시", "district": "양천구", "admin_area_name_chosung": "ㅁ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 227, "admin_area_name": "목3동", "city": "서울특별시", "district": "양천구", "admin_area_name_chosung": "ㅁ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 228, "admin_area_name": "목4동", "city": "서울특별시", "district": "양천구", "admin_area_name_chosung": "ㅁ4ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 229, "admin_area_name": "목5동", "city": "서울특별시", "district": "양천구", "admin_area_name_chosung": "ㅁ5ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 230, "admin_area_name": "신월1동", "city": "서울특별시", "district": "양천구", "admin_area_name_chosung": "ㅅㅇ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 231, "admin_area_name": "신월2동", "city": "서울특별시", "district": "양천구", "admin_area_name_chosung": "ㅅㅇ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 232, "admin_area_name": "신월3동", "city": "서울특별시", "district": "양천구", "admin_area_name_chosung": "ㅅㅇ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 233, "admin_area_name": "신월4동", "city": "서울특별시", "district": "양천구", "admin_area_name_chosung": "ㅅㅇ4ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 234, "admin_area_name": "신월5동", "city": "서울특별시", "district": "양천구", "admin_area_name_chosung": "ㅅㅇ5ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 235, "admin_area_name": "신월6동", "city": "서울특별시", "district": "양천구", "admin_area_name_chosung": "ㅅㅇ6ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 236, "admin_area_name": "신월7동", "city": "서울특별시", "district": "양천구", "admin_area_name_chosung": "ㅅㅇ7ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 237, "admin_area_name": "신정1동", "city": "서울특별시", "district": "양천구", "admin_area_name_chosung": "ㅅㅈ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 238, "admin_area_name": "신정2동", "city": "서울특별시", "district": "양천구", "admin_area_name_chosung": "ㅅㅈ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 239, "admin_area_name": "신정3동", "city": "서울특별시", "district": "양천구", "admin_area_name_chosung": "ㅅㅈ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 240, "admin_area_name": "신정4동", "city": "서울특별시", "district": "양천구", "admin_area_name_chosung": "ㅅㅈ4ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 241, "admin_area_name": "신정6동", "city": "서울특별시", "district": "양천구", "admin_area_name_chosung": "ㅅㅈ6ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 242, "admin_area_name": "신정7동", "city": "서울특별시", "district": "양천구", "admin_area_name_chosung": "ㅅㅈ7ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 243, "admin_area_name": "염창동", "city": "서울특별시", "district": "강서구", "admin_area_name_chosung": "ㅇㅊㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 244, "admin_area_name": "등촌1동", "city": "서울특별시", "district": "강서구", "admin_area_name_chosung": "ㄷㅊ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 245, "admin_area_name": "등촌2동", "city": "서울특별시", "district": "강서구", "admin_area_name_chosung": "ㄷㅊ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 246, "admin_area_name": "등촌3동", "city": "서울특별시", "district": "강서구", "admin_area_name_chosung": "ㄷㅊ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 247, "admin_area_name": "화곡1동", "city": "서울특별시", "district": "강서구", "admin_area_name_chosung": "ㅎㄱ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 248, "admin_area_name": "화곡2동", "city": "서울특별시", "district": "강서구", "admin_area_name_chosung": "ㅎㄱ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 249, "admin_area_name": "화곡3동", "city": "서울특별시", "district": "강서구", "admin_area_name_chosung": "ㅎㄱ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 250, "admin_area_name": "화곡4동", "city": "서울특별시", "district": "강서구", "admin_area_name_chosung": "ㅎㄱ4ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 251, "admin_area_name": "화곡본동", "city": "서울특별시", "district": "강서구", "admin_area_name_chosung": "ㅎㄱㅂㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 252, "admin_area_name": "화곡6동", "city": "서울특별시", "district": "강서구", "admin_area_name_chosung": "ㅎㄱ6ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 253, "admin_area_name": "화곡8동", "city": "서울특별시", "district": "강서구", "admin_area_name_chosung": "ㅎㄱ8ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 254, "admin_area_name": "가양1동", "city": "서울특별시", "district": "강서구", "admin_area_name_chosung": "ㄱㅇ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 255, "admin_area_name": "가양2동", "city": "서울특별시", "district": "강서구", "admin_area_name_chosung": "ㄱㅇ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 256, "admin_area_name": "가양3동", "city": "서울특별시", "district": "강서구", "admin_area_name_chosung": "ㄱㅇ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 257, "admin_area_name": "발산1동", "city": "서울특별시", "district": "강서구", "admin_area_name_chosung": "ㅂㅅ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 258, "admin_area_name": "우장산동", "city": "서울특별시", "district": "강서구", "admin_area_name_chosung": "ㅇㅈㅅㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 259, "admin_area_name": "공항동", "city": "서울특별시", "district": "강서구", "admin_area_name_chosung": "ㄱㅎㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 260, "admin_area_name": "방화1동", "city": "서울특별시", "district": "강서구", "admin_area_name_chosung": "ㅂㅎ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 261, "admin_area_name": "방화2동", "city": "서울특별시", "district": "강서구", "admin_area_name_chosung": "ㅂㅎ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 262, "admin_area_name": "방화3동", "city": "서울특별시", "district": "강서구", "admin_area_name_chosung": "ㅂㅎ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 263, "admin_area_name": "신도림동", "city": "서울특별시", "district": "구로구", "admin_area_name_chosung": "ㅅㄷㄹㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 264, "admin_area_name": "구로1동", "city": "서울특별시", "district": "구로구", "admin_area_name_chosung": "ㄱㄹ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 265, "admin_area_name": "구로2동", "city": "서울특별시", "district": "구로구", "admin_area_name_chosung": "ㄱㄹ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 266, "admin_area_name": "구로3동", "city": "서울특별시", "district": "구로구", "admin_area_name_chosung": "ㄱㄹ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 267, "admin_area_name": "구로4동", "city": "서울특별시", "district": "구로구", "admin_area_name_chosung": "ㄱㄹ4ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 268, "admin_area_name": "구로5동", "city": "서울특별시", "district": "구로구", "admin_area_name_chosung": "ㄱㄹ5ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 269, "admin_area_name": "가리봉동", "city": "서울특별시", "district": "구로구", "admin_area_name_chosung": "ㄱㄹㅂㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 270, "admin_area_name": "고척1동", "city": "서울특별시", "district": "구로구", "admin_area_name_chosung": "ㄱㅊ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 271, "admin_area_name": "고척2동", "city": "서울특별시", "district": "구로구", "admin_area_name_chosung": "ㄱㅊ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 272, "admin_area_name": "개봉1동", "city": "서울특별시", "district": "구로구", "admin_area_name_chosung": "ㄱㅂ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 273, "admin_area_name": "개봉2동", "city": "서울특별시", "district": "구로구", "admin_area_name_chosung": "ㄱㅂ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 274, "admin_area_name": "개봉3동", "city": "서울특별시", "district": "구로구", "admin_area_name_chosung": "ㄱㅂ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 275, "admin_area_name": "오류1동", "city": "서울특별시", "district": "구로구", "admin_area_name_chosung": "ㅇㄹ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 276, "admin_area_name": "오류2동", "city": "서울특별시", "district": "구로구", "admin_area_name_chosung": "ㅇㄹ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 277, "admin_area_name": "수궁동", "city": "서울특별시", "district": "구로구", "admin_area_name_chosung": "ㅅㄱㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 278, "admin_area_name": "항동", "city": "서울특별시", "district": "구로구", "admin_area_name_chosung": "ㅎㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 279, "admin_area_name": "가산동", "city": "서울특별시", "district": "금천구", "admin_area_name_chosung": "ㄱㅅㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 280, "admin_area_name": "독산1동", "city": "서울특별시", "district": "금천구", "admin_area_name_chosung": "ㄷㅅ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 281, "admin_area_name": "독산2동", "city": "서울특별시", "district": "금천구", "admin_area_name_chosung": "ㄷㅅ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 282, "admin_area_name": "독산3동", "city": "서울특별시", "district": "금천구", "admin_area_name_chosung": "ㄷㅅ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 283, "admin_area_name": "독산4동", "city": "서울특별시", "district": "금천구", "admin_area_name_chosung": "ㄷㅅ4ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 284, "admin_area_name": "시흥1동", "city": "서울특별시", "district": "금천구", "admin_area_name_chosung": "ㅅㅎ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 285, "admin_area_name": "시흥2동", "city": "서울특별시", "district": "금천구", "admin_area_name_chosung": "ㅅㅎ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 286, "admin_area_name": "시흥3동", "city": "서울특별시", "district": "금천구", "admin_area_name_chosung": "ㅅㅎ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 287, "admin_area_name": "시흥4동", "city": "서울특별시", "district": "금천구", "admin_area_name_chosung": "ㅅㅎ4ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 288, "admin_area_name": "시흥5동", "city": "서울특별시", "district": "금천구", "admin_area_name_chosung": "ㅅㅎ5ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 289, "admin_area_name": "영등포본동", "city": "서울특별시", "district": "영등포구", "admin_area_name_chosung": "ㅇㄷㅍㅂㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 290, "admin_area_name": "영등포동", "city": "서울특별시", "district": "영등포구", "admin_area_name_chosung": "ㅇㄷㅍㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 291, "admin_area_name": "여의동", "city": "서울특별시", "district": "영등포구", "admin_area_name_chosung": "ㅇㅇㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 292, "admin_area_name": "당산1동", "city": "서울특별시", "district": "영등포구", "admin_area_name_chosung": "ㄷㅅ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 293, "admin_area_name": "당산2동", "city": "서울특별시", "district": "영등포구", "admin_area_name_chosung": "ㄷㅅ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 294, "admin_area_name": "도림동", "city": "서울특별시", "district": "영등포구", "admin_area_name_chosung": "ㄷㄹㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 295, "admin_area_name": "문래동", "city": "서울특별시", "district": "영등포구", "admin_area_name_chosung": "ㅁㄹㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 296, "admin_area_name": "양평1동", "city": "서울특별시", "district": "영등포구", "admin_area_name_chosung": "ㅇㅍ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 297, "admin_area_name": "양평2동", "city": "서울특별시", "district": "영등포구", "admin_area_name_chosung": "ㅇㅍ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 298, "admin_area_name": "신길1동", "city": "서울특별시", "district": "영등포구", "admin_area_name_chosung": "ㅅㄱ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 299, "admin_area_name": "신길3동", "city": "서울특별시", "district": "영등포구", "admin_area_name_chosung": "ㅅㄱ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 300, "admin_area_name": "신길4동", "city": "서울특별시", "district": "영등포구", "admin_area_name_chosung": "ㅅㄱ4ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 301, "admin_area_name": "신길5동", "city": "서울특별시", "district": "영등포구", "admin_area_name_chosung": "ㅅㄱ5ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 302, "admin_area_name": "신길6동", "city": "서울특별시", "district": "영등포구", "admin_area_name_chosung": "ㅅㄱ6ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 303, "admin_area_name": "신길7동", "city": "서울특별시", "district": "영등포구", "admin_area_name_chosung": "ㅅㄱ7ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 304, "admin_area_name": "대림1동", "city": "서울특별시", "district": "영등포구", "admin_area_name_chosung": "ㄷㄹ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 305, "admin_area_name": "대림2동", "city": "서울특별시", "district": "영등포구", "admin_area_name_chosung": "ㄷㄹ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 306, "admin_area_name": "대림3동", "city": "서울특별시", "district": "영등포구", "admin_area_name_chosung": "ㄷㄹ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 307, "admin_area_name": "동작구", "city": "서울특별시", "district": "동작구", "admin_area_name_chosung": "ㄷㅈㄱ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 308, "admin_area_name": "노량진1동", "city": "서울특별시", "district": "동작구", "admin_area_name_chosung": "ㄴㄹㅈ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 309, "admin_area_name": "노량진2동", "city": "서울특별시", "district": "동작구", "admin_area_name_chosung": "ㄴㄹㅈ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 310, "admin_area_name": "상도1동", "city": "서울특별시", "district": "동작구", "admin_area_name_chosung": "ㅅㄷ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 311, "admin_area_name": "상도2동", "city": "서울특별시", "district": "동작구", "admin_area_name_chosung": "ㅅㄷ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 312, "admin_area_name": "상도3동", "city": "서울특별시", "district": "동작구", "admin_area_name_chosung": "ㅅㄷ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 313, "admin_area_name": "상도4동", "city": "서울특별시", "district": "동작구", "admin_area_name_chosung": "ㅅㄷ4ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 314, "admin_area_name": "흑석동", "city": "서울특별시", "district": "동작구", "admin_area_name_chosung": "ㅎㅅㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 315, "admin_area_name": "사당1동", "city": "서울특별시", "district": "동작구", "admin_area_name_chosung": "ㅅㄷ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 316, "admin_area_name": "사당2동", "city": "서울특별시", "district": "동작구", "admin_area_name_chosung": "ㅅㄷ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 317, "admin_area_name": "사당3동", "city": "서울특별시", "district": "동작구", "admin_area_name_chosung": "ㅅㄷ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 318, "admin_area_name": "사당4동", "city": "서울특별시", "district": "동작구", "admin_area_name_chosung": "ㅅㄷ4ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 319, "admin_area_name": "사당5동", "city": "서울특별시", "district": "동작구", "admin_area_name_chosung": "ㅅㄷ5ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 320, "admin_area_name": "대방동", "city": "서울특별시", "district": "동작구", "admin_area_name_chosung": "ㄷㅂㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 321, "admin_area_name": "신대방1동", "city": "서울특별시", "district": "동작구", "admin_area_name_chosung": "ㅅㄷㅂ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 322, "admin_area_name": "신대방2동", "city": "서울특별시", "district": "동작구", "admin_area_name_chosung": "ㅅㄷㅂ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 323, "admin_area_name": "보라매동", "city": "서울특별시", "district": "관악구", "admin_area_name_chosung": "ㅂㄹㅁㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 324, "admin_area_name": "청림동", "city": "서울특별시", "district": "관악구", "admin_area_name_chosung": "ㅊㄹㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 325, "admin_area_name": "성현동", "city": "서울특별시", "district": "관악구", "admin_area_name_chosung": "ㅅㅎㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 326, "admin_area_name": "행운동", "city": "서울특별시", "district": "관악구", "admin_area_name_chosung": "ㅎㅇㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 327, "admin_area_name": "낙성대동", "city": "서울특별시", "district": "관악구", "admin_area_name_chosung": "ㄴㅅㄷㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 328, "admin_area_name": "청룡동", "city": "서울특별시", "district": "관악구", "admin_area_name_chosung": "ㅊㄹㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 329, "admin_area_name": "은천동", "city": "서울특별시", "district": "관악구", "admin_area_name_chosung": "ㅇㅊㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 330, "admin_area_name": "중앙동", "city": "서울특별시", "district": "관악구", "admin_area_name_chosung": "ㅈㅇㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 331, "admin_area_name": "인헌동", "city": "서울특별시", "district": "관악구", "admin_area_name_chosung": "ㅇㅎㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 332, "admin_area_name": "남현동", "city": "서울특별시", "district": "관악구", "admin_area_name_chosung": "ㄴㅎㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 333, "admin_area_name": "서원동", "city": "서울특별시", "district": "관악구", "admin_area_name_chosung": "ㅅㅇㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 334, "admin_area_name": "신원동", "city": "서울특별시", "district": "관악구", "admin_area_name_chosung": "ㅅㅇㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 335, "admin_area_name": "서림동", "city": "서울특별시", "district": "관악구", "admin_area_name_chosung": "ㅅㄹㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 336, "admin_area_name": "신사동", "city": "서울특별시", "district": "관악구", "admin_area_name_chosung": "ㅅㅅㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 337, "admin_area_name": "신림동", "city": "서울특별시", "district": "관악구", "admin_area_name_chosung": "ㅅㄹㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 338, "admin_area_name": "난향동", "city": "서울특별시", "district": "관악구", "admin_area_name_chosung": "ㄴㅎㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 339, "admin_area_name": "조원동", "city": "서울특별시", "district": "관악구", "admin_area_name_chosung": "ㅈㅇㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 340, "admin_area_name": "대학동", "city": "서울특별시", "district": "관악구", "admin_area_name_chosung": "ㄷㅎㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 341, "admin_area_name": "삼성동", "city": "서울특별시", "district": "관악구", "admin_area_name_chosung": "ㅅㅅㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 342, "admin_area_name": "미성동", "city": "서울특별시", "district": "관악구", "admin_area_name_chosung": "ㅁㅅㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 343, "admin_area_name": "난곡동", "city": "서울특별시", "district": "관악구", "admin_area_name_chosung": "ㄴㄱㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 344, "admin_area_name": "서초1동", "city": "서울특별시", "district": "서초구", "admin_area_name_chosung": "ㅅㅊ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 345, "admin_area_name": "서초2동", "city": "서울특별시", "district": "서초구", "admin_area_name_chosung": "ㅅㅊ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 346, "admin_area_name": "서초3동", "city": "서울특별시", "district": "서초구", "admin_area_name_chosung": "ㅅㅊ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 347, "admin_area_name": "서초4동", "city": "서울특별시", "district": "서초구", "admin_area_name_chosung": "ㅅㅊ4ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 348, "admin_area_name": "잠원동", "city": "서울특별시", "district": "서초구", "admin_area_name_chosung": "ㅈㅇㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 349, "admin_area_name": "반포본동", "city": "서울특별시", "district": "서초구", "admin_area_name_chosung": "ㅂㅍㅂㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 350, "admin_area_name": "반포1동", "city": "서울특별시", "district": "서초구", "admin_area_name_chosung": "ㅂㅍ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 351, "admin_area_name": "반포2동", "city": "서울특별시", "district": "서초구", "admin_area_name_chosung": "ㅂㅍ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 352, "admin_area_name": "반포3동", "city": "서울특별시", "district": "서초구", "admin_area_name_chosung": "ㅂㅍ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 353, "admin_area_name": "반포4동", "city": "서울특별시", "district": "서초구", "admin_area_name_chosung": "ㅂㅍ4ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 354, "admin_area_name": "방배본동", "city": "서울특별시", "district": "서초구", "admin_area_name_chosung": "ㅂㅂㅂㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 355, "admin_area_name": "방배1동", "city": "서울특별시", "district": "서초구", "admin_area_name_chosung": "ㅂㅂ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 356, "admin_area_name": "방배2동", "city": "서울특별시", "district": "서초구", "admin_area_name_chosung": "ㅂㅂ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 357, "admin_area_name": "방배3동", "city": "서울특별시", "district": "서초구", "admin_area_name_chosung": "ㅂㅂ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 358, "admin_area_name": "방배4동", "city": "서울특별시", "district": "서초구", "admin_area_name_chosung": "ㅂㅂ4ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 359, "admin_area_name": "양재1동", "city": "서울특별시", "district": "서초구", "admin_area_name_chosung": "ㅇㅈ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 360, "admin_area_name": "양재2동", "city": "서울특별시", "district": "서초구", "admin_area_name_chosung": "ㅇㅈ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 361, "admin_area_name": "내곡동", "city": "서울특별시", "district": "서초구", "admin_area_name_chosung": "ㄴㄱㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 362, "admin_area_name": "신사동", "city": "서울특별시", "district": "강남구", "admin_area_name_chosung": "ㅅㅅㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 363, "admin_area_name": "논현1동", "city": "서울특별시", "district": "강남구", "admin_area_name_chosung": "ㄴㅎ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 364, "admin_area_name": "논현2동", "city": "서울특별시", "district": "강남구", "admin_area_name_chosung": "ㄴㅎ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 365, "admin_area_name": "압구정동", "city": "서울특별시", "district": "강남구", "admin_area_name_chosung": "ㅇㄱㅈㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 366, "admin_area_name": "청담동", "city": "서울특별시", "district": "강남구", "admin_area_name_chosung": "ㅊㄷㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 367, "admin_area_name": "삼성1동", "city": "서울특별시", "district": "강남구", "admin_area_name_chosung": "ㅅㅅ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 368, "admin_area_name": "삼성2동", "city": "서울특별시", "district": "강남구", "admin_area_name_chosung": "ㅅㅅ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 369, "admin_area_name": "대치1동", "city": "서울특별시", "district": "강남구", "admin_area_name_chosung": "ㄷㅊ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 370, "admin_area_name": "대치2동", "city": "서울특별시", "district": "강남구", "admin_area_name_chosung": "ㄷㅊ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 371, "admin_area_name": "대치4동", "city": "서울특별시", "district": "강남구", "admin_area_name_chosung": "ㄷㅊ4ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 372, "admin_area_name": "역삼1동", "city": "서울특별시", "district": "강남구", "admin_area_name_chosung": "ㅇㅅ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 373, "admin_area_name": "역삼2동", "city": "서울특별시", "district": "강남구", "admin_area_name_chosung": "ㅇㅅ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 374, "admin_area_name": "도곡1동", "city": "서울특별시", "district": "강남구", "admin_area_name_chosung": "ㄷㄱ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 375, "admin_area_name": "도곡2동", "city": "서울특별시", "district": "강남구", "admin_area_name_chosung": "ㄷㄱ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 376, "admin_area_name": "개포1동", "city": "서울특별시", "district": "강남구", "admin_area_name_chosung": "ㄱㅍ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 377, "admin_area_name": "개포2동", "city": "서울특별시", "district": "강남구", "admin_area_name_chosung": "ㄱㅍ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 378, "admin_area_name": "개포3동", "city": "서울특별시", "district": "강남구", "admin_area_name_chosung": "ㄱㅍ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 379, "admin_area_name": "개포4동", "city": "서울특별시", "district": "강남구", "admin_area_name_chosung": "ㄱㅍ4ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 380, "admin_area_name": "세곡동", "city": "서울특별시", "district": "강남구", "admin_area_name_chosung": "ㅅㄱㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 381, "admin_area_name": "일원본동", "city": "서울특별시", "district": "강남구", "admin_area_name_chosung": "ㅇㅇㅂㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 382, "admin_area_name": "일원1동", "city": "서울특별시", "district": "강남구", "admin_area_name_chosung": "ㅇㅇ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 383, "admin_area_name": "수서동", "city": "서울특별시", "district": "강남구", "admin_area_name_chosung": "ㅅㅅㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 384, "admin_area_name": "풍납1동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㅍㄴ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 385, "admin_area_name": "풍납2동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㅍㄴ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 386, "admin_area_name": "거여1동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㄱㅇ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 387, "admin_area_name": "거여2동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㄱㅇ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 388, "admin_area_name": "마천1동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㅁㅊ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 389, "admin_area_name": "마천2동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㅁㅊ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 390, "admin_area_name": "방이1동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㅂㅇ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 391, "admin_area_name": "방이2동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㅂㅇ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 392, "admin_area_name": "오륜동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㅇㄹㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 393, "admin_area_name": "오금동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㅇㄱㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 394, "admin_area_name": "송파1동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㅅㅍ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 395, "admin_area_name": "송파2동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㅅㅍ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 396, "admin_area_name": "석촌동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㅅㅊㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 397, "admin_area_name": "삼전동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㅅㅈㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 398, "admin_area_name": "가락본동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㄱㄹㅂㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 399, "admin_area_name": "가락1동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㄱㄹ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 400, "admin_area_name": "가락2동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㄱㄹ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 401, "admin_area_name": "문정1동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㅁㅈ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 402, "admin_area_name": "문정2동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㅁㅈ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 403, "admin_area_name": "장지동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㅈㅈㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 404, "admin_area_name": "위례동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㅇㄹㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 405, "admin_area_name": "잠실본동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㅈㅅㅂㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 406, "admin_area_name": "잠실2동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㅈㅅ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 407, "admin_area_name": "잠실3동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㅈㅅ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 408, "admin_area_name": "잠실4동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㅈㅅ4ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 409, "admin_area_name": "잠실6동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㅈㅅ6ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 410, "admin_area_name": "잠실7동", "city": "서울특별시", "district": "송파구", "admin_area_name_chosung": "ㅈㅅ7ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 411, "admin_area_name": "강동구", "city": "서울특별시", "district": "강동구", "admin_area_name_chosung": "ㄱㄷㄱ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 412, "admin_area_name": "강일동", "city": "서울특별시", "district": "강동구", "admin_area_name_chosung": "ㄱㅇㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 413, "admin_area_name": "상일1동", "city": "서울특별시", "district": "강동구", "admin_area_name_chosung": "ㅅㅇ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 414, "admin_area_name": "상일2동", "city": "서울특별시", "district": "강동구", "admin_area_name_chosung": "ㅅㅇ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 415, "admin_area_name": "명일1동", "city": "서울특별시", "district": "강동구", "admin_area_name_chosung": "ㅁㅇ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 416, "admin_area_name": "명일2동", "city": "서울특별시", "district": "강동구", "admin_area_name_chosung": "ㅁㅇ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 417, "admin_area_name": "고덕1동", "city": "서울특별시", "district": "강동구", "admin_area_name_chosung": "ㄱㄷ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 418, "admin_area_name": "고덕2동", "city": "서울특별시", "district": "강동구", "admin_area_name_chosung": "ㄱㄷ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 419, "admin_area_name": "암사1동", "city": "서울특별시", "district": "강동구", "admin_area_name_chosung": "ㅇㅅ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 420, "admin_area_name": "암사2동", "city": "서울특별시", "district": "강동구", "admin_area_name_chosung": "ㅇㅅ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 421, "admin_area_name": "암사3동", "city": "서울특별시", "district": "강동구", "admin_area_name_chosung": "ㅇㅅ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 422, "admin_area_name": "천호1동", "city": "서울특별시", "district": "강동구", "admin_area_name_chosung": "ㅊㅎ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 423, "admin_area_name": "천호2동", "city": "서울특별시", "district": "강동구", "admin_area_name_chosung": "ㅊㅎ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 424, "admin_area_name": "천호3동", "city": "서울특별시", "district": "강동구", "admin_area_name_chosung": "ㅊㅎ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 425, "admin_area_name": "성내1동", "city": "서울특별시", "district": "강동구", "admin_area_name_chosung": "ㅅㄴ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 426, "admin_area_name": "성내2동", "city": "서울특별시", "district": "강동구", "admin_area_name_chosung": "ㅅㄴ2ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 427, "admin_area_name": "성내3동", "city": "서울특별시", "district": "강동구", "admin_area_name_chosung": "ㅅㄴ3ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 428, "admin_area_name": "길동", "city": "서울특별시", "district": "강동구", "admin_area_name_chosung": "ㄱㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 429, "admin_area_name": "둔촌1동", "city": "서울특별시", "district": "강동구", "admin_area_name_chosung": "ㄷㅊ1ㄷ"}
+{"index": {"_index": "admin-dong"}}
+{"id": 430, "admin_area_name": "둔촌2동", "city": "서울특별시", "district": "강동구", "admin_area_name_chosung": "ㄷㅊ2ㄷ"}
