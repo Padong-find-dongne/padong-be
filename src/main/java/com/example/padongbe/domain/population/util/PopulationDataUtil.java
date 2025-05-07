@@ -1,19 +1,31 @@
 package com.example.padongbe.domain.population.util;
 
+import com.example.padongbe.domain.dongne.entity.AdminDong;
+import com.example.padongbe.domain.dongne.service.DongneService;
 import com.example.padongbe.domain.population.entity.Population;
 import com.opencsv.CSVReader;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
+@Component
 public class PopulationDataUtil {
 
-    private final static String filePath = "data/agePopulation.csv";
-    private final static String dongneRegex = "^서울특별시.*구.*\\(\\d{10}\\)$";
+    private static DongneService dongneService;
+
+    public PopulationDataUtil(DongneService dongneService){
+        this.dongneService = dongneService;
+    }
+
+    private final static String filePath = "data/population.csv";
+    private final static String dongneRegex = "^서울특별시\\s[가-힣]+구\\s[가-힣0-9]+동\\(\\d{10}\\)$";
 
     public static List<Population> readPopulationFromCsv() {
         List<Population> result = new ArrayList<>();
@@ -32,15 +44,14 @@ public class PopulationDataUtil {
                 }
 
                 String rawRegion = fields[0].trim();
-                if (!rawRegion.matches(dongneRegex)) {
-                    continue;
-                }
+                if (!rawRegion.matches(dongneRegex)) continue;
 
                 String dongneCode = rawRegion.substring(rawRegion.indexOf("(") + 1, rawRegion.indexOf(")")).trim();
+                AdminDong adminDong = dongneService.findAdminDongByCode(dongneCode);
 
                 // 전체 (계)
                 result.add(Population.builder()
-                        .dongneCode(dongneCode)
+                        .adminDong(adminDong)
                         .gender("계")
                         .age0to9(parse(fields[4]))
                         .age10to19(parse(fields[5]))
@@ -53,7 +64,7 @@ public class PopulationDataUtil {
 
                 // 남성
                 result.add(Population.builder()
-                        .dongneCode(dongneCode)
+                        .adminDong(adminDong)
                         .gender("남")
                         .age0to9(parse(fields[16]))
                         .age10to19(parse(fields[17]))
@@ -66,7 +77,7 @@ public class PopulationDataUtil {
 
                 // 여성
                 result.add(Population.builder()
-                        .dongneCode(dongneCode)
+                        .adminDong(adminDong)
                         .gender("여")
                         .age0to9(parse(fields[29]))
                         .age10to19(parse(fields[30]))

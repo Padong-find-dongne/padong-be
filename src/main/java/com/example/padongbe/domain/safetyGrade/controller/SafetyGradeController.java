@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/safetyGrade")
+@RequestMapping("/safety-grade")
 @Tag(name = "SafetyGrade", description = "안전지수등급 관련 API")
 public class SafetyGradeController {
 

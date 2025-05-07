@@ -1,6 +1,6 @@
-package com.example.padongbe.boundary.service;
+package com.example.padongbe.domain.boundary.service;
 
-import com.example.padongbe.boundary.dto.BoundaryResponse;
+import com.example.padongbe.domain.boundary.dto.BoundaryResponse;
 import com.example.padongbe.global.ResponseDTO;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;

@@ -1,4 +1,4 @@
-package com.example.padongbe.boundary.dto;
+package com.example.padongbe.domain.boundary.dto;
 
 import java.util.List;
 import lombok.AllArgsConstructor;

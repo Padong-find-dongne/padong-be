@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/population")
-@Tag(name = "Population API", description = "동네별 인구수 관련 API")
+@Tag(name = "Population", description = "동네별 인구수 관련 API")
 public class PopulationController {
 
     private final PopulationService populationService;
@@ -28,6 +28,5 @@ public class PopulationController {
     public ResponseEntity<PopulationChartDto> getPopulationByDongneCode(@PathVariable String dongneCode) {
         return ResponseEntity.ok(populationService.getPopulationByDongneCode(dongneCode));
     }
-
 
 }

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/rentPrice")
+@RequestMapping("/rent-price")
 @Tag(name = "RentPrice", description = "전월세가 관련 API")
 public class RentPriceController {
     private final RentPriceService rentPriceService;
@@ -27,7 +27,7 @@ public class RentPriceController {
     @Operation(summary = "건물유형별 전월세가 조회")
     @Parameter(name = "buildingType", description = "건물 유형 (예: apartment, officetel, villa)")
     @Parameter(name = "dongneId", description = "법정동코드 10자리 (예:1141011000)")
-    public ResponseEntity<RentPriceDto> getRentPriceByDongneId(@PathVariable String buildingType, @PathVariable Long dongneId) {
+    public ResponseEntity<RentPriceDto> getRentPriceByDongneId(@PathVariable String buildingType, @PathVariable String dongneId) {
         return ResponseEntity.ok(rentPriceService.getRentPriceByDongneId(dongneId, buildingType));
     }
 
