@@ -1,5 +1,7 @@
 package com.example.padongbe.domain.rentPrice.service;
 
+import com.example.padongbe.domain.dongne.entity.AdminDong;
+import com.example.padongbe.domain.dongne.entity.DongMapping;
 import com.example.padongbe.domain.dongne.entity.LegalDong;
 import com.example.padongbe.domain.dongne.service.DongneService;
 import com.example.padongbe.domain.rentPrice.dto.response.RentPriceDto;
@@ -8,7 +10,6 @@ import com.example.padongbe.domain.rentPrice.repository.RentPriceRepository;
 import com.example.padongbe.domain.rentPrice.util.RentPriceDataUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.poi.sl.draw.geom.GuideIf;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,18 +31,29 @@ public class RentPriceService {
     public RentPriceDto getRentPriceByDongneId(String dongneId, String buildingType) {
         String dongne = dongneId.toString();
 
-//        Optional<RentPrice> rentPriceOpt = rentPriceRepository.
-//                findByDistrictCodeAndDongCodeAndBuildingType(districtCode, dongCode, convertBuildingType(buildingType));
 
-        LegalDong legalDong = dongneService.findLegalDongByName(dongneId);
-
-        Optional<RentPrice> rentPriceOpt = rentPriceRepository.
-                findByLegalDongAndBuildingType(legalDong, convertBuildingType(buildingType));
-        if (rentPriceOpt.isEmpty()) {
-            log.error("No data found for dongneId: {}", dongneId);
-            throw new IllegalArgumentException("No data found for the given dongneId");
+        for (DongMapping dongMapping : dongMappingList) {
+            Optional<RentPrice> rentPriceOpt = rentPriceRepository.findByLegalDongAndBuildingType(dongMapping.getLegalDong(), convertedBuildingType);
+            if (rentPriceOpt.isPresent()) {
+                RentPrice rentPrice = rentPriceOpt.get();
+                sumMonthlyRent += rentPrice.getAvgMonthlyRent();
+                sumJeonseDeposit += rentPrice.getAvgJeonseDeposit();
+                sumMonthlyDeposit += rentPrice.getAvgMonthlyDeposit();
+                count++;
+            }
         }
-        return new RentPriceDto(rentPriceOpt.get());
+
+        Long avgMonthlyRent = count > 0 ? sumMonthlyRent / count : 0;
+        Long avgJeonseDeposit = count > 0 ? sumJeonseDeposit / count : 0;
+        Long avgMonthlyDeposit = count > 0 ? sumMonthlyDeposit / count : 0;
+
+        return RentPriceDto.builder()
+                .adminDongCode(adminDongCode)
+                .buildingType(buildingType)
+                .avgMonthlyRent(avgMonthlyRent)
+                .avgJeonseDeposit(avgJeonseDeposit)
+                .avgMonthlyDeposit(avgMonthlyDeposit)
+                .build();
     }
 
     private String convertBuildingType(String buildingType) {

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class OpenSearchService {
@@ -56,6 +57,6 @@ public class OpenSearchService {
     }
 
     private boolean isChosungOnly(String keyword) {
-        return keyword.chars().allMatch(c -> c >= 0x3131 && c <= 0x314E);
+        return keyword.chars().allMatch(c -> c >= 0x3131 && c <= 0x314E); // ㄱ~ㅎ
     }
 }
