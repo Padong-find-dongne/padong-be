@@ -6,10 +6,12 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Getter
 @Builder
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Population {
@@ -19,13 +21,6 @@ public class Population {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private AdminDong adminDong;
-    private String gender; // "계", "남", "여"
-    private double age0to9;
-    private double age10to19;
-    private double age20to29;
-    private double age30to39;
-    private double age40to49;
-    private double age50to59;
-    private double age60plus;
-
+    private double totalPopulation;
+    private double density;
 }

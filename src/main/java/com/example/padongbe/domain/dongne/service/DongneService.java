@@ -10,7 +10,9 @@ import com.example.padongbe.domain.dongne.repository.LegalDongRepository;
 import com.example.padongbe.domain.dongne.util.DongneDataUtil;
 import com.example.padongbe.domain.safetyGrade.entity.SafetyGrade;
 import com.example.padongbe.domain.safetyGrade.service.SafetyGradeService;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,6 +21,7 @@ import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class DongneService {
 
     private final AdminDongRepository adminDongRepository;
@@ -92,5 +95,16 @@ public class DongneService {
 
         return adminDongRepository.findByCityAndDistrictAndAdminAreaName(city, district, dong)
                 .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 행정동 주소입니다."));
+    }
+
+    public LegalDong findLegalDongByAdminCode(String adminCode){
+        Optional<AdminDong> optional= adminDongRepository.findByAdminDongCode(adminCode);
+        if (optional.isEmpty()) return null;
+        else {
+            log.info(optional.get().getAdminDongName());
+            log.info(String.valueOf(dongMappingRepository.findByAdminDong(optional.get()).size()));
+            DongMapping legalDong= dongMappingRepository.findByAdminDong(optional.get()).get(0);
+            return legalDong.getLegalDong();
+        }
     }
 }

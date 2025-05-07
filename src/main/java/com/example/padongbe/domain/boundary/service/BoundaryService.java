@@ -1,6 +1,8 @@
 package com.example.padongbe.domain.boundary.service;
 
 import com.example.padongbe.domain.boundary.dto.BoundaryResponse;
+import com.example.padongbe.domain.dongne.entity.LegalDong;
+import com.example.padongbe.domain.dongne.service.DongneService;
 import com.example.padongbe.global.ResponseDTO;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -8,12 +10,19 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @Service
+@RequiredArgsConstructor
+@Slf4j
 public class BoundaryService {
+
+  private final DongneService dongneService;
   private final WebClient webClient = WebClient.builder()
       .baseUrl("http://api.vworld.kr")
       .build();
@@ -23,6 +32,17 @@ public class BoundaryService {
   private final Gson gson = new Gson();
 
   public ResponseDTO<BoundaryResponse> getBoundary(String geocode) {
+
+    LegalDong legalDong= dongneService.findLegalDongByAdminCode(geocode);
+    if (legalDong== null) return ResponseDTO.res(HttpStatus.OK, "법정동으로 변환 실패");
+    else geocode= legalDong.getLegalDongCode();
+
+    log.info(geocode+" "+legalDong.getLegalDongName());
+
+    String legalCode = geocode.substring(0,8);
+
+    log.info(legalCode);
+
     String jsonString = webClient.get()
         .uri(uriBuilder -> uriBuilder
             .path("/req/data")
@@ -31,7 +51,7 @@ public class BoundaryService {
             .queryParam("data", "LT_C_ADEMD_INFO")
             .queryParam("key", serviceKey)
             .queryParam("domain", "www.padong.site")
-            .queryParam("attrFilter", "emdCd:=:" + geocode)
+            .queryParam("attrFilter", "emdCd:=:" + legalCode)
             .build())
         .retrieve()
         .bodyToMono(String.class)
