@@ -48,6 +48,4 @@ public class MobilityController {
         mobilityService.fetchData();
     }
 
-
-
 }

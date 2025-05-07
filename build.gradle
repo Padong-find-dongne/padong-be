@@ -26,24 +26,35 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+
     compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'com.mysql:mysql-connector-j'
-    annotationProcessor 'org.projectlombok:lombok'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
     // Swagger
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2'
+
     // Apache POI
     implementation 'org.apache.poi:poi-ooxml:5.2.5'
-    //webClient
-    implementation 'org.springframework.boot:spring-boot-starter-webflux'
-    //Jsoup
+
+    // Jsoup
     implementation 'org.jsoup:jsoup:1.17.2'
+
     // Gson
     implementation 'com.google.code.gson:gson:2.10.1'
+
     // OpenCSV
     implementation 'com.opencsv:opencsv:5.7.1'
+
+    // AWS OpenSearch SDK (IAM 인증용)
+    implementation 'software.amazon.awssdk:opensearch:2.25.4'
+    implementation 'software.amazon.awssdk:auth'
+    implementation 'software.amazon.awssdk:url-connection-client:2.25.4'
 }
 
 tasks.named('test') {
