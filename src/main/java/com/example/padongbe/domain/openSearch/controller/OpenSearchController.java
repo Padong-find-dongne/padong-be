@@ -24,21 +24,21 @@ public class OpenSearchController {
         return ResponseEntity.ok(openSearchService.autocomplete(keyword));
     }
 
-    @PostMapping("/create")
+    @GetMapping("/create")
     @Operation(summary = "검색 인덱스 매핑")
     public ResponseEntity<String> createAdminDongIndex() {
         openSearchService.createAdminDongIndex();
         return ResponseEntity.ok("인덱스 맵핑 생성 완료");
     }
 
-    @PostMapping("/data")
+    @GetMapping("/data")
     @Operation(summary = "검색 데이터 삽입")
     public ResponseEntity<String> insertAdminDongData() {
         openSearchService.uploadBulkFromFile();
         return ResponseEntity.ok("데이터 삽입 완료");
     }
 
-    @DeleteMapping("/delete")
+    @GetMapping("/delete")
     @Operation(summary = "검색 데이터 삭제")
     public ResponseEntity<String> deleteAdminDongData() {
         openSearchService.deleteAdminDongIndex();
