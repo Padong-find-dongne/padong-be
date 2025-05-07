@@ -1,6 +1,7 @@
 package com.example.padongbe.domain.activityMobility.controller;
 
 import com.example.padongbe.domain.activityMobility.dto.MobilityResponse;
+import com.example.padongbe.domain.activityMobility.dto.MultiMobilityResponse;
 import com.example.padongbe.domain.activityMobility.service.MobilityService;
 import com.example.padongbe.global.ResponseDTO;
 import io.swagger.v3.oas.annotations.Operation;
@@ -32,12 +33,12 @@ public class MobilityController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/address/merge")
+    @GetMapping("/address/multi")
     @Operation(summary = "두 개의 행정동 주소로 검색")
-    public ResponseEntity<ResponseDTO<List<MobilityResponse>>> searchByTwoAddresses(
+    public ResponseEntity<ResponseDTO<MultiMobilityResponse>> searchByTwoAddresses(
             @RequestParam String address1,
-            @RequestParam String address2) {
-
+            @RequestParam String address2)
+    {
         return ResponseEntity.ok(mobilityService.searchByTwoAddresses(address1, address2));
     }
 

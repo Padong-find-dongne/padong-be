@@ -1,14 +1,17 @@
 package com.example.padongbe.domain.activityMobility.service;
 
-import static com.example.padongbe.domain.activityMobility.util.ActivityMobilityDataUtil.readActivityMobilityFromExcel;
-
+import com.example.padongbe.domain.activityMobility.dto.IntersectedMobilityResponse;
 import com.example.padongbe.domain.activityMobility.dto.MobilityResponse;
+import com.example.padongbe.domain.activityMobility.dto.MultiMobilityResponse;
 import com.example.padongbe.domain.activityMobility.entity.Mobility;
 import com.example.padongbe.domain.activityMobility.repository.MobilityRepository;
 import com.example.padongbe.domain.dongne.dto.AdminDongDto;
 import com.example.padongbe.domain.dongne.entity.AdminDong;
 import com.example.padongbe.domain.dongne.service.DongneService;
 import com.example.padongbe.global.ResponseDTO;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -17,9 +20,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Service;
+import static com.example.padongbe.domain.activityMobility.util.ActivityMobilityDataUtil.readActivityMobilityFromExcel;
 
 @Service
 @RequiredArgsConstructor
@@ -70,42 +71,99 @@ public class MobilityService {
         return ResponseDTO.res(HttpStatus.OK, "출발 행정동 조회 성공", responses);
     }
 
-    public ResponseDTO<List<MobilityResponse>> searchByTwoAddresses(String address1, String address2) {
+    public ResponseDTO<MultiMobilityResponse> searchByTwoAddresses(String address1, String address2) {
         List<MobilityResponse> response1 = searchByAddress(address1).getData();
         List<MobilityResponse> response2 = searchByAddress(address2).getData();
 
-        Map<String, MobilityResponse> response1Map = response1.stream()
+        Map<String, MobilityResponse> map1 = response1.stream()
                 .collect(Collectors.toMap(
                         r -> r.getDepartureDong().getAdminDongCode(),
                         Function.identity(),
                         (a, b) -> a
                 ));
 
-        List<MobilityResponse> result = new ArrayList<>();
+        Map<String, MobilityResponse> map2 = response2.stream()
+                .collect(Collectors.toMap(
+                        r -> r.getDepartureDong().getAdminDongCode(),
+                        Function.identity(),
+                        (a, b) -> a
+                ));
 
-        for (MobilityResponse r2 : response2) {
-            String code = r2.getDepartureDong().getAdminDongCode();
-            MobilityResponse r1 = response1Map.get(code);
-            if (r1 != null) {
-                MobilityResponse mergedResponse = MobilityResponse.builder()
+        List<IntersectedMobilityResponse> intersected = new ArrayList<>();
+        List<MobilityResponse> onlyFromFirst = new ArrayList<>();
+        List<MobilityResponse> onlyFromSecond = new ArrayList<>();
+
+        for (Map.Entry<String, MobilityResponse> entry : map1.entrySet()) {
+            String code = entry.getKey();
+            MobilityResponse r1 = entry.getValue();
+
+            if (map2.containsKey(code)) {
+                MobilityResponse r2 = map2.get(code);
+
+                IntersectedMobilityResponse merged = IntersectedMobilityResponse.builder()
                         .departureDong(r1.getDepartureDong())
-                        .totalMobility(r1.getTotalMobility() + r2.getTotalMobility())
-                        .avgTime((r1.getAvgTime() + r2.getAvgTime()) / 2)
+                        .totalMobility1(r1.getTotalMobility())
+                        .totalMobility2(r2.getTotalMobility())
+//                        .totalMobility(r1.getTotalMobility() + r2.getTotalMobility())
+                        .avgTime1(r1.getAvgTime())
+                        .avgTime2(r2.getAvgTime())
                         .build();
-                result.add(mergedResponse);
+
+                intersected.add(merged);
+            } else {
+                onlyFromFirst.add(r1);
             }
         }
 
-        List<MobilityResponse> finalResult;
-        if (result.isEmpty()) {
-            finalResult = new ArrayList<>();
-            finalResult.addAll(response1);
-            finalResult.addAll(response2);
-        } else {
-            finalResult = result;
+        for (Map.Entry<String, MobilityResponse> entry : map2.entrySet()) {
+            if (!map1.containsKey(entry.getKey())) {
+                onlyFromSecond.add(entry.getValue());
+            }
         }
-        finalResult.sort(Comparator.comparingDouble(MobilityResponse::getAvgTime));
-        return ResponseDTO.res(HttpStatus.OK, "출발 행정동 조회 성공", finalResult);
+
+        // 1. 필터링
+        intersected = intersected.stream()
+                .filter(r ->
+                        r.getTotalMobility1() >= 10 &&
+                                r.getTotalMobility2() >= 10 &&
+                                (r.getTotalMobility1() + r.getTotalMobility2() >= 50) &&
+                                r.getAvgTime1() >= 20 &&
+                                r.getAvgTime2() >= 20
+                )
+                .collect(Collectors.toList());
+
+        // 2. 점수 기반 정렬
+        intersected.sort((r1, r2) -> {
+            double diff1 = Math.abs(r1.getAvgTime1() - r1.getAvgTime2());
+            double diff2 = Math.abs(r2.getAvgTime1() - r2.getAvgTime2());
+
+            double score1 = (diff1 > 30) ? 0 : (
+                    0.25 * (1 - (diff1 / 30.0)) +
+                            0.35 * Math.max(0, (1 - ((r1.getAvgTime1() + r1.getAvgTime2()) / 120.0))) +
+                            0.40 * Math.log10(r1.getTotalMobility1() + r1.getTotalMobility2())
+            );
+
+            double score2 = (diff2 > 30) ? 0 : (
+                    0.25 * (1 - (diff2 / 30.0)) +
+                            0.35 * Math.max(0, (1 - ((r2.getAvgTime1() + r2.getAvgTime2()) / 120.0))) +
+                            0.40 * Math.log10(r2.getTotalMobility1() + r2.getTotalMobility2())
+            );
+
+            return Double.compare(score2, score1);
+        });
+
+        // 2. 나머지: totalMobility 기준 내림차순
+        Comparator<MobilityResponse> byMobilityDesc = Comparator.comparingDouble(MobilityResponse::getTotalMobility).reversed();
+        onlyFromFirst.sort(byMobilityDesc);
+        onlyFromSecond.sort(byMobilityDesc);
+
+        MultiMobilityResponse result = MultiMobilityResponse.builder()
+                .firstMobility(onlyFromFirst)
+                .secondMobility(onlyFromSecond)
+                .intersectedMobility(intersected)
+                .build();
+
+        return ResponseDTO.res(HttpStatus.OK, "출발지 데이터 병합 완료", result);
     }
 
 }

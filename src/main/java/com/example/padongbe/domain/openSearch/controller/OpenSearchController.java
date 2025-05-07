@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/open-search")
-@Tag(name = "OpenSearch API", description = "검색어 자동완성 관련 API")
+@Tag(name = "OpenSearch", description = "검색어 자동완성 관련 API")
 public class OpenSearchController {
     private final OpenSearchService openSearchService;
 
