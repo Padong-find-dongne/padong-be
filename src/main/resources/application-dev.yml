@@ -5,7 +5,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/padong
     username: root
-    password: "0317"
+    password: pw
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
@@ -21,9 +21,5 @@ swagger-config:
 
 open-search:
   url: ""
-
-  iam:
-    region: ""
-    access-key: ""
-    secret-key: ""
-    session-token: ""
+  username: ""
+  password: ""

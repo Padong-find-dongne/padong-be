@@ -17,13 +17,15 @@ spring:
         format_sql: true
 
 swagger-config:
-  server-url: "http://3.39.234.97:8080"
+  server-url: "http://padong.site"
 
 open-search:
   url: ${OPEN_SEARCH_URL}
+  username: ${OPEN_SEARCH_USERNAME}
+  password: ${OPEN_SEARCH_PASSWORD}
 
-  iam:
-    region: ${OS_IAM_REGION}
-    access-key: ${OS_IAM_ACCESS_KEY_ID}
-    secret-key: ${OS_IAM_SECRET_ACCESS_KEY}
-    session-token: ${OS_IAM_SESSION_TOKEN}
+#  iam:
+#    region: ${OS_IAM_REGION}
+#    access-key: ${OS_IAM_ACCESS_KEY_ID}
+#    secret-key: ${OS_IAM_SECRET_ACCESS_KEY}
+#    session-token: ${OS_IAM_SESSION_TOKEN}
