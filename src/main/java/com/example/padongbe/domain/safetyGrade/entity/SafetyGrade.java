@@ -19,12 +19,8 @@ public class SafetyGrade {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String districtName;
-    private Long trafficAccidentGrade;
-    private Long fireGrade;
-    private Long crimeGrade;
-    private Long livingGrade;
-    private Long suicideGrade;
-    private Long epidemicGrade;
+    private double avgGrade;
+
 
     @OneToMany(mappedBy = "safetyGrade")
     private List<AdminDong> adminDongs = new ArrayList<>();

@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +31,7 @@ public class MobilityController {
     public ResponseEntity<ResponseDTO<List<MobilityResponse>>> searchByAddress(@RequestParam String address,
         @RequestParam(defaultValue = "0") int page
         ) {
-        Pageable pageable = PageRequest.of(page, 10, Sort.by(Sort.Direction.DESC, "totalMobility"));
+        Pageable pageable = PageRequest.of(page, 10, Sort.by(Direction.DESC, "totalMobility"));
         ResponseDTO<List<MobilityResponse>> response = mobilityService.searchByAddress(address, pageable);
         return ResponseEntity.ok(response);
     }

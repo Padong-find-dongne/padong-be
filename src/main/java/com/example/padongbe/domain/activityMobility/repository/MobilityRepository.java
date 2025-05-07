@@ -11,7 +11,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface MobilityRepository extends JpaRepository<Mobility,Long> {
 
-  Page<Mobility> findByArrivalDongOrderByTotalMobility(AdminDong adminDong, Pageable pageable);
+  Page<Mobility> findByArrivalDong(AdminDong adminDong, Pageable pageable);
 
   List<Mobility> findByArrivalDong(AdminDong adminDong);
 }

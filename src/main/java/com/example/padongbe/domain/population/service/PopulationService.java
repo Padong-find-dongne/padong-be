@@ -31,12 +31,9 @@ public class PopulationService {
         populationRepository.saveAll(populationList);
     }
 
-    public ResponseDTO<PopulationDataDto> getPopulationByDongneCode(String dongneCode) {
-        AdminDong adminDong = dongneService.findAdminDongByCode(dongneCode);
+    public PopulationDataDto getPopulationByAdmin(AdminDong adminDong) {
         Optional<Population> optional= populationRepository.findByAdminDong(adminDong);
-      return optional.map(population -> ResponseDTO.res(HttpStatus.OK, "인구밀도 조회 성공",
-              new PopulationDataDto(population)))
-          .orElseGet(() -> ResponseDTO.res(HttpStatus.OK, "조회할 수 없습니다."));
+      return optional.map(PopulationDataDto::new).orElse(null);
     }
 
     public void uploadDensityData() {

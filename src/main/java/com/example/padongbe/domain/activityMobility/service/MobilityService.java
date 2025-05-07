@@ -8,6 +8,8 @@ import com.example.padongbe.domain.activityMobility.repository.MobilityRepositor
 import com.example.padongbe.domain.dongne.dto.AdminDongDto;
 import com.example.padongbe.domain.dongne.entity.AdminDong;
 import com.example.padongbe.domain.dongne.service.DongneService;
+import com.example.padongbe.domain.population.service.PopulationService;
+import com.example.padongbe.domain.safetyGrade.service.SafetyGradeService;
 import com.example.padongbe.global.ResponseDTO;
 import java.util.Collection;
 import lombok.RequiredArgsConstructor;
@@ -31,18 +33,31 @@ public class MobilityService {
 
     private final MobilityRepository mobilityRepository;
     private final DongneService dongneService;
+    private final PopulationService populationService;
+    private final SafetyGradeService safetyGradeService;
 
     public List<MobilityResponse> mapFromEntities(Collection<Mobility> mobilities){
         List<MobilityResponse> responses = new ArrayList<>();
         for (Mobility mobility :mobilities) {
             AdminDong departureDong = mobility.getDepartureDong();
+            double safety= departureDong.getSafetyGrade().getAvgGrade();
+            double density= populationService.getPopulationByAdmin(departureDong).getDensity();
+            double avgTime= mobility.getAvgTime();
+            double totalMobility= mobility.getTotalMobility();
+
             responses.add(MobilityResponse.builder()
                 .departureDong(AdminDongDto.builder()
                     .adminDongCode(departureDong.getAdminDongCode())
                     .address(departureDong.getCity()+" "+departureDong.getDistrict()+" "+departureDong.getAdminAreaName())
                     .build())
-                .totalMobility(mobility.getTotalMobility())
-                .avgTime(mobility.getAvgTime())
+                .totalMobility(Math.round(totalMobility * 100) / 100.0)
+                .avgTime(Math.round(avgTime * 100) / 100.0)
+                .density(Math.round(density * 100) / 100.0)
+                .safety(Math.round(safety * 100) / 100.0)
+//                .avgJeonseDeposit()    여기 완성해야함
+//                .avgMonthlyDeposit()
+//                .avgMonthlyRent()
+//                .score()
                 .build());
         }
 
@@ -54,7 +69,7 @@ public class MobilityService {
 
     public ResponseDTO<List<MobilityResponse>> searchByAddress(String address, Pageable pageable) {
         AdminDong adminDong = dongneService.findAdminDongByAddress(address);
-        Page<Mobility> mobilities = mobilityRepository.findByArrivalDongOrderByTotalMobility(adminDong, pageable);
+        Page<Mobility> mobilities = mobilityRepository.findByArrivalDong(adminDong, pageable);
         if (mobilities.isEmpty())
             return ResponseDTO.res(HttpStatus.NOT_FOUND, "해당 행정동이 존재하지 않습니다.");
 
