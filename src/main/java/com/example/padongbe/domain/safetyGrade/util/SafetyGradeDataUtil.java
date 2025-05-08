@@ -37,9 +37,13 @@ public class SafetyGradeDataUtil {
                 double f = row.getCell(6).getNumericCellValue();
 
                 SafetyGrade safetyGrade = SafetyGrade.builder()
-                        .districtName(districtName)
-                        .avgGrade((a+b+c+d+e+f)/6.0)
-                        .build();
+                    .trafficAccidents(a)
+                    .fires(b)
+                    .crimes(c)
+                    .publicSafety(d)
+                    .districtName(districtName)
+                    .avgGrade((a+b+c+d+e+f)/6.0)
+                    .build();
 
                 result.add(safetyGrade);
             }

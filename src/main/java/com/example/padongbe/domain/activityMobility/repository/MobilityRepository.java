@@ -4,6 +4,7 @@ import com.example.padongbe.domain.activityMobility.entity.Mobility;
 import java.util.List;
 
 import com.example.padongbe.domain.dongne.entity.AdminDong;
+import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -27,4 +28,7 @@ public interface MobilityRepository extends JpaRepository<Mobility,Long> {
 
   @Query("SELECT MAX(m.avgTime) FROM Mobility m")
   Double findMaxAvgTime();
+
+
+  Optional<Mobility> findByArrivalDongAndDepartureDong(AdminDong arrivalDong, AdminDong departureDong);
 }

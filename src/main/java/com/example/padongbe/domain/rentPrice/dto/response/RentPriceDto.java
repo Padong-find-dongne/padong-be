@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 @Getter
 @Builder
 public class RentPriceDto {
-    private String adminDongCode;
     private String buildingType;
     private Long avgJeonseDeposit;
     private Long avgMonthlyDeposit;

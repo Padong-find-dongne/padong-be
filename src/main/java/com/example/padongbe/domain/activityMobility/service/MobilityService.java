@@ -77,6 +77,12 @@ public class MobilityService {
         return ResponseDTO.res(HttpStatus.OK, "출발 행정동 조회 성공", mapFromEntities(mobilities.getContent()));
     }
 
+    public Mobility findByGeoCodes(String arrivalCode, String departureCode){
+        AdminDong arrivalDong= dongneService.findAdminDongByCode(arrivalCode);
+        AdminDong departureDong= dongneService.findAdminDongByCode(departureCode);
+        Optional<Mobility>optional= mobilityRepository.findByArrivalDongAndDepartureDong(arrivalDong,departureDong);
+      return optional.orElse(null);
+    }
     public ResponseDTO<MultiMobilityResponse> searchByTwoAddresses(String address1, String address2, int page) {
         AdminDong adminDong1 = dongneService.findAdminDongByAddress(address1);
         AdminDong adminDong2 = dongneService.findAdminDongByAddress(address2);

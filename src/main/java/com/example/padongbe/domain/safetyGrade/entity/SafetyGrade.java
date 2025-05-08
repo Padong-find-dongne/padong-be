@@ -20,6 +20,12 @@ public class SafetyGrade {
     private Long id;
     private String districtName;
     private double avgGrade;
+    private double trafficAccidents;
+    private double fires;
+    private double crimes;
+    private double publicSafety;
+//    private double suicides;
+//    private double infectiousDiseases;
 
 
     @OneToMany(mappedBy = "safetyGrade")

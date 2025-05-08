@@ -61,7 +61,6 @@ public class RentPriceService {
         long avgMonthlyDeposit = depositCount > 0 ? sumMonthlyDeposit / depositCount : 0L;
 
         return RentPriceDto.builder()
-                .adminDongCode(adminDong.getAdminDongCode())
                 .buildingType(buildingType)
                 .avgMonthlyRent(avgMonthlyRent)
                 .avgJeonseDeposit(avgJeonseDeposit)
@@ -107,7 +106,6 @@ public class RentPriceService {
         long avgMonthlyDeposit = depositCount > 0 ? sumMonthlyDeposit / depositCount : 0L;
 
         return RentPriceDto.builder()
-                .adminDongCode(adminDong.getAdminDongCode())
                 .buildingType("all")
                 .avgMonthlyRent(avgMonthlyRent)
                 .avgJeonseDeposit(avgJeonseDeposit)

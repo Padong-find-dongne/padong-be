@@ -23,7 +23,6 @@ import java.util.List;
 public class PopulationService {
 
     private final PopulationRepository populationRepository;
-    private final DongneService dongneService;
 
     public void uploadPopulationData() {
         List<Population> populationList = PopulationDataUtil.readPopulationFromCsv();
@@ -35,6 +34,8 @@ public class PopulationService {
         Optional<Population> optional= populationRepository.findByAdminDong(adminDong);
       return optional.map(PopulationDataDto::new).orElse(null);
     }
+
+
 
     public void uploadDensityData() {
         DensityDataUtil.readDensityFromExcel();

@@ -22,6 +22,7 @@ public class SafetyGradeService {
 
     }
 
+
     public SafetyGrade getSafetyGradeByDistrict(String districtCode) {
         return safetyGradeRepository.findById(Long.valueOf(districtCode))
                 .orElseThrow(() -> new IllegalArgumentException("Not Found Safety Grade"));
