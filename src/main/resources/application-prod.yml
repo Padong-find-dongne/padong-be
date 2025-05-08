@@ -17,7 +17,8 @@ spring:
         format_sql: true
 
 swagger-config:
-  server-url: "http://padong.site"
+  server-url-https: "https://padong.site"
+  server-url-http: "https://padong.site"
 
 open-search:
   url: ${OPEN_SEARCH_URL}

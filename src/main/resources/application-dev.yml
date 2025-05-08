@@ -17,7 +17,10 @@ spring:
         format_sql: true
 
 swagger-config:
-  server-url: "http://localhost:8080"
+  server-url-http: "http://localhost:8080"
+  server-url-https: "http://localhost:8080"
+
+
 
 open-search:
   url: ""
