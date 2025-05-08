@@ -27,33 +27,88 @@ public class RentPriceService {
         rentPriceRepository.saveAll(rentPriceList);
     }
 
-    public RentPriceDto getRentPriceByAdminDongCode(String dongneId, String buildingType) {
-        AdminDong dongne = dongneService.findAdminDongByCode(dongneId);
-        List<DongMapping> dongMappingList = dongne.getDongMappingList();
+    public RentPriceDto getRentPriceByAdminDongCode(String adminDongCode, String buildingType) {
+        AdminDong adminDong = dongneService.findAdminDongByCode(adminDongCode);
+        List<DongMapping> dongMappingList = adminDong.getDongMappingList();
 
-        Long sumMonthlyRent = 0L;
-        Long sumJeonseDeposit = 0L;
-        Long sumMonthlyDeposit = 0L;
-        int count = 0;
+        long sumMonthlyRent = 0L, sumJeonseDeposit = 0L, sumMonthlyDeposit = 0L;
+        int rentCount = 0, jeonseCount = 0, depositCount = 0;
 
         for (DongMapping dongMapping : dongMappingList) {
-            Optional<RentPrice> rentPriceOpt = rentPriceRepository.findByLegalDongAndBuildingType(dongMapping.getLegalDong(), convertBuildingType(buildingType));
+            Optional<RentPrice> rentPriceOpt = rentPriceRepository.findByLegalDongAndBuildingType(
+                    dongMapping.getLegalDong(), convertBuildingType(buildingType));
+
             if (rentPriceOpt.isPresent()) {
                 RentPrice rentPrice = rentPriceOpt.get();
-                sumMonthlyRent += rentPrice.getAvgMonthlyRent();
-                sumJeonseDeposit += rentPrice.getAvgJeonseDeposit();
-                sumMonthlyDeposit += rentPrice.getAvgMonthlyDeposit();
-                count++;
+
+                if (rentPrice.getAvgMonthlyRent() != null) {
+                    sumMonthlyRent += rentPrice.getAvgMonthlyRent();
+                    rentCount++;
+                }
+                if (rentPrice.getAvgJeonseDeposit() != null) {
+                    sumJeonseDeposit += rentPrice.getAvgJeonseDeposit();
+                    jeonseCount++;
+                }
+                if (rentPrice.getAvgMonthlyDeposit() != null) {
+                    sumMonthlyDeposit += rentPrice.getAvgMonthlyDeposit();
+                    depositCount++;
+                }
             }
         }
 
-        Long avgMonthlyRent = count > 0 ? sumMonthlyRent / count : 0;
-        Long avgJeonseDeposit = count > 0 ? sumJeonseDeposit / count : 0;
-        Long avgMonthlyDeposit = count > 0 ? sumMonthlyDeposit / count : 0;
+        long avgMonthlyRent = rentCount > 0 ? sumMonthlyRent / rentCount : 0L;
+        long avgJeonseDeposit = jeonseCount > 0 ? sumJeonseDeposit / jeonseCount : 0L;
+        long avgMonthlyDeposit = depositCount > 0 ? sumMonthlyDeposit / depositCount : 0L;
 
         return RentPriceDto.builder()
-                .adminDongCode(dongne.getAdminDongCode())
+                .adminDongCode(adminDong.getAdminDongCode())
                 .buildingType(buildingType)
+                .avgMonthlyRent(avgMonthlyRent)
+                .avgJeonseDeposit(avgJeonseDeposit)
+                .avgMonthlyDeposit(avgMonthlyDeposit)
+                .build();
+    }
+
+    public RentPriceDto getRentPriceByAdminDongCode(String adminDongCode) {
+        AdminDong adminDong = dongneService.findAdminDongByCode(adminDongCode);
+        List<DongMapping> dongMappingList = adminDong.getDongMappingList();
+
+        long sumMonthlyRent = 0L, sumJeonseDeposit = 0L, sumMonthlyDeposit = 0L;
+        int rentCount = 0, jeonseCount = 0, depositCount = 0;
+
+        String[] buildingTypes = {"apartment", "officetel", "villa"};
+
+        for (DongMapping dongMapping : dongMappingList) {
+            for (String type : buildingTypes) {
+                Optional<RentPrice> rentPriceOpt = rentPriceRepository.findByLegalDongAndBuildingType(
+                        dongMapping.getLegalDong(), convertBuildingType(type));
+
+                if (rentPriceOpt.isPresent()) {
+                    RentPrice rentPrice = rentPriceOpt.get();
+
+                    if (rentPrice.getAvgMonthlyRent() != null) {
+                        sumMonthlyRent += rentPrice.getAvgMonthlyRent();
+                        rentCount++;
+                    }
+                    if (rentPrice.getAvgJeonseDeposit() != null) {
+                        sumJeonseDeposit += rentPrice.getAvgJeonseDeposit();
+                        jeonseCount++;
+                    }
+                    if (rentPrice.getAvgMonthlyDeposit() != null) {
+                        sumMonthlyDeposit += rentPrice.getAvgMonthlyDeposit();
+                        depositCount++;
+                    }
+                }
+            }
+        }
+
+        long avgMonthlyRent = rentCount > 0 ? sumMonthlyRent / rentCount : 0L;
+        long avgJeonseDeposit = jeonseCount > 0 ? sumJeonseDeposit / jeonseCount : 0L;
+        long avgMonthlyDeposit = depositCount > 0 ? sumMonthlyDeposit / depositCount : 0L;
+
+        return RentPriceDto.builder()
+                .adminDongCode(adminDong.getAdminDongCode())
+                .buildingType("all")
                 .avgMonthlyRent(avgMonthlyRent)
                 .avgJeonseDeposit(avgJeonseDeposit)
                 .avgMonthlyDeposit(avgMonthlyDeposit)

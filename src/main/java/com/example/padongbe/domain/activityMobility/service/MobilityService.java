@@ -9,19 +9,17 @@ import com.example.padongbe.domain.dongne.dto.AdminDongDto;
 import com.example.padongbe.domain.dongne.entity.AdminDong;
 import com.example.padongbe.domain.dongne.service.DongneService;
 import com.example.padongbe.domain.population.service.PopulationService;
-import com.example.padongbe.domain.safetyGrade.service.SafetyGradeService;
+import com.example.padongbe.domain.rentPrice.dto.response.RentPriceDto;
+import com.example.padongbe.domain.rentPrice.service.RentPriceService;
+import com.example.padongbe.domain.score.service.ScoreService;
 import com.example.padongbe.global.ResponseDTO;
-import java.util.Collection;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -34,35 +32,38 @@ public class MobilityService {
     private final MobilityRepository mobilityRepository;
     private final DongneService dongneService;
     private final PopulationService populationService;
-    private final SafetyGradeService safetyGradeService;
+    private final RentPriceService rentPriceService;
+    private final ScoreService scoreService;
 
-    public List<MobilityResponse> mapFromEntities(Collection<Mobility> mobilities){
+    public List<MobilityResponse> mapFromEntities(Collection<Mobility> mobilities) {
         List<MobilityResponse> responses = new ArrayList<>();
-        for (Mobility mobility :mobilities) {
+        for (Mobility mobility : mobilities) {
             AdminDong departureDong = mobility.getDepartureDong();
-            double safety= departureDong.getSafetyGrade().getAvgGrade();
-            double density= populationService.getPopulationByAdmin(departureDong).getDensity();
-            double avgTime= mobility.getAvgTime();
-            double totalMobility= mobility.getTotalMobility();
+            double safety = departureDong.getSafetyGrade().getAvgGrade();
+            double density = populationService.getPopulationByAdmin(departureDong).getDensity();
+            double avgTime = mobility.getAvgTime();
+            double totalMobility = mobility.getTotalMobility();
+            RentPriceDto rentPriceDto = rentPriceService.getRentPriceByAdminDongCode(departureDong.getAdminDongCode());
+            double score = scoreService.calculateScore(totalMobility, avgTime, density, safety, rentPriceDto);
 
             responses.add(MobilityResponse.builder()
-                .departureDong(AdminDongDto.builder()
-                    .adminDongCode(departureDong.getAdminDongCode())
-                    .address(departureDong.getCity()+" "+departureDong.getDistrict()+" "+departureDong.getAdminAreaName())
-                    .build())
-                .totalMobility(Math.round(totalMobility * 100) / 100.0)
-                .avgTime(Math.round(avgTime * 100) / 100.0)
-                .density(Math.round(density * 100) / 100.0)
-                .safety(Math.round(safety * 100) / 100.0)
-//                .avgJeonseDeposit()    여기 완성해야함
-//                .avgMonthlyDeposit()
-//                .avgMonthlyRent()
-//                .score()
-                .build());
+                    .departureDong(AdminDongDto.builder()
+                            .adminDongCode(departureDong.getAdminDongCode())
+                            .address(departureDong.getCity() + " " + departureDong.getDistrict() + " " + departureDong.getAdminAreaName())
+                            .build())
+                    .totalMobility(Math.round(totalMobility * 100) / 100.0)
+                    .avgTime(Math.round(avgTime * 100) / 100.0)
+                    .density(Math.round(density * 100) / 100.0)
+                    .safety(Math.round(safety * 100) / 100.0)
+                    .avgJeonseDeposit(Math.round(rentPriceDto.getAvgJeonseDeposit() * 100) / 100.0)
+                    .avgMonthlyDeposit(Math.round(rentPriceDto.getAvgMonthlyDeposit() * 100) / 100.0)
+                    .avgMonthlyRent(Math.round(rentPriceDto.getAvgMonthlyRent() * 100) / 100.0)
+                    .score(score)
+                    .build());
         }
-
         return responses;
     }
+
     public void fetchData() {
         mobilityRepository.saveAll(readActivityMobilityFromExcel());
     }
@@ -167,21 +168,26 @@ public class MobilityService {
         onlyFromSecond.sort(byMobilityDesc);
 
         MultiMobilityResponse result = MultiMobilityResponse.builder()
-                .firstMobility(listToPage(onlyFromFirst,page))
-                .secondMobility(listToPage(onlyFromSecond,page))
+                .firstMobility(listToPage(onlyFromFirst, page))
+                .secondMobility(listToPage(onlyFromSecond, page))
                 .intersectedMobility(listToPage(intersected, page))
                 .build();
 
         return ResponseDTO.res(HttpStatus.OK, "출발지 데이터 병합 완료", result);
     }
 
-    public <T>List<T> listToPage(List<T> list, int page){
+    public <T> List<T> listToPage(List<T> list, int page) {
         int totalElements = list.size();
-        int fromIndex = (page+1) * 10;
+        int fromIndex = (page + 1) * 10;
         int toIndex = Math.min(fromIndex + 10, totalElements);
 
-        if (fromIndex <= totalElements)  return list.subList(fromIndex, toIndex);
+        if (fromIndex <= totalElements) return list.subList(fromIndex, toIndex);
         return null;
+    }
+
+    private double normalize(double value, double min, double max) {
+        if (max == min) return 0.5;
+        return (value - min) / (max - min);
     }
 
 }
