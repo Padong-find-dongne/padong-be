@@ -11,7 +11,7 @@ import com.example.padongbe.domain.dongne.service.DongneService;
 import com.example.padongbe.domain.population.service.PopulationService;
 import com.example.padongbe.domain.rentPrice.dto.response.RentPriceDto;
 import com.example.padongbe.domain.rentPrice.service.RentPriceService;
-import com.example.padongbe.domain.score.service.ScoreService;
+import com.example.padongbe.domain.score.service.ScoreCalculator;
 import com.example.padongbe.global.ResponseDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -33,7 +33,7 @@ public class MobilityService {
     private final DongneService dongneService;
     private final PopulationService populationService;
     private final RentPriceService rentPriceService;
-    private final ScoreService scoreService;
+    private final ScoreCalculator scoreCalculator;
 
     public List<MobilityResponse> mapFromEntities(Collection<Mobility> mobilities) {
         List<MobilityResponse> responses = new ArrayList<>();
@@ -44,7 +44,7 @@ public class MobilityService {
             double avgTime = mobility.getAvgTime();
             double totalMobility = mobility.getTotalMobility();
             RentPriceDto rentPriceDto = rentPriceService.getRentPriceByAdminDongCode(departureDong.getAdminDongCode());
-            double score = scoreService.calculateScore(totalMobility, avgTime, density, safety, rentPriceDto);
+            double score = scoreCalculator.calculateScore(totalMobility, avgTime, density, safety, rentPriceDto);
 
             responses.add(MobilityResponse.builder()
                     .departureDong(AdminDongDto.builder()

@@ -20,12 +20,12 @@ public class PopulationDataUtil {
 
     private static DongneService dongneService;
 
-    public PopulationDataUtil(DongneService dongneService){
+    public PopulationDataUtil(DongneService dongneService) {
         PopulationDataUtil.dongneService = dongneService;
     }
 
     private final static String filePath = "data/population.csv";
-    private final static String dongneRegex = "^서울특별시\\s[가-힣]+구\\s[가-힣0-9]+동\\(\\d{10}\\)$";
+    private final static String dongneRegex = "^서울특별시\\s[가-힣]+구\\s[가-힣0-9\\.]+동\\(\\d{10}\\)$";
 
     public static List<Population> readPopulationFromCsv() {
         List<Population> result = new ArrayList<>();

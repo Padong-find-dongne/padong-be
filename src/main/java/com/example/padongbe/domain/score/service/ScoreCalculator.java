@@ -6,11 +6,11 @@ import com.example.padongbe.domain.rentPrice.dto.response.RentPriceDto;
 import com.example.padongbe.domain.rentPrice.repository.RentPriceRepository;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
+@Component
 @RequiredArgsConstructor
-public class ScoreService {
+public class ScoreCalculator {
 
     private final MobilityRepository mobilityRepository;
     private final RentPriceRepository rentPriceRepository;
@@ -44,7 +44,6 @@ public class ScoreService {
 
         jeonseMin = rentPriceRepository.findMinAvgJeonseDeposit();
         jeonseMax = rentPriceRepository.findMaxAvgJeonseDeposit();
-
     }
 
     public double calculateScore(

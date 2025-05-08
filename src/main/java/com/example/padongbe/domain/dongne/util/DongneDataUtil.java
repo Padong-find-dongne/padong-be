@@ -35,6 +35,7 @@ public class DongneDataUtil {
 
                 if (!city.equals("서울특별시")) continue;
                 if(adminDongName.equals("서울특별시")) continue;
+                if(adminDongName.endsWith("구")) continue;
                 if (isDistrictOnly(adminDongName) && isDistrictOnly(legalDongName)) {
                     System.out.println(adminDongName + " " + legalDongName);
                     continue;
