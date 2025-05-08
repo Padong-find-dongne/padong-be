@@ -2,7 +2,6 @@ package com.example.padongbe.domain.rentPrice.service;
 
 import com.example.padongbe.domain.dongne.entity.AdminDong;
 import com.example.padongbe.domain.dongne.entity.DongMapping;
-import com.example.padongbe.domain.dongne.entity.LegalDong;
 import com.example.padongbe.domain.dongne.service.DongneService;
 import com.example.padongbe.domain.rentPrice.dto.response.RentPriceDto;
 import com.example.padongbe.domain.rentPrice.entity.RentPrice;
@@ -28,12 +27,17 @@ public class RentPriceService {
         rentPriceRepository.saveAll(rentPriceList);
     }
 
-    public RentPriceDto getRentPriceByDongneId(String dongneId, String buildingType) {
-        String dongne = dongneId.toString();
+    public RentPriceDto getRentPriceByAdminDongCode(String dongneId, String buildingType) {
+        AdminDong dongne = dongneService.findAdminDongByCode(dongneId);
+        List<DongMapping> dongMappingList = dongne.getDongMappingList();
 
+        Long sumMonthlyRent = 0L;
+        Long sumJeonseDeposit = 0L;
+        Long sumMonthlyDeposit = 0L;
+        int count = 0;
 
         for (DongMapping dongMapping : dongMappingList) {
-            Optional<RentPrice> rentPriceOpt = rentPriceRepository.findByLegalDongAndBuildingType(dongMapping.getLegalDong(), convertedBuildingType);
+            Optional<RentPrice> rentPriceOpt = rentPriceRepository.findByLegalDongAndBuildingType(dongMapping.getLegalDong(), convertBuildingType(buildingType));
             if (rentPriceOpt.isPresent()) {
                 RentPrice rentPrice = rentPriceOpt.get();
                 sumMonthlyRent += rentPrice.getAvgMonthlyRent();
@@ -48,7 +52,7 @@ public class RentPriceService {
         Long avgMonthlyDeposit = count > 0 ? sumMonthlyDeposit / count : 0;
 
         return RentPriceDto.builder()
-                .adminDongCode(adminDongCode)
+                .adminDongCode(dongne.getAdminDongCode())
                 .buildingType(buildingType)
                 .avgMonthlyRent(avgMonthlyRent)
                 .avgJeonseDeposit(avgJeonseDeposit)
@@ -64,4 +68,5 @@ public class RentPriceService {
             default -> throw new IllegalStateException("Unexpected value: " + buildingType);
         };
     }
+
 }
