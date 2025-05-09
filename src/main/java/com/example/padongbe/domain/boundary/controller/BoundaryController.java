@@ -1,6 +1,7 @@
 package com.example.padongbe.domain.boundary.controller;
 
 import com.example.padongbe.domain.boundary.dto.BoundaryResponse;
+import com.example.padongbe.domain.boundary.dto.LocationResponse;
 import com.example.padongbe.domain.boundary.service.BoundaryService;
 import com.example.padongbe.global.ResponseDTO;
 import io.swagger.v3.oas.annotations.Operation;
@@ -23,6 +24,12 @@ public class BoundaryController {
     @Operation(summary = "행정동 경계 조회")
     public ResponseEntity<ResponseDTO<BoundaryResponse>> getBoundary(@PathVariable String geocode) {
         return ResponseEntity.ok(boundaryService.getBoundary(geocode));
+    }
+
+    @GetMapping("/location/{address}")
+    @Operation(summary = "행정동 위치 조회")
+    public ResponseEntity<ResponseDTO<LocationResponse>> getLocation(@PathVariable String address) {
+        return ResponseEntity.ok(boundaryService.getLocation(address));
     }
 
 }
