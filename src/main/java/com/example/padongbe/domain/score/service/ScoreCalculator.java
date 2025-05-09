@@ -75,12 +75,11 @@ public class ScoreCalculator {
         double rawScore =
                 mobilityNorm * 5.0 +
                         timeNorm * 2.0 +
-                        densityNorm * 1.5+
+                        densityNorm * 1.5 +
                         safetyScore;
 
-//        return Math.round(adjustForDisplay(finalScore) * 100) / 100.0;
-//        return Math.round(finalScore * 100) / 100.0;
-        double finalScore = Math.min(10.0, rawScore * 1.3 + 1.0);
+        double finalScore = 6.0 + (rawScore / 9.5) * 3.8;
+        finalScore = Math.min(finalScore, 9.5);
         return Math.round(finalScore * 100) / 100.0;
     }
 
