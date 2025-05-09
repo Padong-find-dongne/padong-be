@@ -53,7 +53,7 @@ public class DongneDetailService {
         .totalMobility(Math.round(totalMobility*100)/100.0).avgTime(Math.round(avgTime*100)/100.0).score(score).density(Math.round(density*100)/100.0)
         .trafficAccidents(safetyGrade.getTrafficAccidents()).publicSafety(
             safetyGrade.getPublicSafety()).fires(safetyGrade.getFires()).crimes(safetyGrade.getCrimes())
-        .location(getLocation(adminDong.getAdminDongName()))
+        .location(getLocation(adminDong.getDistrict()+" "+adminDong.getAdminAreaName()))
         .build());
 
   }
