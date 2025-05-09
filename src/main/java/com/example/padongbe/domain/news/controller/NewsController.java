@@ -22,12 +22,12 @@ public class NewsController {
     @GetMapping("/search/youth-house")
     @Operation(summary = "청년주택 뉴스 조회")
     public ResponseEntity<ResponseDTO<NewsResponse>> getYouthHouseNews() {
-        return ResponseEntity.ok(newsService.getNews("서울 청년 주택"));
+        return ResponseEntity.ok(newsService.getNews("청년 주택"));
     }
 
     @GetMapping("/search/house-price")
     @Operation(summary = "주택가격 뉴스 조회")
     public ResponseEntity<ResponseDTO<NewsResponse>> getHousePriceNews() {
-        return ResponseEntity.ok(newsService.getNews("서울 주택 가격"));
+        return ResponseEntity.ok(newsService.getNews("주택 가격"));
     }
 }

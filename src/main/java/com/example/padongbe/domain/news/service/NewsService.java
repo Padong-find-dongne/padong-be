@@ -47,6 +47,7 @@ public class NewsService {
             .path("/v1/search/news.json")
             .queryParam("query", search)
             .queryParam("display", 10)
+            .queryParam("start", (int)(Math.random() * 20) + 1)
             .build())
         .retrieve()
         .bodyToMono(NewsResponse.class)
