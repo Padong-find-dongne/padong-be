@@ -1,4 +1,4 @@
-package com.example.padongbe.domain.boundary.dto;
+package com.example.padongbe.domain.dongne.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

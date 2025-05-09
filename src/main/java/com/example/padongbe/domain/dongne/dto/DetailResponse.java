@@ -1,6 +1,5 @@
 package com.example.padongbe.domain.dongne.dto;
 
-import com.example.padongbe.domain.activityMobility.dto.MobilityResponse;
 import com.example.padongbe.domain.rentPrice.dto.response.RentPriceDto;
 import lombok.Builder;
 import lombok.Getter;
@@ -19,5 +18,6 @@ public class DetailResponse {
   private double crimes;
   private double publicSafety;
   private RentPriceDto[] rentPrice;
+  private LocationResponse location;
 
 }
