@@ -18,6 +18,6 @@ public class DetailResponse {
   private double crimes;
   private double publicSafety;
   private RentPriceDto[] rentPrice;
-  private LocationResponse location;
+  private LocationResponse[] location;
 
 }

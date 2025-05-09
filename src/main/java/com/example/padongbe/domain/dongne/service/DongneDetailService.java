@@ -37,14 +37,23 @@ public class DongneDetailService {
     rentPriceDtos[0]= rentPriceService.getRentPriceByAdminDongCode(departureCode,"apartment");
     rentPriceDtos[1]= rentPriceService.getRentPriceByAdminDongCode(departureCode,"officetel");
     rentPriceDtos[2]= rentPriceService.getRentPriceByAdminDongCode(departureCode,"villa");
+
     Mobility mobility= mobilityService.findByGeoCodes(arrivalCode, departureCode);
 
     double totalMobility= mobility.getTotalMobility();
     double avgTime= mobility.getAvgTime();
-    AdminDong adminDong= dongneService.findAdminDongByCode(departureCode);
-    SafetyGrade safetyGrade= adminDong.getSafetyGrade();
+    AdminDong departureDong= dongneService.findAdminDongByCode(departureCode);
+    AdminDong arrivalDong= dongneService.findAdminDongByCode(arrivalCode);
+    SafetyGrade safetyGrade= departureDong.getSafetyGrade();
 
-    double density= populationService.getPopulationByAdmin(adminDong).getDensity();
+    String address= departureDong.getDistrict()+" "+departureDong.getAdminAreaName();
+    LocationResponse[] locationResponses= new LocationResponse[2];
+    locationResponses[0]= getLocation(departureDong.getDistrict()+" "+departureDong.getAdminAreaName(),"departure");
+    locationResponses[1]= getLocation(arrivalDong.getDistrict()+" "+arrivalDong.getAdminAreaName(),"arrival");
+
+
+
+    double density= populationService.getPopulationByAdmin(departureDong).getDensity();
     double score= scoreCalculator.calculateScore(totalMobility, avgTime,density,
         safetyGrade.getAvgGrade(),rentPriceService.getRentPriceByAdminDongCode(departureCode));
 
@@ -53,12 +62,12 @@ public class DongneDetailService {
         .totalMobility(Math.round(totalMobility*100)/100.0).avgTime(Math.round(avgTime*100)/100.0).score(score).density(Math.round(density*100)/100.0)
         .trafficAccidents(safetyGrade.getTrafficAccidents()).publicSafety(
             safetyGrade.getPublicSafety()).fires(safetyGrade.getFires()).crimes(safetyGrade.getCrimes())
-        .location(getLocation(adminDong.getDistrict()+" "+adminDong.getAdminAreaName()))
+        .location(locationResponses)
         .build());
 
   }
 
-  public LocationResponse getLocation(String address) {
+  public LocationResponse getLocation(String address,String type) {
     JsonNode json = googleClient.get()
         .uri(uriBuilder -> uriBuilder
             .path("/maps/api/geocode/json")
@@ -73,7 +82,7 @@ public class DongneDetailService {
     double lat = location.path("lat").asDouble();
     double lng = location.path("lng").asDouble();
 
-    LocationResponse response= new LocationResponse(address,lat,lng);
+    LocationResponse response= new LocationResponse(address,type,lat,lng);
 
     return response;
 
