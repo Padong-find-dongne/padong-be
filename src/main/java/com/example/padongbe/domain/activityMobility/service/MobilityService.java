@@ -184,12 +184,15 @@ public class MobilityService {
 
     public <T> List<T> listToPage(List<T> list, int page) {
         int totalElements = list.size();
-        int fromIndex = (page + 1) * 10;
+        int fromIndex = page * 10;
         int toIndex = Math.min(fromIndex + 10, totalElements);
 
-        if (fromIndex <= totalElements) return list.subList(fromIndex, toIndex);
-        return null;
+        if (fromIndex < totalElements) {
+            return list.subList(fromIndex, toIndex);
+        }
+        return Collections.emptyList();
     }
+
 
     private double normalize(double value, double min, double max) {
         if (max == min) return 0.5;
