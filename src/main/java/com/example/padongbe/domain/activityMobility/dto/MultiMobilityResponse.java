@@ -10,5 +10,5 @@ import java.util.List;
 public class MultiMobilityResponse {
     private List<MobilityResponse> firstMobility;
     private List<MobilityResponse> secondMobility;
-    private List<IntersectedMobilityResponse> intersectedMobility;
+    private List<MobilityResponse> intersectedMobility;
 }

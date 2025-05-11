@@ -118,9 +118,14 @@ public class MobilityService {
 
                 IntersectedMobilityResponse merged = IntersectedMobilityResponse.builder()
                         .departureDong(r1.getDepartureDong())
+                        .score(r1.getScore())
+                        .density(r1.getDensity())
+                        .safety(r1.getSafety())
+                        .avgMonthlyDeposit(r1.getAvgMonthlyDeposit())
+                        .avgMonthlyRent(r1.getAvgMonthlyRent())
+                        .avgJeonseDeposit(r1.getAvgJeonseDeposit())
                         .totalMobility1(r1.getTotalMobility())
                         .totalMobility2(r2.getTotalMobility())
-//                        .totalMobility(r1.getTotalMobility() + r2.getTotalMobility())
                         .avgTime1(r1.getAvgTime())
                         .avgTime2(r2.getAvgTime())
                         .build();
@@ -173,10 +178,14 @@ public class MobilityService {
         onlyFromFirst.sort(byMobilityDesc);
         onlyFromSecond.sort(byMobilityDesc);
 
+        List<MobilityResponse> mobilityResponseList = intersected.stream()
+                        .map(IntersectedMobilityResponse::toMobilityResponse)
+                        .toList();
+
         MultiMobilityResponse result = MultiMobilityResponse.builder()
                 .firstMobility(listToPage(onlyFromFirst, page))
                 .secondMobility(listToPage(onlyFromSecond, page))
-                .intersectedMobility(listToPage(intersected, page))
+                .intersectedMobility(listToPage(mobilityResponseList, page))
                 .build();
 
         return ResponseDTO.res(HttpStatus.OK, "출발지 데이터 병합 완료", result);
