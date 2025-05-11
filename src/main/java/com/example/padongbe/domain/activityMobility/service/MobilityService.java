@@ -83,22 +83,22 @@ public class MobilityService {
         Optional<Mobility>optional= mobilityRepository.findByArrivalDongAndDepartureDong(arrivalDong,departureDong);
       return optional.orElse(null);
     }
+
     public ResponseDTO<MultiMobilityResponse> searchByTwoAddresses(String address1, String address2, int page) {
         AdminDong adminDong1 = dongneService.findAdminDongByAddress(address1);
         AdminDong adminDong2 = dongneService.findAdminDongByAddress(address2);
 
-        List<Mobility> entities1 = mobilityRepository.findByArrivalDong(adminDong1);
-        List<Mobility> entities2 = mobilityRepository.findByArrivalDong(adminDong2);
+        List<MobilityResponse> firstMobility = mapFromEntities(mobilityRepository.findByArrivalDong(adminDong1));
+        List<MobilityResponse> secondMobility = mapFromEntities(mobilityRepository.findByArrivalDong(adminDong2));
 
-
-        Map<String, MobilityResponse> map1 = mapFromEntities(entities1).stream()
+        Map<String, MobilityResponse> map1 = firstMobility.stream()
                 .collect(Collectors.toMap(
                         r -> r.getDepartureDong().getAdminDongCode(),
                         Function.identity(),
                         (a, b) -> a
                 ));
 
-        Map<String, MobilityResponse> map2 = mapFromEntities(entities2).stream()
+        Map<String, MobilityResponse> map2 = secondMobility.stream()
                 .collect(Collectors.toMap(
                         r -> r.getDepartureDong().getAdminDongCode(),
                         Function.identity(),
@@ -106,17 +106,13 @@ public class MobilityService {
                 ));
 
         List<IntersectedMobilityResponse> intersected = new ArrayList<>();
-        List<MobilityResponse> onlyFromFirst = new ArrayList<>();
-        List<MobilityResponse> onlyFromSecond = new ArrayList<>();
 
-        for (Map.Entry<String, MobilityResponse> entry : map1.entrySet()) {
-            String code = entry.getKey();
-            MobilityResponse r1 = entry.getValue();
-
+        for (String code : map1.keySet()) {
             if (map2.containsKey(code)) {
+                MobilityResponse r1 = map1.get(code);
                 MobilityResponse r2 = map2.get(code);
 
-                IntersectedMobilityResponse merged = IntersectedMobilityResponse.builder()
+                intersected.add(IntersectedMobilityResponse.builder()
                         .departureDong(r1.getDepartureDong())
                         .score(r1.getScore())
                         .density(r1.getDensity())
@@ -128,21 +124,11 @@ public class MobilityService {
                         .totalMobility2(r2.getTotalMobility())
                         .avgTime1(r1.getAvgTime())
                         .avgTime2(r2.getAvgTime())
-                        .build();
-
-                intersected.add(merged);
-            } else {
-                onlyFromFirst.add(r1);
+                        .build());
             }
         }
 
-        for (Map.Entry<String, MobilityResponse> entry : map2.entrySet()) {
-            if (!map1.containsKey(entry.getKey())) {
-                onlyFromSecond.add(entry.getValue());
-            }
-        }
-
-        // 1. 필터링
+        // intersected 필터링 조건 유지 (필요 없으면 이 블록 삭제 가능)
         intersected = intersected.stream()
                 .filter(r ->
                         r.getTotalMobility1() >= 10 &&
@@ -153,7 +139,7 @@ public class MobilityService {
                 )
                 .collect(Collectors.toList());
 
-        // 2. 점수 기반 정렬
+        // intersected 정렬
         intersected.sort((r1, r2) -> {
             double diff1 = Math.abs(r1.getAvgTime1() - r1.getAvgTime2());
             double diff2 = Math.abs(r2.getAvgTime1() - r2.getAvgTime2());
@@ -173,19 +159,19 @@ public class MobilityService {
             return Double.compare(score2, score1);
         });
 
-        // 2. 나머지: totalMobility 기준 내림차순
+        // 정렬
         Comparator<MobilityResponse> byMobilityDesc = Comparator.comparingDouble(MobilityResponse::getTotalMobility).reversed();
-        onlyFromFirst.sort(byMobilityDesc);
-        onlyFromSecond.sort(byMobilityDesc);
+        firstMobility.sort(byMobilityDesc);
+        secondMobility.sort(byMobilityDesc);
 
-        List<MobilityResponse> mobilityResponseList = intersected.stream()
-                        .map(IntersectedMobilityResponse::toMobilityResponse)
-                        .toList();
+        List<MobilityResponse> intersectedResponses = intersected.stream()
+                .map(IntersectedMobilityResponse::toMobilityResponse)
+                .toList();
 
         MultiMobilityResponse result = MultiMobilityResponse.builder()
-                .firstMobility(listToPage(onlyFromFirst, page))
-                .secondMobility(listToPage(onlyFromSecond, page))
-                .intersectedMobility(listToPage(mobilityResponseList, page))
+                .firstMobility(listToPage(firstMobility, page))
+                .secondMobility(listToPage(secondMobility, page))
+                .intersectedMobility(listToPage(intersectedResponses, page))
                 .build();
 
         return ResponseDTO.res(HttpStatus.OK, "출발지 데이터 병합 완료", result);
