@@ -94,9 +94,9 @@ public class MobilityService {
         List<MobilityResponse> firstMobility = mapFromEntities(mobilityRepository.findByArrivalDong(adminDong1));
         List<MobilityResponse> secondMobility = mapFromEntities(mobilityRepository.findByArrivalDong(adminDong2));
 
-//        Pageable pageable = PageRequest.of(page, 10, Sort.by(Sort.Direction.DESC, "totalMobility"));
-//        List<MobilityResponse> firstMobility = searchByAddress(address1, pageable).getData();
-//        List<MobilityResponse> secondMobility = searchByAddress(address2, pageable).getData();
+        Pageable pageable = PageRequest.of(page, 10, Sort.by(Sort.Direction.DESC, "totalMobility"));
+        List<MobilityResponse> first = searchByAddress(address1, pageable).getData();
+        List<MobilityResponse> second = searchByAddress(address2, pageable).getData();
 
         Map<String, MobilityResponse> map1 = firstMobility.stream()
                 .collect(Collectors.toMap(
@@ -176,8 +176,8 @@ public class MobilityService {
                 .toList();
 
         MultiMobilityResponse result = MultiMobilityResponse.builder()
-                .firstMobility(listToPage(firstMobility, page))
-                .secondMobility(listToPage(secondMobility, page))
+                .firstMobility(first)
+                .secondMobility(second)
                 .intersectedMobility(listToPage(intersectedResponses, page))
                 .build();
 
