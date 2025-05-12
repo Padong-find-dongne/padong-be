@@ -15,7 +15,9 @@ import com.example.padongbe.domain.score.service.ScoreCalculator;
 import com.example.padongbe.global.ResponseDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -82,14 +84,19 @@ public class MobilityService {
         AdminDong departureDong= dongneService.findAdminDongByCode(departureCode);
         Optional<Mobility>optional= mobilityRepository.findByArrivalDongAndDepartureDong(arrivalDong,departureDong);
       return optional.orElse(null);
+
     }
 
     public ResponseDTO<MultiMobilityResponse> searchByTwoAddresses(String address1, String address2, int page) {
         AdminDong adminDong1 = dongneService.findAdminDongByAddress(address1);
         AdminDong adminDong2 = dongneService.findAdminDongByAddress(address2);
 
-        List<MobilityResponse> firstMobility = mapFromEntities(mobilityRepository.findByArrivalDong(adminDong1));
-        List<MobilityResponse> secondMobility = mapFromEntities(mobilityRepository.findByArrivalDong(adminDong2));
+//        List<MobilityResponse> firstMobility = mapFromEntities(mobilityRepository.findByArrivalDong(adminDong1));
+//        List<MobilityResponse> secondMobility = mapFromEntities(mobilityRepository.findByArrivalDong(adminDong2));
+
+        Pageable pageable = PageRequest.of(page, 10, Sort.by(Sort.Direction.DESC, "totalMobility"));
+        List<MobilityResponse> firstMobility = searchByAddress(address1, pageable).getData();
+        List<MobilityResponse> secondMobility = searchByAddress(address2, pageable).getData();
 
         Map<String, MobilityResponse> map1 = firstMobility.stream()
                 .collect(Collectors.toMap(
