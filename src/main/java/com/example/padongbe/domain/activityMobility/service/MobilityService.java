@@ -91,12 +91,12 @@ public class MobilityService {
         AdminDong adminDong1 = dongneService.findAdminDongByAddress(address1);
         AdminDong adminDong2 = dongneService.findAdminDongByAddress(address2);
 
-//        List<MobilityResponse> firstMobility = mapFromEntities(mobilityRepository.findByArrivalDong(adminDong1));
-//        List<MobilityResponse> secondMobility = mapFromEntities(mobilityRepository.findByArrivalDong(adminDong2));
+        List<MobilityResponse> firstMobility = mapFromEntities(mobilityRepository.findByArrivalDong(adminDong1));
+        List<MobilityResponse> secondMobility = mapFromEntities(mobilityRepository.findByArrivalDong(adminDong2));
 
-        Pageable pageable = PageRequest.of(page, 10, Sort.by(Sort.Direction.DESC, "totalMobility"));
-        List<MobilityResponse> firstMobility = searchByAddress(address1, pageable).getData();
-        List<MobilityResponse> secondMobility = searchByAddress(address2, pageable).getData();
+//        Pageable pageable = PageRequest.of(page, 10, Sort.by(Sort.Direction.DESC, "totalMobility"));
+//        List<MobilityResponse> firstMobility = searchByAddress(address1, pageable).getData();
+//        List<MobilityResponse> secondMobility = searchByAddress(address2, pageable).getData();
 
         Map<String, MobilityResponse> map1 = firstMobility.stream()
                 .collect(Collectors.toMap(
