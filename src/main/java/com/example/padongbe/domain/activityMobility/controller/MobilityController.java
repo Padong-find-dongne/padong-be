@@ -2,12 +2,14 @@ package com.example.padongbe.domain.activityMobility.controller;
 
 import com.example.padongbe.domain.activityMobility.dto.MobilityResponse;
 import com.example.padongbe.domain.activityMobility.dto.MultiMobilityResponse;
+import com.example.padongbe.domain.activityMobility.entity.Mobility;
 import com.example.padongbe.domain.activityMobility.service.MobilityService;
 import com.example.padongbe.global.ResponseDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -20,10 +22,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/mobility")
-@RequiredArgsConstructor
 @Tag(name = "Mobility", description = "서울시 생활이동 데이터 관리 API")
+@RequiredArgsConstructor
 public class MobilityController {
-    private final MobilityService mobilityService;
+    private final   MobilityService mobilityService;
 
     @GetMapping("/address")
     @Operation(summary = "행정동 주소로 검색")
@@ -38,7 +40,7 @@ public class MobilityController {
 
     @GetMapping("/address/multi")
     @Operation(summary = "두 개의 행정동 주소로 검색")
-    public ResponseEntity<ResponseDTO<MultiMobilityResponse>> searchByTwoAddresses(
+    public ResponseEntity<ResponseDTO<MultiMobilityResponse>> searchByTwoAddresses( @RequestBody Mobility mobility,
             @RequestParam String address1,
             @RequestParam String address2,
             @RequestParam int page

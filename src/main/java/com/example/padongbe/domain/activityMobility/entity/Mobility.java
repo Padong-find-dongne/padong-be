@@ -30,5 +30,4 @@ public class Mobility {
 
   private double totalMobility;
   private double avgTime;
-
 }

@@ -195,10 +195,4 @@ public class MobilityService {
         return Collections.emptyList();
     }
 
-
-    private double normalize(double value, double min, double max) {
-        if (max == min) return 0.5;
-        return (value - min) / (max - min);
-    }
-
 }

@@ -51,7 +51,7 @@ public class ScoreCalculator {
             double totalMobility,
             double avgTime,
             double density,
-            double safety, // 평균등급 (1~5)
+            double safety,
             RentPriceDto rentPriceDto
     ) {
         // 1. 정규화
@@ -64,14 +64,9 @@ public class ScoreCalculator {
 //        double jeonseNorm = boost(1 - normalize(rentPriceDto.getAvgJeonseDeposit(), jeonseMin, jeonseMax));
 //        double rentNorm = (monthlyNorm + depositNorm + jeonseNorm) / 3.0;
 
-//        double safetyScore = Math.max(0, (5.0 - safety) * 0.75); // 1등급 = 3.0
         // 만점: 1.5점 (1등급), 최하: 0점 (5등급)
         double safetyScore = Math.max(0, (5.0 - safety) * 0.375);  // (1.5 / 4)
 
-
-// 최종 점수 (10점 만점)
-
-// 최종 점수 (10점 만점)
         double rawScore =
                 mobilityNorm * 5.0 +
                         timeNorm * 2.0 +
@@ -81,11 +76,6 @@ public class ScoreCalculator {
         double finalScore = 6.0 + (rawScore / 9.5) * 3.8;
         finalScore = Math.min(finalScore, 9.5);
         return Math.round(finalScore * 100) / 100.0;
-    }
-
-    private double normalize(double value, double min, double max) {
-        if (max == min) return 0.5;
-        return (value - min) / (max - min);
     }
 
     // 예: 평균을 기준으로 한 양방향 정규화
@@ -98,20 +88,5 @@ public class ScoreCalculator {
     private double boost(double value) {
         return Math.pow(value, 0.7); // 또는 그냥 return value;
     }
-
-    private double adjustForDisplay(double rawScore) {
-        return Math.min(10.0, rawScore * 1.4 + 1.0);
-    }
-
-
-//    private double adjustForDisplay(double rawScore) {
-//        if (rawScore <= 6.0) {
-//            return 6.0 + (rawScore / 6.0) * 2.0; // 0~6 → 6~8
-//        } else if (rawScore <= 9.0) {
-//            return 8.0 + ((rawScore - 6.0) / 3.0); // 6~9 → 8~9
-//        } else {
-//            return 9.0 + ((rawScore - 9.0) / 3.5); // 9~12.5 → 9~10
-//        }
-//    }
 
 }
