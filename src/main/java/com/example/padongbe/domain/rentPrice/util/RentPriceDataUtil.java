@@ -18,15 +18,15 @@ import java.util.List;
 @Component
 public class RentPriceDataUtil {
 
-    private static DongneService dongneService;
+    private final DongneService dongneService;
 
     public RentPriceDataUtil(DongneService dongneService) {
         this.dongneService = dongneService;
     }
 
-    private final static String filePath = "data/rentPriceData.xlsx";
+    private final String filePath = "data/rentPriceData.xlsx";
 
-    public static List<RentPrice> readRentPricesFromExcel() {
+    public List<RentPrice> readRentPricesFromExcel() {
         long start = System.currentTimeMillis();
         List<RentPrice> result = new ArrayList<>();
         ClassPathResource resource = new ClassPathResource(filePath);
@@ -51,10 +51,6 @@ public class RentPriceDataUtil {
                 RentPrice rent = RentPrice.builder()
                         .buildingType(buildingType)
                         .legalDong(legalDong)
-//                        .dongName(dongName)
-//                        .districtName(districtName)
-//                        .districtCode(districtCode)
-//                        .dongCode(dongCode)
                         .avgJeonseDeposit(avgJeonseDeposit.isEmpty() ? null : Long.parseLong(avgJeonseDeposit))
                         .avgMonthlyDeposit(avgMonthlyDeposit.isEmpty() ? null : Long.parseLong(avgMonthlyDeposit))
                         .avgMonthlyRent(avgMonthlyRent.isEmpty() ? null : Long.parseLong(avgMonthlyRent))

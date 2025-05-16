@@ -15,23 +15,17 @@ import java.util.stream.Collectors;
 public class SafetyGradeService {
 
     private final SafetyGradeRepository safetyGradeRepository;
+    private final SafetyGradeDataUtil safetyGradeDataUtil;
 
     public void uploadSafetyGrade() {
-        List<SafetyGrade> safetyGradeList = SafetyGradeDataUtil.readSafetyGradeFromExcel();
+        List<SafetyGrade> safetyGradeList = safetyGradeDataUtil.readSafetyGradeFromExcel();
         safetyGradeRepository.saveAll(safetyGradeList);
-
     }
-
 
     public SafetyGrade getSafetyGradeByDistrict(String districtCode) {
         return safetyGradeRepository.findById(Long.valueOf(districtCode))
                 .orElseThrow(() -> new IllegalArgumentException("Not Found Safety Grade"));
     }
-
-//    public SafetyGrade findByDistrictName(String districtName) {
-//        return safetyGradeRepository.findByDistrictName(districtName)
-//                .orElseThrow(() -> new IllegalArgumentException("Not Found Safety Grade"));
-//    }
 
     public Map<String, SafetyGrade> getSafetyGradeMap() {
         return safetyGradeRepository.findAll().stream()

@@ -5,6 +5,7 @@ import com.example.padongbe.domain.activityMobility.dto.MobilityResponse;
 import com.example.padongbe.domain.activityMobility.dto.MultiMobilityResponse;
 import com.example.padongbe.domain.activityMobility.entity.Mobility;
 import com.example.padongbe.domain.activityMobility.repository.MobilityRepository;
+import com.example.padongbe.domain.activityMobility.util.ActivityMobilityDataUtil;
 import com.example.padongbe.domain.dongne.dto.AdminDongDto;
 import com.example.padongbe.domain.dongne.entity.AdminDong;
 import com.example.padongbe.domain.dongne.service.DongneService;
@@ -25,8 +26,6 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import static com.example.padongbe.domain.activityMobility.util.ActivityMobilityDataUtil.readActivityMobilityFromExcel;
-
 @Service
 @RequiredArgsConstructor
 public class MobilityService {
@@ -36,6 +35,7 @@ public class MobilityService {
     private final PopulationService populationService;
     private final RentPriceService rentPriceService;
     private final ScoreCalculator scoreCalculator;
+    private final ActivityMobilityDataUtil activityMobilityDataUtil;
 
     public List<MobilityResponse> mapFromEntities(Collection<Mobility> mobilities) {
         List<MobilityResponse> responses = new ArrayList<>();
@@ -67,7 +67,7 @@ public class MobilityService {
     }
 
     public void fetchData() {
-        mobilityRepository.saveAll(readActivityMobilityFromExcel());
+        mobilityRepository.saveAll(activityMobilityDataUtil.readActivityMobilityFromExcel());
     }
 
     public ResponseDTO<List<MobilityResponse>> searchByAddress(String address, Pageable pageable) {

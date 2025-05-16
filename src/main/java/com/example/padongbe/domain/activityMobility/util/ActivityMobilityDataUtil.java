@@ -18,15 +18,15 @@ import java.util.List;
 @Component
 public class ActivityMobilityDataUtil {
 
-    private static DongneService dongneService;
+    private final DongneService dongneService;
 
     public ActivityMobilityDataUtil(DongneService dongneService) {
         this.dongneService = dongneService;
     }
 
-    private final static String filePath = "data/HW_이동인구_요약_2025_03.xlsx";
+    private final String filePath = "data/HW_이동인구_요약_2025_03.xlsx";
 
-    public static List<Mobility> readActivityMobilityFromExcel() {
+    public List<Mobility> readActivityMobilityFromExcel() {
         long start = System.currentTimeMillis();
         List<Mobility> result = new ArrayList<>();
         ClassPathResource resource = new ClassPathResource(filePath);

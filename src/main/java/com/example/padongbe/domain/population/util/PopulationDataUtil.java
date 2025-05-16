@@ -5,10 +5,8 @@ import com.example.padongbe.domain.dongne.service.DongneService;
 import com.example.padongbe.domain.population.entity.Population;
 import com.opencsv.CSVReader;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -18,16 +16,16 @@ import java.util.List;
 @Component
 public class PopulationDataUtil {
 
-    private static DongneService dongneService;
+    private final DongneService dongneService;
 
     public PopulationDataUtil(DongneService dongneService) {
-        PopulationDataUtil.dongneService = dongneService;
+        this.dongneService = dongneService;
     }
 
-    private final static String filePath = "data/population.csv";
-    private final static String dongneRegex = "^서울특별시\\s[가-힣]+구\\s[가-힣0-9\\.]+동\\(\\d{10}\\)$";
+    private final String filePath = "data/population.csv";
+    private final String dongneRegex = "^서울특별시\\s[가-힣]+구\\s[가-힣0-9\\.]+동\\(\\d{10}\\)$";
 
-    public static List<Population> readPopulationFromCsv() {
+    public List<Population> readPopulationFromCsv() {
         List<Population> result = new ArrayList<>();
         ClassPathResource resource = new ClassPathResource(filePath);
 

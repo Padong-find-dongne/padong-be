@@ -21,9 +21,10 @@ public class RentPriceService {
 
     private final RentPriceRepository rentPriceRepository;
     private final DongneService dongneService;
+    private final RentPriceDataUtil rentPriceDataUtil;
 
     public void uploadRentPriceData() {
-        List<RentPrice> rentPriceList = RentPriceDataUtil.readRentPricesFromExcel();
+        List<RentPrice> rentPriceList = rentPriceDataUtil.readRentPricesFromExcel();
         rentPriceRepository.saveAll(rentPriceList);
     }
 

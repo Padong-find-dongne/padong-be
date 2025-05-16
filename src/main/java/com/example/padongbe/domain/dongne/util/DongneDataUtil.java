@@ -4,16 +4,18 @@ import com.example.padongbe.domain.dongne.dto.DongMappingDto;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.stereotype.Component;
 
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class DongneDataUtil {
 
-    private final static String filePath = "data/dongne.xlsx";
+    private final String filePath = "data/dongne.xlsx";
 
-    public static List<DongMappingDto> readDongneFromExcel() {
+    public List<DongMappingDto> readDongneFromExcel() {
         ClassPathResource file = new ClassPathResource(filePath);
         List<DongMappingDto> results = new ArrayList<>();
 

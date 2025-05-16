@@ -31,10 +31,11 @@ public class DongneService {
     private final LegalDongRepository legalDongRepository;
     private final DongMappingRepository dongMappingRepository;
     private final SafetyGradeService safetyGradeService;
+    private final DongneDataUtil dongneDataUtil;
 
 
     public void addDongneDate() {
-        List<DongMappingDto> rows = DongneDataUtil.readDongneFromExcel();
+        List<DongMappingDto> rows = dongneDataUtil.readDongneFromExcel();
 
         for (DongMappingDto dto : rows) {
             AdminDong admin = adminDongRepository.findByAdminDongCode(dto.getAdminDongCode())
